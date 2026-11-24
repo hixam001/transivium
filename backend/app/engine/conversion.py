@@ -5,6 +5,7 @@ from app.engine.budget import Budget
 from app.engine.errors import EngineError
 from app.engine.gnfa import generate_regex
 from app.engine.regex_verifier import verify_regex
+from app.engine.transducers import mealy_to_moore, moore_to_mealy, output_equivalent
 from app.engine.validation import require_valid
 from app.schemas import MACHINE, MachineBase
 
@@ -13,6 +14,8 @@ OPERATIONS = {
     "nfa_to_dfa": ("nfa", determinize),
     "enfa_to_dfa": ("enfa", determinize),
     "minimize_dfa": ("dfa", minimize),
+    "mealy_to_moore": ("mealy", mealy_to_moore),
+    "moore_to_mealy": ("moore", moore_to_mealy),
 }
 
 
@@ -56,17 +59,18 @@ def convert(model: MachineBase, operation: str, budget: Budget | None = None) ->
     steps = []
     result = OPERATIONS[operation][1](source, budget, steps)
     require_valid(MACHINE.validate_python(result), budget)
-    if not equivalent(source, result, budget)["equivalent"]:
+    transducer = model.kind in {"mealy", "moore"}
+    checker = output_equivalent if transducer else equivalent
+    mode = "normalized_output" if transducer else "language"
+    if not checker(source, result, budget)["equivalent"]:
         raise EngineError(
             "VERIFICATION_FAILED", "Generated machine failed exact verification.", 500
         )
-    budget.step(
-        steps, "verify", "Exact language equivalence verified", mode="language", equivalent=True
-    )
+    budget.step(steps, "verify", "Exact equivalence verified", mode=mode, equivalent=True)
     return dict(
         operation=operation,
         machine=result,
         steps=steps,
-        verification=dict(equivalent=True, mode="language", method="product_bfs"),
+        verification=dict(equivalent=True, mode=mode, method="product_bfs"),
         regexArtifact=None,
     )

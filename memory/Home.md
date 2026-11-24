@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Mealy/Moore simulation and playback implemented with full/prefix outputs, separate initial Moore output, normalized post-input streams and no acceptance label for transducers."
-next_actions: ["TRN-14"]
+current_state: "Both transducer conversions implemented and integrated, with reachable incoming-output splitting, synthetic initial Moore output, destination-state Mealy outputs and exact normalized-output certification."
+next_actions: ["TRN-20"]
 ---
 
 # Transivium memory home

@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Mealy/Moore simulation and playback implemented with full/prefix outputs, separate initial Moore output, normalized post-input streams and no acceptance label for transducers."
-next_actions: ["TRN-14"]
+current_state: "Both transducer conversions implemented and integrated, with reachable incoming-output splitting, synthetic initial Moore output, destination-state Mealy outputs and exact normalized-output certification."
+next_actions: ["TRN-20"]
 ---
 
 # Project state
@@ -73,3 +73,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-12]]: Conversion/results and educational derivations implemented with confirmed adoption, independently verified regex copy/JSON download, canonical reference diagrams, and a two-sided editable comparison workspace with witness replay. Navigation protects unsaved comparison edits. Next: [[memory/Issues/TRN-13]].
 
 - [[memory/Issues/TRN-13]]: Mealy/Moore simulation and playback implemented with full/prefix outputs, separate initial Moore output, normalized post-input streams and no acceptance label for transducers. Next: [[memory/Issues/TRN-14]].
+
+- [[memory/Issues/TRN-14]]: Both transducer conversions implemented and integrated, with reachable incoming-output splitting, synthetic initial Moore output, destination-state Mealy outputs and exact normalized-output certification. Next: [[memory/Issues/TRN-20]].

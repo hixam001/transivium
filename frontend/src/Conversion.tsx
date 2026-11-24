@@ -23,6 +23,8 @@ export type ConversionResult = {
   } | null;
 };
 const operations: Partial<Record<Kind, [string, string][]>> = {
+  mealy: [["mealy_to_moore", "Mealy → Moore"]],
+  moore: [["moore_to_mealy", "Moore → Mealy"]],
   dfa: [
     ["minimize_dfa", "Minimize DFA"],
     ["dfa_to_regex", "DFA → regular expression"],
@@ -193,7 +195,9 @@ export default function Conversion({
               <p>
                 {artifact
                   ? "Independently reconstructed from the emitted expression and checked by exact language comparison."
-                  : "The source and result have exactly the same language."}
+                  : result.verification.mode === "normalized_output"
+                    ? "Post-input output streams are exactly equal. The initial Moore output is excluded."
+                    : "The source and result have exactly the same language."}
               </p>
             </div>
             {artifact && (

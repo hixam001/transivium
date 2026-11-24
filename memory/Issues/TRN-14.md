@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-14"
 issue_type: "Story"
 summary: "Transducer conversions (FR-11,12)"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-102"
 depends_on: ["TRN-13"]
@@ -27,8 +27,8 @@ As a learner or instructor, I want transducer conversions (fr-11,12), so that th
 
 ## Acceptance criteria
 
-- [ ] Split Mealy target states by incoming output with synthetic initial state; Moore-to-Mealy emits destination output.
-- [ ] Exact normalized-output product search verifies conversions, including empty input and multiple incoming outputs.
+- [x] Split Mealy target states by incoming output with synthetic initial state; Moore-to-Mealy emits destination output.
+- [x] Exact normalized-output product search verifies conversions, including empty input and multiple incoming outputs.
 
 Baseline done condition: Exact normalized-output checks pass
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -43,7 +43,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-13, TC-14, TC-15, TC-34
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 3 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -64,3 +64,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Both transducer conversions implemented and integrated, with reachable incoming-output splitting, synthetic initial Moore output, destination-state Mealy outputs and exact normalized-output certification.
+
+124 backend tests passed, including generated transducers, all short binary input streams, empty input, split states, ignored synthetic initial output, mutation detection and state/product caps. Frontend lint/build and 17 component checks passed; ten browser checks passed, including explicit adoption and replay in both directions. Inspected converted Moore result. NFR acceptance tasks precede the TRN-15 integration gate.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
