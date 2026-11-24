@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Responsive five-kind graph/table editor implemented with state/edge editing, safe deletion/replacement, sample machines, keyboard forms and revision-aware validation. Product/design context recorded from the supplied brief."
-next_actions: ["TRN-05"]
+current_state: "DFA/NFA/epsilon-NFA simulation and POST /simulate implemented with immutable initial-plus-n traces, closure edges and bounded response construction."
+next_actions: ["TRN-06"]
 ---
 
 # Project state
@@ -55,3 +55,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-03]]: Strict schemas, all-five-kind semantic validation, input guards, shared budgets and bounded HTTP/error boundary implemented. Generated machine JSON Schema added. Next: [[memory/Issues/TRN-04]].
 
 - [[memory/Issues/TRN-04]]: Responsive five-kind graph/table editor implemented with state/edge editing, safe deletion/replacement, sample machines, keyboard forms and revision-aware validation. Product/design context recorded from the supplied brief. Next: [[memory/Issues/TRN-05]].
+
+- [[memory/Issues/TRN-05]]: DFA/NFA/epsilon-NFA simulation and POST /simulate implemented with immutable initial-plus-n traces, closure edges and bounded response construction. Next: [[memory/Issues/TRN-06]].

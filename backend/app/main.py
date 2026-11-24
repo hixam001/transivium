@@ -9,8 +9,9 @@ from starlette.exceptions import HTTPException
 
 from app.boundary import Boundary, error_response
 from app.engine.errors import EngineError
+from app.engine.simulation import simulate
 from app.engine.validation import validate
-from app.schemas import MachineRequest
+from app.schemas import MachineRequest, SimulationRequest
 
 app = FastAPI(title="Transivium", version="0.1.0")
 app.add_middleware(
@@ -63,3 +64,8 @@ def health() -> dict[str, str]:
 def validate_machine(request: MachineRequest):
     issues = validate(request.machine)
     return {"valid": not issues, "issues": issues}
+
+
+@app.post("/api/v1/simulate")
+def simulate_machine(request: SimulationRequest):
+    return simulate(request.machine, request.input)
