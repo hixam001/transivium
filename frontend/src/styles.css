@@ -537,7 +537,7 @@ footer {
   justify-content: space-between;
   gap: 12px;
   font-size: 11px;
-  color: #65738a;
+  color: #59677e;
 }
 .guide {
   padding: 30px;
@@ -1092,4 +1092,21 @@ footer {
   place-items: center;
   color: var(--muted);
   font-size: 13px;
+}
+:focus-visible {
+  outline-color: #2456bd;
+}
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 20px;
+  background: white;
+  color: #2456bd;
+  padding: 12px 18px;
+  z-index: 10000;
+  border: 1px solid #2456bd;
+  border-radius: 6px;
+}
+.skip-link:focus {
+  top: 12px;
 }

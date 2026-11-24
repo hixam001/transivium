@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Local API boundary safety hardened: typed response-overflow errors, malformed UTF-8 handling, uniform CORS failures and generated request IDs. Browser labels remain literal text."
-next_actions: ["TRN-23"]
+current_state: "Keyboard/table accessibility improved with skip navigation, named landmarks/graph regions, state descriptions, stronger focus/contrast and natural alphabet-field editing."
+next_actions: ["TRN-24"]
 ---
 
 # Transivium memory home

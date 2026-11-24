@@ -25,7 +25,7 @@ Desktop navigation rail, generous work area and narrow state inspector. Graph ta
 
 ## Interaction
 
-Every visible control works. Labels persist above fields. Buttons name actions, validation preserves the draft and points at fields, destructive replacement/deletion requires confirmation. Loading/disabled/empty/error states are explicit. Focus uses a blue 3px outline; reduced-motion disables nonessential animation. Text selection and scrollbars share the palette. Table controls remain the complete keyboard alternative to graph gestures.
+Every visible control works. Labels persist above fields. Buttons name actions, validation preserves the draft and points at fields, destructive replacement/deletion requires confirmation. Loading/disabled/empty/error states are explicit. Focus uses a deep blue (#2456bd) 3px outline; reduced-motion disables nonessential animation. Text selection and scrollbars share the palette. Table controls remain the complete keyboard alternative to graph gestures.
 
 ## Links
 

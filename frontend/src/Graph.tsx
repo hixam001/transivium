@@ -103,6 +103,7 @@ export default function Graph({
   activeStates = [],
   activeTransitions = [],
   readOnly = false,
+  label = "Machine graph",
 }: {
   machine: Machine;
   select: (id: string) => void;
@@ -110,6 +111,7 @@ export default function Graph({
   activeStates?: string[];
   activeTransitions?: Transition[];
   readOnly?: boolean;
+  label?: string;
 }) {
   const [positions, setPositions] = useState<
     Record<string, { x: number; y: number }>
@@ -131,6 +133,7 @@ export default function Graph({
   }, [machine.states.length, machine.kind]);
   const nodes = machine.states.map((s, i) => ({
     id: s.id,
+    ariaLabel: `State ${s.label || s.id}${s.id === machine.startState ? ", start" : ""}${machine.finalStates?.includes(s.id) ? ", accepting" : ""}${s.output !== undefined ? `, output ${s.output}` : ""}${activeStates.includes(s.id) ? ", active" : ""}`,
     type: "machine",
     position: positions[s.id] ?? {
       x: 90 + (i % 4) * 190,
@@ -176,7 +179,7 @@ export default function Graph({
     }));
   }, [machine.transitions, activeTransitions]);
   return (
-    <div className="graph" role="region" aria-label="Machine graph">
+    <div className="graph" role="region" aria-label={label}>
       <ReactFlow
         nodes={nodes}
         edges={edges}

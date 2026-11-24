@@ -27,6 +27,7 @@ import {
   kinds,
   removeState,
 } from "./model";
+import AlphabetInput from "./AlphabetInput";
 import "./styles.css";
 const currentPage = () =>
   location.pathname === "/help"
@@ -222,7 +223,10 @@ export default function App() {
   }
   return (
     <div className="app-shell">
-      <aside className="sidebar">
+      <a className="skip-link" href="#main-workspace">
+        Skip to workspace
+      </a>
+      <aside className="sidebar" aria-label="Workspace navigation">
         <a
           className="brand"
           href="/"
@@ -288,7 +292,7 @@ export default function App() {
           </p>
         </div>
       </aside>
-      <main className="workspace">
+      <main className="workspace" id="main-workspace" tabIndex={-1}>
         <header className="page-heading">
           <div>
             <h1>
@@ -465,40 +469,29 @@ export default function App() {
                   onStep={setHighlight}
                 />
               </div>
-              <aside className="inspector panel">
+              <section
+                className="inspector panel"
+                aria-label="Machine inspector"
+              >
                 <h2>Machine definition</h2>
                 <label>
                   Input alphabet
-                  <input
-                    aria-label="Input alphabet"
-                    value={machine.alphabet.join(", ")}
-                    onChange={(e) =>
-                      update({
-                        ...machine,
-                        alphabet:
-                          e.target.value === ""
-                            ? []
-                            : e.target.value.split(",").map((s) => s.trim()),
-                      })
-                    }
+                  <AlphabetInput
+                    label="Input alphabet"
                     placeholder="0, 1"
+                    value={machine.alphabet}
+                    onChange={(alphabet) => update({ ...machine, alphabet })}
                   />
                 </label>
                 <p className="field-hint">Separate symbols with commas.</p>
                 {!isAcceptor(machine) && (
                   <label>
                     Output alphabet
-                    <input
-                      aria-label="Output alphabet"
-                      value={machine.outputAlphabet?.join(", ") ?? ""}
-                      onChange={(e) =>
-                        update({
-                          ...machine,
-                          outputAlphabet:
-                            e.target.value === ""
-                              ? []
-                              : e.target.value.split(",").map((s) => s.trim()),
-                        })
+                    <AlphabetInput
+                      label="Output alphabet"
+                      value={machine.outputAlphabet ?? []}
+                      onChange={(outputAlphabet) =>
+                        update({ ...machine, outputAlphabet })
                       }
                     />
                   </label>
@@ -648,7 +641,7 @@ export default function App() {
                     </ul>
                   )}
                 </div>
-              </aside>
+              </section>
             </div>
           </>
         )}

@@ -249,6 +249,7 @@ export default function Conversion({
                     <h3>Source · {machine.states.length} states</h3>
                     <Graph
                       machine={machine}
+                      label="Source machine graph"
                       select={noop}
                       connect={noop}
                       readOnly
@@ -261,6 +262,11 @@ export default function Conversion({
                     </h3>
                     <Graph
                       machine={target}
+                      label={
+                        artifact
+                          ? "Canonical minimal DFA graph"
+                          : "Result machine graph"
+                      }
                       select={noop}
                       connect={noop}
                       readOnly

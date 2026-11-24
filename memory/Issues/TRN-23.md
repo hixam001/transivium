@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-23"
 issue_type: "Task"
 summary: "Verify accessibility"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-104"
 depends_on: []
@@ -27,8 +27,8 @@ As a maintainer, I want verify accessibility, so that the documented Transivium 
 
 ## Acceptance criteria
 
-- [ ] keyboard-operable essential controls, text/table alternative to graph, visible focus, semantic labels, acceptance not indicated by color alone.
-- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+- [x] keyboard-operable essential controls, text/table alternative to graph, visible focus, semantic labels, acceptance not indicated by color alone.
+- [x] Record reproducible evidence and any unmet target before the P0 release gate.
 
 Baseline done condition: keyboard-operable essential controls, text/table alternative to graph, visible focus, semantic labels, acceptance not indicated by color alone.
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -43,7 +43,7 @@ This task verifies cross-cutting requirements as component work lands; it does n
 ## Test and delivery evidence
 
 Planned cases: TC-32, TC-39
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: Unestimated; do not interpret as zero.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -63,3 +63,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Keyboard/table accessibility improved with skip navigation, named landmarks/graph regions, state descriptions, stronger focus/contrast and natural alphabet-field editing.
+
+Four browser cases passed: seven configured axe scans reported zero violations, a DFA was built/run through actual Tab/Enter/Space/Arrow input, Backspace and reduced motion worked, and transducer/verified-regex results were checked. Frontend lint/build and 17 component tests passed. Inspected the keyboard-completed render. TC-39 volunteer study remains NOT RUN; no complete WCAG certification claim.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

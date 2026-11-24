@@ -3,6 +3,7 @@ import { ArrowRightLeft, Plus, ShieldCheck, Trash2 } from "lucide-react";
 import { api, ApiError } from "./api";
 import Graph from "./Diagram";
 import TransitionTable from "./TransitionTable";
+import AlphabetInput from "./AlphabetInput";
 import {
   blank,
   examples,
@@ -106,18 +107,10 @@ function SideEditor({
           </label>
           <label>
             Alphabet
-            <input
-              aria-label={`${side} alphabet`}
-              value={machine.alphabet.join(", ")}
-              onChange={(e) =>
-                update({
-                  ...machine,
-                  alphabet:
-                    e.target.value === ""
-                      ? []
-                      : e.target.value.split(",").map((s) => s.trim()),
-                })
-              }
+            <AlphabetInput
+              label={`${side} alphabet`}
+              value={machine.alphabet}
+              onChange={(alphabet) => update({ ...machine, alphabet })}
             />
           </label>
           <label>
@@ -208,7 +201,13 @@ function SideEditor({
           </button>
         </div>
       </div>
-      <Graph machine={machine} select={setSelected} connect={noop} readOnly />
+      <Graph
+        machine={machine}
+        label={`${side} machine graph`}
+        select={setSelected}
+        connect={noop}
+        readOnly
+      />
       <TransitionTable machine={machine} update={update} />
       <div className="compare-validation">
         <button onClick={validate} disabled={status === "pending"}>

@@ -9,7 +9,7 @@ source: "repository-documentation-and-user-task"
 tags: ["transivium", "reference"]
 requirement_id: "NFR-04"
 priority: "P0"
-implementation_status: "Not implemented"
+implementation_status: "Keyboard/table access, focus, labels, contrast and reduced motion implemented and tested"
 test_status: "NOT RUN"
 owners: ["TRN-23", "TRN-15", "TRN-17"]
 tests: ["TC-32", "TC-39"]
@@ -31,7 +31,7 @@ Success measure: Release evidence in docs/07_TEST_PLAN.md.
 
 Planned evidence: TC-32, TC-39. Application test status: **NOT RUN**.
 Priority P0; P1 begins only after the P0 release gate; P2 remains deferred.
-The requirement is documented, not implemented. Proposed numerical targets retain proposed status.
+Automated accessibility and keyboard workflow evidence is in [[docs/TEST_EVIDENCE]]. The volunteer usability study remains NOT RUN; no full conformance claim is made. Proposed numerical targets retain proposed status.
 
 ## Sources and delivery
 
