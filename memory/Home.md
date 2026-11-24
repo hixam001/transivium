@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Public exact equivalence endpoint implemented with same-alphabet validation, sorted shortest witnesses, epsilon-vs-null semantics and explicit resource failures."
-next_actions: ["TRN-10"]
+current_state: "Bounded formal regex AST, sound simplifier, precedence-aware deterministic serialization and GNFA elimination traces implemented. No regex export is certified or exposed yet."
+next_actions: ["TRN-11"]
 ---
 
 # Transivium memory home

@@ -48,7 +48,7 @@ For each original state k in canonical BFS order (proposed deterministic policy)
 Use snapshot of labels involving k before deletion. Remove k and its incident labels only after all updates. Once only S,T remain, result is R_ST (∅ if absent). Proof invariant: label from i to j denotes all paths whose interior states have been eliminated, including repetitions handled by star. Inductively final label recognizes exactly original language. Worst-case expression size exponential; check budget throughout.
 
 ### 8.3 AST and sound simplification
-Nodes: Empty, Epsilon, Literal, Union(list), Concat(list), Star(child). Apply identities `∅|R=R`, `R|R=R`, `εR=Rε=R`, `∅R=R∅=∅`, `∅*=ε*=ε`, `(R*)*=R*`; flatten associative nodes, deduplicate union branches and deterministically sort. Never apply invalid identities such as `(AB)*=A*B*`. Count allocations and serialized length; bound recursion. Serializer uses precedence (star > concat > union), parentheses where needed; no shorthand constructs.
+Nodes: Empty, Epsilon, Literal, Union(list), Concat(list), Star(child). Apply identities `∅|R=R`, `R|R=R`, `εR=Rε=R`, `∅R=R∅=∅`, `∅*=ε*=ε`, `(R*)*=R*`; flatten associative nodes, deduplicate union branches and deterministically sort. Never apply invalid identities such as `(AB)*=A*B*`. Count AST nodes and serialized UTF-8 character allocations as work units; guard length before allocating text and bound expression depth. Cached serialization therefore cannot grow without consuming the 50,000-work budget. Serializer uses precedence (star > concat > union), parentheses where needed; no shorthand constructs.
 
 ## 9. Formal-v1 regex exchange contract
 Grammar (EBNF; literal metacharacters quoted):

@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-10"
 issue_type: "Story"
 summary: "GNFA AST, simplifier, serializer (FR-13)"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-102"
 depends_on: ["TRN-08"]
@@ -27,8 +27,8 @@ As a learner or instructor, I want gnfa ast, simplifier, serializer (fr-13), so 
 
 ## Acceptance criteria
 
-- [ ] Use GNFA state elimination with snapshot labels, formal AST identities and deterministic precedence-aware text serialization.
-- [ ] Check AST/work/UTF-8 size budgets while generating; generation alone does not certify export.
+- [x] Use GNFA state elimination with snapshot labels, formal AST identities and deterministic precedence-aware text serialization.
+- [x] Check AST/work/UTF-8 size budgets while generating; generation alone does not certify export.
 
 Baseline done condition: Correct elimination traces and grammar output
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -43,7 +43,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-16, TC-17, TC-18, TC-19, TC-20, TC-33, TC-35
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 4 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -63,3 +63,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Bounded formal regex AST, sound simplifier, precedence-aware deterministic serialization and GNFA elimination traces implemented. No regex export is certified or exposed yet.
+
+74 backend tests passed. Algebraic identities/precedence, D01 and empty/universal/epsilon/omitted-symbol languages, empty alphabet, deterministic generation and work/UTF-8 size guards checked. Test-only bounded host-regex comparisons supplement fixture checks; runtime never uses host regex for automata. Independent exact verification is TRN-11.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
