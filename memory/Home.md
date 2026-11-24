@@ -41,4 +41,4 @@ For a portable deterministic graph export, run `python3 scripts/memory.py refres
 
 ## Coverage
 
-All baseline documents reviewed; 22 functional and 7 nonfunctional requirements linked. No prior memory was present. Runtime implementation evidence is absent; application tests and external exchange remain NOT RUN.
+All baseline documents reviewed; 22 functional and 7 nonfunctional requirements linked. No prior memory was present. Runtime evidence is recorded per issue in [[memory/Project]]; external exchange remains NOT RUN.

@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Planning and memory ready; application not implemented"
-next_actions: ["TRN-01 formal contracts", "TRN-02 scaffold"]
+current_state: "Formal contracts and ten reference fixtures implemented; architecture selected for local implementation, with partner agreement explicitly pending."
+next_actions: ["TRN-02"]
 ---
 
 # Project state
@@ -45,3 +45,7 @@ Documentation checks are separate from application tests. TC-01–39 remain NOT 
 - [[memory/References/Documentation-Review]]
 - [[docs/00_PRD]]
 - [[docs/02_SAD]]
+
+## Implementation progress
+
+- [[memory/Issues/TRN-01]]: Formal contracts and ten reference fixtures implemented; architecture selected for local implementation, with partner agreement explicitly pending. Next: [[memory/Issues/TRN-02]].

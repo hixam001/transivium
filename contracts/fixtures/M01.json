@@ -1,0 +1,61 @@
+{
+  "id": "M01",
+  "machine": {
+    "kind": "mealy",
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "outputAlphabet": [
+      "0",
+      "1"
+    ],
+    "states": [
+      {
+        "id": "s"
+      }
+    ],
+    "startState": "s",
+    "transitions": [
+      {
+        "from": "s",
+        "symbol": "0",
+        "to": "s",
+        "output": "1"
+      },
+      {
+        "from": "s",
+        "symbol": "1",
+        "to": "s",
+        "output": "0"
+      }
+    ]
+  },
+  "samples": [
+    {
+      "input": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "output": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "normalizedOutput": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ]
+    },
+    {
+      "input": [],
+      "output": [],
+      "normalizedOutput": []
+    }
+  ]
+}

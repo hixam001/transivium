@@ -1,0 +1,33 @@
+{
+  "id": "D03",
+  "machine": {
+    "kind": "dfa",
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "states": [
+      {
+        "id": "s"
+      }
+    ],
+    "startState": "s",
+    "finalStates": [
+      "s"
+    ],
+    "transitions": [
+      {
+        "from": "s",
+        "symbol": "0",
+        "to": "s"
+      },
+      {
+        "from": "s",
+        "symbol": "1",
+        "to": "s"
+      }
+    ]
+  },
+  "samples": [],
+  "regex": "(0|1)*"
+}

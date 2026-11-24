@@ -1,0 +1,77 @@
+{
+  "id": "O01",
+  "machine": {
+    "kind": "moore",
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "outputAlphabet": [
+      "0",
+      "1"
+    ],
+    "states": [
+      {
+        "id": "s",
+        "output": "0"
+      },
+      {
+        "id": "t",
+        "output": "1"
+      }
+    ],
+    "startState": "s",
+    "transitions": [
+      {
+        "from": "s",
+        "symbol": "0",
+        "to": "t"
+      },
+      {
+        "from": "s",
+        "symbol": "1",
+        "to": "s"
+      },
+      {
+        "from": "t",
+        "symbol": "0",
+        "to": "t"
+      },
+      {
+        "from": "t",
+        "symbol": "1",
+        "to": "s"
+      }
+    ]
+  },
+  "samples": [
+    {
+      "input": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "output": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "normalizedOutput": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ]
+    },
+    {
+      "input": [],
+      "output": [
+        "0"
+      ],
+      "normalizedOutput": []
+    }
+  ]
+}

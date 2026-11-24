@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-01"
 issue_type: "Task"
 summary: "Agree formal semantics, schema and regex exchange format"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-100"
 depends_on: []
@@ -27,8 +27,8 @@ As a maintainer, I want agree formal semantics, schema and regex exchange format
 
 ## Acceptance criteria
 
-- [ ] Record ADR statuses and explicitly separate required formal conventions from proposed stack choices.
-- [ ] Prepare formal-v1 exchange fixtures and record external agreement as pending until confirmed; do not invent stakeholder signoff.
+- [x] Record ADR statuses and explicitly separate required formal conventions from proposed stack choices.
+- [x] Prepare formal-v1 exchange fixtures and record external agreement as pending until confirmed; do not invent stakeholder signoff.
 
 Baseline done condition: ADRs and fixtures reviewed; external agreement tracked
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -63,3 +63,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Formal contracts and ten reference fixtures implemented; architecture selected for local implementation, with partner agreement explicitly pending.
+
+Nine contract/memory regression checks passed. Fixture totality/references and D01/D02 reference behavior checked; no runtime engine claim.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

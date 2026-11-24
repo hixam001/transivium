@@ -1,0 +1,31 @@
+{
+  "id": "D04",
+  "machine": {
+    "kind": "dfa",
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "states": [
+      {
+        "id": "s"
+      }
+    ],
+    "startState": "s",
+    "finalStates": [],
+    "transitions": [
+      {
+        "from": "s",
+        "symbol": "0",
+        "to": "s"
+      },
+      {
+        "from": "s",
+        "symbol": "1",
+        "to": "s"
+      }
+    ]
+  },
+  "samples": [],
+  "regex": "∅"
+}

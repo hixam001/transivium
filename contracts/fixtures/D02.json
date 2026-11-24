@@ -1,0 +1,86 @@
+{
+  "id": "D02",
+  "machine": {
+    "kind": "dfa",
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "states": [
+      {
+        "id": "q0"
+      },
+      {
+        "id": "q1"
+      },
+      {
+        "id": "q2"
+      },
+      {
+        "id": "unreachable"
+      },
+      {
+        "id": "duplicate"
+      }
+    ],
+    "startState": "q0",
+    "finalStates": [
+      "q2"
+    ],
+    "transitions": [
+      {
+        "from": "q0",
+        "symbol": "0",
+        "to": "q1"
+      },
+      {
+        "from": "q0",
+        "symbol": "1",
+        "to": "q0"
+      },
+      {
+        "from": "q1",
+        "symbol": "0",
+        "to": "q1"
+      },
+      {
+        "from": "q1",
+        "symbol": "1",
+        "to": "q2"
+      },
+      {
+        "from": "q2",
+        "symbol": "0",
+        "to": "q1"
+      },
+      {
+        "from": "q2",
+        "symbol": "1",
+        "to": "duplicate"
+      },
+      {
+        "from": "unreachable",
+        "symbol": "0",
+        "to": "unreachable"
+      },
+      {
+        "from": "unreachable",
+        "symbol": "1",
+        "to": "unreachable"
+      },
+      {
+        "from": "duplicate",
+        "symbol": "0",
+        "to": "q1"
+      },
+      {
+        "from": "duplicate",
+        "symbol": "1",
+        "to": "q0"
+      }
+    ]
+  },
+  "samples": [],
+  "minimalStates": 3,
+  "equivalentTo": "D01"
+}

@@ -1,0 +1,54 @@
+{
+  "id": "N01",
+  "machine": {
+    "kind": "nfa",
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "states": [
+      {
+        "id": "s"
+      },
+      {
+        "id": "t"
+      }
+    ],
+    "startState": "s",
+    "finalStates": [
+      "t"
+    ],
+    "transitions": [
+      {
+        "from": "s",
+        "symbol": "0",
+        "to": "s"
+      },
+      {
+        "from": "s",
+        "symbol": "0",
+        "to": "t"
+      },
+      {
+        "from": "t",
+        "symbol": "1",
+        "to": "t"
+      }
+    ]
+  },
+  "samples": [
+    {
+      "input": [
+        "0",
+        "1"
+      ],
+      "accepted": true
+    },
+    {
+      "input": [
+        "1"
+      ],
+      "accepted": false
+    }
+  ]
+}

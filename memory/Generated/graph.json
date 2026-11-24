@@ -129,6 +129,15 @@
       ]
     },
     {
+      "id": "docs/IMPLEMENTATION_DECISIONS",
+      "type": "decision",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "decision"
+      ]
+    },
+    {
       "id": "docs/SETUP_GUIDE",
       "type": "reference",
       "status": "active",
@@ -194,7 +203,7 @@
     {
       "id": "memory/Handoffs/TRN-01",
       "type": "session",
-      "status": "draft",
+      "status": "complete",
       "tags": [
         "transivium",
         "session"
@@ -804,6 +813,15 @@
       ]
     },
     {
+      "id": "memory/Sessions/2026-11-24-TRN-01",
+      "type": "session",
+      "status": "complete",
+      "tags": [
+        "transivium",
+        "session"
+      ]
+    },
+    {
       "id": "memory/Templates/Jira-Issue",
       "type": "reference",
       "status": "active",
@@ -910,6 +928,10 @@
     },
     {
       "source": "docs/02_SAD",
+      "target": "docs/IMPLEMENTATION_DECISIONS"
+    },
+    {
+      "source": "docs/02_SAD",
       "target": "memory/Home"
     },
     {
@@ -975,6 +997,26 @@
     {
       "source": "docs/APP_FLOW",
       "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/IMPLEMENTATION_DECISIONS",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "docs/IMPLEMENTATION_DECISIONS",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "docs/IMPLEMENTATION_DECISIONS",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "docs/IMPLEMENTATION_DECISIONS",
+      "target": "memory/Decisions/Formal-Conventions"
+    },
+    {
+      "source": "docs/IMPLEMENTATION_DECISIONS",
+      "target": "memory/Issues/TRN-01"
     },
     {
       "source": "docs/SETUP_GUIDE",
@@ -3851,6 +3893,22 @@
     {
       "source": "memory/Sessions/2026-11-24-Memory-Bootstrap",
       "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-01",
+      "target": "memory/Handoffs/TRN-01"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-01",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-01",
+      "target": "memory/Issues/TRN-02"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-01",
+      "target": "memory/Project"
     },
     {
       "source": "memory/Templates/Jira-Issue",

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "syntax": "formal-v1",
+  "alphabet": "Distinct single ASCII alphanumeric symbols; separately declared",
+  "operators": [
+    "|",
+    "concatenation",
+    "*",
+    "(",
+    ")",
+    "ε",
+    "∅"
+  ],
+  "precedence": [
+    "union",
+    "concatenation",
+    "star"
+  ],
+  "initialMooreOutput": "excluded from normalized equivalence",
+  "verification": "exact reachable product BFS; no sampled proof",
+  "partnerAgreement": "pending",
+  "limits": {
+    "states": 256,
+    "symbols": 16,
+    "transitions": 16384,
+    "inputTokens": 512,
+    "requestBytes": 524288,
+    "regexBytes": 65536,
+    "astWork": 50000,
+    "productPairs": 65536,
+    "derivationSteps": 2000,
+    "responseBytes": 2097152,
+    "parserDepth": 128,
+    "deadlineSeconds": 5
+  }
+}

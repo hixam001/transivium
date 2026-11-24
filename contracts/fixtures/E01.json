@@ -1,0 +1,59 @@
+{
+  "id": "E01",
+  "machine": {
+    "kind": "enfa",
+    "alphabet": [
+      "a"
+    ],
+    "states": [
+      {
+        "id": "s"
+      },
+      {
+        "id": "t"
+      },
+      {
+        "id": "u"
+      }
+    ],
+    "startState": "s",
+    "finalStates": [
+      "t"
+    ],
+    "transitions": [
+      {
+        "from": "s",
+        "symbol": null,
+        "to": "t"
+      },
+      {
+        "from": "t",
+        "symbol": null,
+        "to": "s"
+      },
+      {
+        "from": "t",
+        "symbol": "a",
+        "to": "u"
+      },
+      {
+        "from": "u",
+        "symbol": null,
+        "to": "t"
+      }
+    ]
+  },
+  "samples": [
+    {
+      "input": [],
+      "accepted": true
+    },
+    {
+      "input": [
+        "a",
+        "a"
+      ],
+      "accepted": true
+    }
+  ]
+}

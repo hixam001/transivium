@@ -1,7 +1,7 @@
 ---
 id: "trn-01-handoff"
 type: "session"
-status: "draft"
+status: "complete"
 created: "2026-11-24"
 updated: "2026-11-24"
 confidence: "high"
@@ -24,7 +24,7 @@ Retrieval signals: project identity, direct wikilinks, active statuses, requirem
 
 ## Scope and plan before implementation
 
-1. Re-read current memory and inspect Git/source state; this is a queued handoff, not evidence this task started.
+1. Read memory and inspected clean main at 621f431. Implementation starts with executable JSON reference fixtures and an implementation ADR; runtime is Python 3.14.10 and Node 26.13.1 on this host.
 2. Review the proposed architecture ADRs and record concrete implementation choices with rationale; distinguish developer choices from stakeholder approval.
 3. Add independently checkable D01/N01/E01/M01/O01 and formal-v1 exchange fixture artifacts when implementing; define exact expected behavior.
 4. Record unresolved external syntax agreement and capacity/deadline questions. Do not contact the partner team without authorization.

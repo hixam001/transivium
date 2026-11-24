@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # Software Architecture & Design — Transivium
 
-Version 0.1 | Proposed design; not implemented
+Version 0.1 | Architecture selected for implementation; see [[docs/IMPLEMENTATION_DECISIONS]] for current status
 
 ## 1. Architectural goals
 Keep mathematical algorithms independent of rendering, use a shared typed contract, produce reproducible traces, and verify language correctness separately from conversion. Prefer simple local deployment over infrastructure unrelated to coursework.

@@ -15,7 +15,7 @@ tags: ["transivium", "reference"]
 
 | Area | Current evidence | Next action |
 |---|---|---|
-| Stack/runtime | React/TypeScript/Vite/React Flow and Python/FastAPI/Pydantic proposed | TRN-01/02 select and pin tested versions; no stakeholder approval invented |
+| Stack/runtime | React/TypeScript/Vite/React Flow and Python/FastAPI/Pydantic selected for implementation | TRN-02 pins and tests versions; no stakeholder approval invented |
 | Engine design | Pure coursework algorithms; independent parser/Thompson design proposed | Implement and test; retain exact verification requirement |
 | External exchange | formal-v1 grammar and fixtures documented; partner agreement absent | Track agreement and external test separately; do not contact others without authorization |
 | Schedule/capacity | Relative six weeks and 53 P0 person-days proposed | Confirm team size/deadline; no invented dates or assignees |
