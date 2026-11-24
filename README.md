@@ -28,7 +28,8 @@ Open this repository folder as an Obsidian vault and start at [[memory/Home]]. S
 - DFA → formal regex with independent reconstruction and exact equivalence check.
 - Acceptor equivalence and shortest distinguishing string.
 - Verified regex copy/download with declared alphabet and canonical minimal DFA.
-- Optional after P0: machine JSON import/export and session history.
+- Versioned machine JSON, session run history, and named projects saved in the browser.
+- Practice examples, layout presets, undo/redo, and SVG/PNG diagram downloads.
 
 ## Implementation stack
 React + TypeScript + Vite + React Flow; Python + FastAPI + Pydantic; pytest and frontend test tooling. Local stateless backend, no accounts or database. Dependencies are pinned in requirements.txt and package-lock.json; tested runtimes are Python 3.14.10 and Node 26.13.1. See the setup guide for checks and browser installation.

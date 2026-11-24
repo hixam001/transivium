@@ -152,19 +152,19 @@ Quality and release. Completion requires evidence from every in-scope child issu
 
 In-scope child implementation tasks are complete; see docs/TEST_EVIDENCE and memory/Handoffs/Release-Candidate. Done denotes the internal local candidate, not external testing or human approval.
 ",Highest,transivium-p0
-105,Epic,Deferred enhancements,"Local planning key: TRN-105
-Planning status: To Do
+105,Epic,Project reuse and advanced editing,"Local planning key: TRN-105
+Planning status: Done
 Epic: None (epic)
 Depends on: None
 Requirements: See linked source contracts
 Estimate (proposed person-days): Unestimated
 
 
-# TRN-105 — Deferred enhancements
+# TRN-105 — Project reuse and advanced editing
 
 ## Outcome
 
-Deferred enhancements. Completion requires evidence from every in-scope child issue; deferred work stays deferred.
+Project reuse and advanced editing. Completion requires evidence from every in-scope child issue; deferred work stays deferred.
 
 ## Issues
 
@@ -1329,7 +1329,7 @@ Frontend lint and two live Chromium cases passed. Tests covered refresh, rejecte
 Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
 ",Low,transivium-p2
 19,Task,Advanced editing and diagram image export,"Local planning key: TRN-19
-Planning status: Deferred
+Planning status: Done
 Epic: TRN-105
 Depends on: TRN-17
 Requirements: FR-22
@@ -1344,10 +1344,10 @@ As a learner or instructor, I want advanced editing and diagram image export, so
 
 ## Acceptance criteria
 
-- [ ] Optional layout presets, undo/redo and SVG/PNG export
-- [ ] Deferred; detailed design, effort and test cases are not specified by the baseline.
+- [x] Optional layout presets, undo/redo and SVG/PNG export
+- [x] Undo and redo restore formal edits and diagram arrangement. Layout changes preserve validation. SVG/PNG files contain readable states and transitions and stay within a bounded raster size.
 
-Baseline done condition: Scope and acceptance criteria agreed before any implementation.
+Baseline done condition: Three layout presets, bounded undo/redo and both diagram formats are available in the editor.
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
 
 ## Dependencies and sequencing
@@ -1360,7 +1360,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: Unestimated; do not interpret as zero.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -1380,7 +1380,15 @@ External partner results must be recorded separately from internal verification.
 - docs/05_ALGORITHMS
 - docs/APP_FLOW
 - docs/07_TEST_PLAN
-",Low,transivium-p2-deferred
+
+## Executed implementation evidence
+
+Grid, row and circle layouts, bounded undo/redo and SVG/PNG downloads are implemented. Formal edits invalidate stale results and layout-only edits preserve validation.
+
+Frontend lint, 17 component tests and two live Chromium cases passed. Undo, redo, branch reset, layout-only validation, escaped SVG labels, PNG bytes and narrow viewport were verified. The narrow graph render was inspected.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
+",Low,transivium-p2
 20,Task,Verify correctness,"Local planning key: TRN-20
 Planning status: Done
 Epic: TRN-104

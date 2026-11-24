@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Named local projects preserve validated machines and diagram layout across refresh. The practice library adds focused acceptor and transducer exercises."
-next_actions: ["TRN-19"]
+current_state: "Grid, row and circle layouts, bounded undo/redo and SVG/PNG downloads are implemented. Formal edits invalidate stale results and layout-only edits preserve validation."
+next_actions: ["TRN-105"]
 ---
 
 # Transivium memory home

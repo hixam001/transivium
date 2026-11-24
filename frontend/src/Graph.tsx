@@ -1,4 +1,5 @@
 import type { Layout } from "./machineFile";
+import { defaultPosition, groupTransitions } from "./diagramLayout";
 import { useEffect, useMemo, useRef } from "react";
 import {
   ReactFlow,
@@ -107,6 +108,9 @@ export default function Graph({
   label = "Machine graph",
   positions = {},
   onPositions,
+  fitRevision,
+  onDragStart,
+  onDragStop,
 }: {
   machine: Machine;
   select: (id: string) => void;
@@ -117,6 +121,9 @@ export default function Graph({
   label?: string;
   positions?: Layout;
   onPositions?: (positions: Layout) => void;
+  fitRevision?: number;
+  onDragStart?: () => void;
+  onDragStop?: () => void;
 }) {
   const viewOptions = readOnly
     ? { padding: { top: 60, bottom: 60, x: 35 }, maxZoom: 1 }
@@ -132,17 +139,14 @@ export default function Graph({
       cancelAnimationFrame(frame);
       window.removeEventListener("resize", refit);
     };
-  }, [machine.states.length, machine.kind]);
+  }, [machine.states.length, machine.kind, fitRevision]);
   const nodes = machine.states.map((s, i) => ({
     id: s.id,
     ariaLabel: `State ${s.label || s.id}${s.id === machine.startState ? ", start" : ""}${machine.finalStates?.includes(s.id) ? ", accepting" : ""}${s.output !== undefined ? `, output ${s.output}` : ""}${activeStates.includes(s.id) ? ", active" : ""}`,
     type: "machine",
     position: Object.hasOwn(positions, s.id)
       ? positions[s.id]
-      : {
-          x: 90 + (i % 4) * 190,
-          y: 150 + Math.floor(i / 4) * 170,
-        },
+      : defaultPosition(i),
     data: {
       label: s.label || s.id,
       output: s.output,
@@ -152,22 +156,7 @@ export default function Graph({
     },
   }));
   const edges = useMemo(() => {
-    const groups = new Map<
-      string,
-      { source: string; target: string; labels: string[] }
-    >();
-    machine.transitions.forEach((t) => {
-      const key = JSON.stringify([t.from, t.to]);
-      const group = groups.get(key) ?? {
-        source: t.from,
-        target: t.to,
-        labels: [],
-      };
-      group.labels.push(
-        `${t.symbol ?? "ε"}${t.output !== undefined ? ` / ${t.output}` : ""}`,
-      );
-      groups.set(key, group);
-    });
+    const groups = groupTransitions(machine);
     return [...groups.entries()].map(([id, e]) => ({
       id,
       source: e.source,
@@ -181,7 +170,7 @@ export default function Graph({
       },
       markerEnd: { type: MarkerType.ArrowClosed, color: "#8292ac" },
     }));
-  }, [machine.transitions, activeTransitions]);
+  }, [machine, activeTransitions]);
   return (
     <div className="graph" role="region" aria-label={label}>
       <ReactFlow
@@ -191,6 +180,8 @@ export default function Graph({
         edgeTypes={edgeTypes}
         onNodeClick={(_, n) => select(n.id)}
         onConnect={connect}
+        onNodeDragStart={onDragStart}
+        onNodeDragStop={onDragStop}
         onInit={(instance) => {
           flow.current = () => {
             void instance.fitView(viewOptions);

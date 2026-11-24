@@ -64,7 +64,13 @@ In **Projects and examples**, validate the current machine, enter a name and sav
 
 Projects stay in this browser and are subject to its storage settings. You can save up to 12 projects. Download JSON to keep a portable copy. The practice selector offers guided examples for minimization, regex export, language comparison and parity.
 
-## 10. Support
+## 10. Arrange and download diagrams
+
+Choose a grid, row or circle in **Layout preset**, then select **Apply layout**. Moving states leaves the machine's transitions and validation intact. **Undo edit** and **Redo edit** step through up to 30 editor changes. Undoing or redoing a formal edit clears validation and any trace from the previous revision.
+
+**Download SVG** produces a scalable diagram. **Download PNG** produces a raster image up to 4,096 pixels per side. The images include state labels and transition symbols, plus outputs for transducers.
+
+## 11. Support
 Report issue with application version/commit, operation, minimal reproducible machine and input, expected vs actual outcome, request ID if shown. Do not send credentials or unnecessary personal data. Local operator guide covers startup issues.
 
 ## Memory links

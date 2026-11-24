@@ -18,6 +18,8 @@ import Simulation from "./Simulation";
 import Conversion from "./Conversion";
 import MachineFiles from "./MachineFiles";
 import ProjectLibrary from "./ProjectLibrary";
+import DiagramTools from "./DiagramTools";
+import { presetLayout } from "./diagramLayout";
 import RunHistory from "./RunHistory";
 import type { RunSnapshot } from "./RunHistory";
 import { machineFile } from "./machineFile";
@@ -43,11 +45,24 @@ const currentPage = () =>
       ? "compare"
       : "editor";
 
+type EditorSnapshot = {
+  machine: Machine;
+  layout: Layout;
+  title: string;
+  selected: string;
+};
+
 export default function App() {
   const [machine, setMachine] = useState<Machine>(() =>
     structuredClone(examples.find((e) => e.id === "D01")!.machine),
   );
   const [layout, setLayout] = useState<Layout>({});
+  const [fitRevision, setFitRevision] = useState(0);
+  const edits = useRef<{ past: EditorSnapshot[]; future: EditorSnapshot[] }>({
+    past: [],
+    future: [],
+  });
+  const dragging = useRef(false);
   const [runs, setRuns] = useState<RunSnapshot[]>([]);
   const runSequence = useRef(0);
   const [title, setTitle] = useState("Ends in 01");
@@ -99,10 +114,39 @@ export default function App() {
     window.addEventListener("popstate", changed);
     return () => window.removeEventListener("popstate", changed);
   }, [compareDirty, dirty, page]);
+  function snapshot(): EditorSnapshot {
+    return { machine, layout, title, selected };
+  }
+  function remember() {
+    edits.current.past = [...edits.current.past.slice(-29), snapshot()];
+    edits.current.future = [];
+  }
+  function restore(direction: "past" | "future") {
+    const next = edits.current[direction].pop();
+    if (!next) return;
+    edits.current[direction === "past" ? "future" : "past"].push(snapshot());
+    if (next.machine !== machine) applyMachine(next.machine);
+    setLayout(next.layout);
+    setFitRevision((value) => value + 1);
+    setTitle(next.title);
+    setSelected(next.selected);
+    setDirty(true);
+  }
   function update(next: Machine) {
+    remember();
+    applyMachine(next);
+  }
+  function applyMachine(next: Machine) {
     setHighlight({ states: [], edges: [] });
     generation.current++;
     setMachine(next);
+    setLayout((old) =>
+      Object.fromEntries(
+        next.states.flatMap(({ id }) =>
+          Object.hasOwn(old, id) ? [[id, old[id]]] : [],
+        ),
+      ),
+    );
     setRevision((r) => r + 1);
     setDirty(true);
     setIssues([]);
@@ -121,6 +165,7 @@ export default function App() {
     update(structuredClone(next));
     setTitle(name);
     setLayout(nextLayout);
+    setFitRevision((value) => value + 1);
     setSelected(next.states[0]?.id ?? "");
     setDirty(false);
     return true;
@@ -167,6 +212,7 @@ export default function App() {
       return;
     update(structuredClone(next));
     setTitle("Converted machine");
+    setFitRevision((value) => value + 1);
     setLayout({});
     setSelected(next.states[0]?.id ?? "");
   }
@@ -440,6 +486,18 @@ export default function App() {
                   New machine
                 </button>
                 <button
+                  disabled={!edits.current.past.length}
+                  onClick={() => restore("past")}
+                >
+                  Undo edit
+                </button>
+                <button
+                  disabled={!edits.current.future.length}
+                  onClick={() => restore("future")}
+                >
+                  Redo edit
+                </button>
+                <button
                   className="primary"
                   onClick={validate}
                   disabled={validation === "pending"}
@@ -482,7 +540,16 @@ export default function App() {
                   <Graph
                     machine={machine}
                     positions={layout}
+                    fitRevision={fitRevision}
+                    onDragStart={() => {
+                      remember();
+                      dragging.current = true;
+                    }}
+                    onDragStop={() => {
+                      dragging.current = false;
+                    }}
                     onPositions={(positions) => {
+                      if (!dragging.current) remember();
                       setLayout((old) => ({ ...old, ...positions }));
                       setDirty(true);
                     }}
@@ -490,6 +557,17 @@ export default function App() {
                     connect={connect}
                     activeStates={highlight.states}
                     activeTransitions={highlight.edges}
+                  />
+                  <DiagramTools
+                    machine={machine}
+                    layout={layout}
+                    title={title}
+                    onPreset={(preset) => {
+                      remember();
+                      setLayout(presetLayout(machine, preset));
+                      setFitRevision((value) => value + 1);
+                      setDirty(true);
+                    }}
                   />
                 </section>
                 <TransitionTable

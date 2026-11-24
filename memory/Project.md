@@ -8,15 +8,15 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Named local projects preserve validated machines and diagram layout across refresh. The practice library adds focused acceptor and transducer exercises."
-next_actions: ["TRN-19"]
+current_state: "Grid, row and circle layouts, bounded undo/redo and SVG/PNG downloads are implemented. Formal edits invalidate stale results and layout-only edits preserve validation."
+next_actions: ["TRN-105"]
 ---
 
 # Project state
 
 ## Context
 
-Transivium is a university finite automata/transducer studio. P0 covers all five machine kinds, seven conversion/minimization operations, exact language equivalence with shortest witness, and independently verified DFA-to-regex export. P1 import/export and history follow P0; P2 persistence/library and advanced editing stay deferred.
+Transivium is a university finite automata/transducer studio. P0 covers all five machine kinds, seven conversion/minimization operations, exact language equivalence with shortest witness, and independently verified DFA-to-regex export. P1 import/export and history and P2 browser projects, library and advanced editing are implemented.
 
 ## Current state
 
@@ -97,3 +97,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-16]]: Version 1 machine JSON, validated import preview, layout round-trip and 20 immutable session traces are implemented. Replaying a snapshot preserves the live draft and identifies older revisions. Next: [[memory/Issues/TRN-18]].
 
 - [[memory/Issues/TRN-18]]: Named local projects preserve validated machines and diagram layout across refresh. The practice library adds focused acceptor and transducer exercises. Next: [[memory/Issues/TRN-19]].
+
+- [[memory/Issues/TRN-19]]: Grid, row and circle layouts, bounded undo/redo and SVG/PNG downloads are implemented. Formal edits invalidate stale results and layout-only edits preserve validation. Next: [[memory/Issues/TRN-105]].
