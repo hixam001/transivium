@@ -89,3 +89,13 @@ Resource bounds now include both synthetic GNFA states before construction. Cap 
 | Deadline | 5 seconds, shared generation and verification budget |
 
 A valid input may exceed an intermediate, trace or verification cap. Such requests return an explicit limit/deadline error, never a partially certified success. Backend tests inject small limits to deterministically exercise pre-growth checks; maximum-size simulation coverage does not imply all maximum-size conversions succeed.
+
+## Integration gate — TRN-15
+
+P0 integration gate evaluated all seven NFR tasks and current-source browser/API workflows. Added six browser cases for remaining acceptor conversions, empty-branch rejection and nonempty shortest-witness replay; all pass.
+
+169 backend and 17 component tests pass; 22 existing browser cases passed together and six new integration cases passed together after correcting selectors and accepting intentional replacement prompts. Frontend lint/build, root Ruff/format, contracts and nine script checks pass. Hosted Verify run 45357334513 passed at 1162b32. No runtime defects found by expanded gate; partner TC-35, learner TC-39 and independent peer review remain unperformed.
+
+Browser tests used freshly started API and Vite services with `CI=1`, preventing reuse of an old server process. The new witness case explicitly accepts replacement confirmation: Playwright otherwise dismisses dialogs and correctly retains the original equivalent machine. Initial selector/confirmation failures were test defects, corrected before counting the cases as passing.
+
+[Hosted verification for 1162b32](https://github.com/hixam001/transivium/actions/runs/45357334513) completed successfully on 2026-11-24. That run includes 22 browser cases; the six added cases are verified locally here and will run in subsequent CI. Final case mapping, guides and release scope are consolidated in TRN-17.

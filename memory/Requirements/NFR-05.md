@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 requirement_id: "NFR-05"
 priority: "P0"
 implementation_status: "Deterministic results, source-preserving failures, stale-response guards and protected adoption/navigation verified"
-test_status: "NOT RUN"
+test_status: "PASS"
 owners: ["TRN-24", "TRN-15", "TRN-17"]
 tests: ["TC-29", "TC-31"]
 ---
@@ -29,7 +29,7 @@ Success measure: Release evidence in docs/07_TEST_PLAN.md.
 
 ## Verification and scope
 
-Planned evidence: TC-29, TC-31. Application test status: **NOT RUN**.
+Planned evidence: TC-29, TC-31. Application test status: **PASS**. Consolidated evidence: [[docs/TEST_EVIDENCE]].
 Priority P0; P1 begins only after the P0 release gate; P2 remains deferred.
 Determinism and source preservation are implemented and tested; request IDs and recoverable view-loading fallbacks support diagnosis without replacing drafts. See [[docs/TEST_EVIDENCE]]. Proposed numerical targets retain proposed status.
 

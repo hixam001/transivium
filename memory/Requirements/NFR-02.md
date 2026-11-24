@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 requirement_id: "NFR-02"
 priority: "P0"
 implementation_status: "Measured local reference p95 target met; expensive operations remain bounded"
-test_status: "NOT RUN"
+test_status: "PASS"
 owners: ["TRN-21", "TRN-15", "TRN-17"]
 tests: ["TC-28", "TC-29", "TC-38"]
 ---
@@ -29,7 +29,7 @@ Success measure: Release evidence in docs/07_TEST_PLAN.md.
 
 ## Verification and scope
 
-Planned evidence: TC-28, TC-29, TC-38. Application test status: **NOT RUN**.
+Planned evidence: TC-28, TC-29, TC-38. Application test status: **PASS**. Consolidated evidence: [[docs/TEST_EVIDENCE]].
 Priority P0; P1 begins only after the P0 release gate; P2 remains deferred.
 Reference latency measurements and bundle improvements are recorded in [[docs/TEST_EVIDENCE]]; no worst-case or public-network capacity claim is made. Proposed numerical targets retain proposed status.
 

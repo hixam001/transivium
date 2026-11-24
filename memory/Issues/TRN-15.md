@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-15"
 issue_type: "Task"
 summary: "Limits, errors, accessibility and integration"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-104"
 depends_on: ["TRN-03", "TRN-04", "TRN-05", "TRN-06", "TRN-07", "TRN-08", "TRN-09", "TRN-10", "TRN-11", "TRN-12", "TRN-13", "TRN-14", "TRN-20", "TRN-21", "TRN-22", "TRN-23", "TRN-24", "TRN-25", "TRN-26"]
@@ -27,8 +27,8 @@ As a maintainer, I want limits, errors, accessibility and integration, so that t
 
 ## Acceptance criteria
 
-- [ ] Evaluate all seven linked NFR tasks, bounds before allocation, unified API error envelopes, local bind/CORS and privacy of logs.
-- [ ] Verify keyboard/table interaction, reduced motion, text outcomes, race handling and source preservation across all P0 workflows.
+- [x] Evaluate all seven linked NFR tasks, bounds before allocation, unified API error envelopes, local bind/CORS and privacy of logs.
+- [x] Verify keyboard/table interaction, reduced motion, text outcomes, race handling and source preservation across all P0 workflows.
 
 Baseline done condition: Stress/error and keyboard flows pass
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -61,7 +61,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-08, TC-09, TC-10, TC-11, TC-12, TC-13, TC-14, TC-15, TC-16, TC-17, TC-18, TC-19, TC-20, TC-21, TC-22, TC-23, TC-24, TC-28, TC-29, TC-30, TC-31, TC-32, TC-33, TC-34, TC-35, TC-38, TC-39
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 4 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -87,3 +87,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+P0 integration gate evaluated all seven NFR tasks and current-source browser/API workflows. Added six browser cases for remaining acceptor conversions, empty-branch rejection and nonempty shortest-witness replay; all pass.
+
+169 backend and 17 component tests pass; 22 existing browser cases passed together and six new integration cases passed together after correcting selectors and accepting intentional replacement prompts. Frontend lint/build, root Ruff/format, contracts and nine script checks pass. Hosted Verify run 45357334513 passed at 1162b32. No runtime defects found by expanded gate; partner TC-35, learner TC-39 and independent peer review remain unperformed.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

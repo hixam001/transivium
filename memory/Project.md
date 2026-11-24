@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Resource bounds now include both synthetic GNFA states before construction. Cap tests cover generation, UTF-8 regex bytes, trace append, exact verification and shared deadlines without returning partial certified artifacts."
-next_actions: ["TRN-15"]
+current_state: "P0 integration gate evaluated all seven NFR tasks and current-source browser/API workflows. Added six browser cases for remaining acceptor conversions, empty-branch rejection and nonempty shortest-witness replay; all pass."
+next_actions: ["TRN-17"]
 ---
 
 # Project state
@@ -89,3 +89,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-25]]: Typed API response DTOs and generated OpenAPI/machine contracts now have drift checks; root lint/format configuration, read-only CI and dependency-free Obsidian graph filters are established. Next: [[memory/Issues/TRN-26]].
 
 - [[memory/Issues/TRN-26]]: Resource bounds now include both synthetic GNFA states before construction. Cap tests cover generation, UTF-8 regex bytes, trace append, exact verification and shared deadlines without returning partial certified artifacts. Next: [[memory/Issues/TRN-15]].
+
+- [[memory/Issues/TRN-15]]: P0 integration gate evaluated all seven NFR tasks and current-source browser/API workflows. Added six browser cases for remaining acceptor conversions, empty-branch rejection and nonempty shortest-witness replay; all pass. Next: [[memory/Issues/TRN-17]].

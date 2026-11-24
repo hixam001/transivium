@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Resource bounds now include both synthetic GNFA states before construction. Cap tests cover generation, UTF-8 regex bytes, trace append, exact verification and shared deadlines without returning partial certified artifacts."
-next_actions: ["TRN-15"]
+current_state: "P0 integration gate evaluated all seven NFR tasks and current-source browser/API workflows. Added six browser cases for remaining acceptor conversions, empty-branch rejection and nonempty shortest-witness replay; all pass."
+next_actions: ["TRN-17"]
 ---
 
 # Transivium memory home
