@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Bounded formal regex AST, sound simplifier, precedence-aware deterministic serialization and GNFA elimination traces implemented. No regex export is certified or exposed yet."
-next_actions: ["TRN-11"]
+current_state: "Independent iterative formal-v1 parser and Thompson constructor implemented; DFA-to-regex API now emits artifacts only after exact reconstruction and canonical-reference checks."
+next_actions: ["TRN-12"]
 ---
 
 # Transivium memory home

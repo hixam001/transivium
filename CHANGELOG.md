@@ -14,6 +14,7 @@ tags: ["transivium", "documentation"]
 Track actual changes here; planned functionality is not a released feature.
 
 ## [Unreleased]
+- Implemented: certified acceptor conversions/minimization, shortest distinguishing strings, bounded GNFA regex generation and independent parser/Thompson exact export verification.
 - Implemented: strict machine validation, bounded API errors, responsive five-kind graph/table editor, and DFA/NFA/epsilon-NFA simulation with finite closure traces.
 - Added: repository-root Obsidian vault, linked FR/NFR requirement notes, Jira-style backlog/export, task handoffs, decision memory and deterministic documentation checks.
 - Changed: contribution workflow now reads memory, writes a pre-implementation handoff, and commits/pushes task-owned changes to main without added contributor attribution.

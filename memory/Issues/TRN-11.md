@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-11"
 issue_type: "Story"
 summary: "Independent regex parser/Thompson verifier (FR-13)"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-102"
 depends_on: ["TRN-07", "TRN-09", "TRN-10"]
@@ -27,8 +27,8 @@ As a learner or instructor, I want independent regex parser/thompson verifier (f
 
 ## Acceptance criteria
 
-- [ ] Parse emitted text independently of the generator AST, Thompson-construct, determinize and compare exactly to the original.
-- [ ] Catch mutated expressions; empty, universal, epsilon and omitted-alphabet-symbol cases pass; failed verification yields no verified artifact.
+- [x] Parse emitted text independently of the generator AST, Thompson-construct, determinize and compare exactly to the original.
+- [x] Catch mutated expressions; empty, universal, epsilon and omitted-alphabet-symbol cases pass; failed verification yields no verified artifact.
 
 Baseline done condition: Exact round-trip fixtures, negative mutation detected
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -45,7 +45,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-16, TC-17, TC-18, TC-19, TC-20, TC-33, TC-35
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 4 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -65,3 +65,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Independent iterative formal-v1 parser and Thompson constructor implemented; DFA-to-regex API now emits artifacts only after exact reconstruction and canonical-reference checks.
+
+108 backend tests passed. Supported/rejected grammar, precedence, repeated star, 128/129 nesting boundary, Thompson cap, all six DFA fixtures, empty alphabets, full alphabet retention, mutated text failure and 35 fixed-seed generated cases checked. Ruff passed after formatting. External simulator agreement/demo remains NOT RUN.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

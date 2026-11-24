@@ -11,7 +11,7 @@ tags: ["transivium", "reference"]
 
 # Current handoff
 
-Active task: [[memory/Handoffs/TRN-10]] → [[memory/Issues/TRN-10]].
+Active task: [[memory/Handoffs/TRN-11]] → [[memory/Issues/TRN-11]].
 
 Read [[memory/Project]] and [[memory/Workflow]] before implementation.
 
