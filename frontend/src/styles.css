@@ -1087,3 +1087,9 @@ footer {
 .nav-item {
   text-align: left;
 }
+.graph[role="status"] {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}

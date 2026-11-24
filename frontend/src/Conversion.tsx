@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRightLeft, Check, Copy, Download } from "lucide-react";
 import { api } from "./api";
-import Graph from "./Graph";
+import Graph from "./Diagram";
 import type { Kind, Machine } from "./model";
 
 export type ConversionResult = {

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRightLeft, Plus, ShieldCheck, Trash2 } from "lucide-react";
 import { api, ApiError } from "./api";
-import Graph from "./Graph";
+import Graph from "./Diagram";
 import TransitionTable from "./TransitionTable";
 import {
   blank,

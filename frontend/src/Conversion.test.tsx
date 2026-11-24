@@ -4,7 +4,7 @@ import Conversion from "./Conversion";
 import type { ConversionResult } from "./Conversion";
 import { examples } from "./model";
 
-vi.mock("./Graph", () => ({ default: () => <div>Machine diagram</div> }));
+vi.mock("./Diagram", () => ({ default: () => <div>Machine diagram</div> }));
 const machine = examples.find((e) => e.id === "D01")!.machine;
 const artifact = {
   schemaVersion: 1,

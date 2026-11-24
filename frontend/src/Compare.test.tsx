@@ -3,7 +3,7 @@ import { afterEach, expect, test, vi } from "vitest";
 import Compare from "./Compare";
 import { examples } from "./model";
 
-vi.mock("./Graph", () => ({ default: () => <div>Machine diagram</div> }));
+vi.mock("./Diagram", () => ({ default: () => <div>Machine diagram</div> }));
 const machine = examples.find((e) => e.id === "D01")!.machine;
 afterEach(() => vi.restoreAllMocks());
 const valid = () => new Response(JSON.stringify({ valid: true, issues: [] }));

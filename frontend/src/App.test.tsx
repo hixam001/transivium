@@ -9,7 +9,7 @@ import { afterEach, expect, test, vi } from "vitest";
 import App from "./App";
 import type { Machine } from "./model";
 
-vi.mock("./Graph", () => ({
+vi.mock("./Diagram", () => ({
   default: ({ machine }: { machine: Machine }) => (
     <div data-testid="graph-model">{JSON.stringify(machine)}</div>
   ),

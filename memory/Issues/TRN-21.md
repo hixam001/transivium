@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-21"
 issue_type: "Task"
 summary: "Verify responsiveness"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-104"
 depends_on: []
@@ -27,8 +27,8 @@ As a maintainer, I want verify responsiveness, so that the documented Transivium
 
 ## Acceptance criteria
 
-- [ ] proposed p95 ≤ 2 s for ordinary reference workloads; bounded expensive operations with a clear failure state.
-- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+- [x] proposed p95 ≤ 2 s for ordinary reference workloads; bounded expensive operations with a clear failure state.
+- [x] Record reproducible evidence and any unmet target before the P0 release gate.
 
 Baseline done condition: proposed p95 ≤ 2 s for ordinary reference workloads; bounded expensive operations with a clear failure state.
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -43,7 +43,7 @@ This task verifies cross-cutting requirements as component work lands; it does n
 ## Test and delivery evidence
 
 Planned cases: TC-28, TC-29, TC-38
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: Unestimated; do not interpret as zero.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -63,3 +63,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Lazy graph/comparison loading and reproducible API/browser responsiveness benchmarks implemented. Recorded reference workloads meet the proposed 2 s p95 target.
+
+300 measured loopback API requests succeeded; worst workload p95 4.867 ms. Production-browser p95 was 80.225 ms for a 100-token trace and 83.681 ms for verified regex plus diagrams (20 samples each, concurrent acceptance browser active). Entry JS reduced from 515.75 to 259.67 kB, with deferred graph/compare chunks. Frontend lint/build, 17 component and ten browser checks passed. Cold-load, public-network and exponential worst cases are excluded.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

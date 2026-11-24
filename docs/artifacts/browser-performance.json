@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "frontend": "Vite production build served with vite preview",
+  "browser": "Chromium 159.0.8154.6",
+  "viewport": {
+    "width": 1440,
+    "height": 1050
+  },
+  "methodology": "Sequential warmed click-to-render timings including loopback request, response parsing and visible result creation; no public-network or cold-load claim. API hardware is in performance.json.",
+  "workloads": [
+    {
+      "workload": "D01-100-token-simulation-click-to-trace",
+      "measuredRequests": 20,
+      "warmups": 2,
+      "p50Ms": 66.603,
+      "p95Ms": 80.225,
+      "maxMs": 92.168,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "D01-regex-click-to-verified-artifact-and-diagrams",
+      "measuredRequests": 20,
+      "warmups": 2,
+      "p50Ms": 70.066,
+      "p95Ms": 83.681,
+      "maxMs": 85.699,
+      "targetMs": 2000,
+      "targetMet": true
+    }
+  ],
+  "pageErrors": [],
+  "allTargetsMet": true,
+  "concurrentActivity": "The browser acceptance suite was running on the same host during these samples."
+}

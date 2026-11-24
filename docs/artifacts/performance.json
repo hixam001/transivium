@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "f50f4cbddc47ae562a3168434b2906c195309484",
+  "environment": {
+    "os": "Linux",
+    "kernel": "7.3.5-2-cachyos",
+    "architecture": "x86_64",
+    "cpu": "13th Gen Intel(R) Core(TM) i5-13420H",
+    "logicalCpus": 12,
+    "clientPython": "3.14.10"
+  },
+  "methodology": "Sequential loopback HTTP requests, full JSON response read; 3 warmups then measured requests per workload; nearest-rank p95. Timing does not include browser render or public-network latency.",
+  "coverageLimitation": "Reference fixtures plus a 20-state/4-symbol/100-token cyclic machine; not every bounded automaton or exponential regex expansion.",
+  "workloads": [
+    {
+      "workload": "validate-20-states-4-symbols",
+      "states": 20,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 2.355,
+      "p95Ms": 2.708,
+      "maxMs": 2.913,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "simulate-20-states-100-tokens",
+      "states": 20,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 4.007,
+      "p95Ms": 4.867,
+      "maxMs": 6.183,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "minimize-20-states",
+      "states": 20,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 3.709,
+      "p95Ms": 4.613,
+      "maxMs": 4.945,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "enfa_to_nfa",
+      "states": 3,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 1.585,
+      "p95Ms": 2.362,
+      "maxMs": 2.548,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "nfa_to_dfa",
+      "states": 2,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 1.739,
+      "p95Ms": 2.285,
+      "maxMs": 2.342,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "enfa_to_dfa",
+      "states": 3,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 1.24,
+      "p95Ms": 1.994,
+      "maxMs": 2.027,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "dfa_to_regex",
+      "states": 3,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 2.327,
+      "p95Ms": 3.121,
+      "maxMs": 3.252,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "mealy_to_moore",
+      "states": 1,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 1.933,
+      "p95Ms": 2.971,
+      "maxMs": 3.434,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "moore_to_mealy",
+      "states": 2,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 1.491,
+      "p95Ms": 2.037,
+      "maxMs": 2.098,
+      "targetMs": 2000,
+      "targetMet": true
+    },
+    {
+      "workload": "exact-equivalence",
+      "states": null,
+      "measuredRequests": 30,
+      "successfulRequests": 30,
+      "errors": {},
+      "p50Ms": 1.493,
+      "p95Ms": 2.212,
+      "maxMs": 2.305,
+      "targetMs": 2000,
+      "targetMet": true
+    }
+  ],
+  "allTargetsMet": true
+}

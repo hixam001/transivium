@@ -34,3 +34,13 @@ Performance, privacy/boundaries, accessibility, reliability, reproducible setup 
 - [[memory/Issues/TRN-15]]
 - [[memory/Issues/TRN-17]]
 - [[memory/Project]]
+
+## Responsiveness — TRN-21
+
+On the recorded Linux x86_64 / Intel i5-13420H host (12 logical CPUs), 30 measured requests per ten API workloads (300 requests; three warmups each) all succeeded. Worst API p95 was **4.867 ms**, including a 20-state/four-symbol/100-token reference workload. See [API measurements](artifacts/performance.json).
+
+Production-browser measurements used Chromium 159 at 1440×1050: 20 samples each, two warmups, with another acceptance-browser suite active on the same host. D01 100-token click-to-trace p95: **80.225 ms**; D01 regex click-to-verified-artifact-and-diagrams p95: **83.681 ms**. No page errors. See [browser measurements](artifacts/browser-performance.json). These warmed loopback observations meet the proposed 2 s reference target; they do not establish cold-start, public-network or worst-case exponential capacity.
+
+The production entry JavaScript bundle decreased from 515.75 kB to 259.67 kB; graph code (250.34 kB) and comparison code (7.80 kB) load separately. This reduces the entry bundle, not the total transfer for an editor that immediately loads its graph. Lint/build, 17 component checks and ten live browser checks passed after splitting.
+
+Reproduce with the local API running: `python3 scripts/benchmark.py --samples 30`. Build the frontend and serve `npm run preview -- --port 4173`, with API on 8000, then run `node scripts/benchmark-browser.mjs --samples 20`. Dependencies and browser setup are in [[docs/SETUP_GUIDE]].

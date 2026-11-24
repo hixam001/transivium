@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import {
   BookOpen,
   Check,
@@ -12,11 +12,11 @@ import {
 } from "lucide-react";
 import type { Connection } from "@xyflow/react";
 import { api, ApiError } from "./api";
-import Graph from "./Graph";
+import Graph from "./Diagram";
 import TransitionTable from "./TransitionTable";
 import Simulation from "./Simulation";
 import Conversion from "./Conversion";
-import Compare from "./Compare";
+const Compare = lazy(() => import("./Compare"));
 import type { Highlight } from "./Simulation";
 import type { Issue, Kind, Machine } from "./model";
 import {
@@ -361,10 +361,14 @@ export default function App() {
             </p>
           </section>
         ) : page === "compare" ? (
-          <Compare
-            editorMachine={machine}
-            onEdit={() => setCompareDirty(true)}
-          />
+          <Suspense
+            fallback={<p role="status">Loading comparison workspace…</p>}
+          >
+            <Compare
+              editorMachine={machine}
+              onEdit={() => setCompareDirty(true)}
+            />
+          </Suspense>
         ) : (
           <>
             <section className="machine-toolbar">
