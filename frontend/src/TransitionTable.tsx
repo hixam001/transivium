@@ -1,13 +1,17 @@
+import { useId } from "react";
 import type { Machine } from "./model";
 import { isNondeterministic } from "./model";
 
 export default function TransitionTable({
   machine,
   update,
+  tableId,
 }: {
+  tableId?: string;
   machine: Machine;
   update: (m: Machine) => void;
 }) {
+  const generatedId = useId();
   const columns: (string | null)[] = [
     ...machine.alphabet,
     ...(machine.kind === "enfa" ? [null] : []),
@@ -49,7 +53,7 @@ export default function TransitionTable({
         className="table-scroll"
         role="region"
         aria-label="Editable transition table"
-        id="transition-table"
+        id={tableId ?? generatedId}
         tabIndex={0}
       >
         <table>

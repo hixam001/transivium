@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Reliability hardened with protected same-page/browser-Back navigation, visible request IDs, isolated diagram/route load failures and preserved drafts. Deterministic operation and trace ordering verified."
-next_actions: ["TRN-25"]
+current_state: "Typed API response DTOs and generated OpenAPI/machine contracts now have drift checks; root lint/format configuration, read-only CI and dependency-free Obsidian graph filters are established."
+next_actions: ["TRN-26"]
 ---
 
 # Transivium memory home

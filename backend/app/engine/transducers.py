@@ -103,8 +103,8 @@ def output_equivalent(left: dict, right: dict, budget: Budget) -> dict:
                 witness = [symbol]
                 cursor = pair
                 while parents[cursor] is not None:
-                    previous, token = parents[cursor]
-                    witness.append(token)
+                    previous, input_symbol = parents[cursor]
+                    witness.append(input_symbol)
                     cursor = previous
                 return dict(
                     equivalent=False,

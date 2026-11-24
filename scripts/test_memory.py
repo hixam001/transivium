@@ -24,11 +24,15 @@ class MemoryChecks(unittest.TestCase):
 
     def test_missing_requirement_is_rejected(self):
         del self.notes["memory/Requirements/FR-13"]
-        self.assertTrue(any("requirement coverage mismatch" in e for e in memory.validate(self.notes)))
+        self.assertTrue(
+            any("requirement coverage mismatch" in e for e in memory.validate(self.notes))
+        )
 
     def test_nonreciprocal_ownership_is_rejected(self):
         self.notes["memory/Requirements/FR-13"]["fields"]["owners"] = ["TRN-04"]
-        self.assertTrue(any("owner mismatch" in e or "reciprocal" in e for e in memory.validate(self.notes)))
+        self.assertTrue(
+            any("owner mismatch" in e or "reciprocal" in e for e in memory.validate(self.notes))
+        )
 
     def test_dependency_cycle_is_rejected(self):
         self.notes["memory/Issues/TRN-02"]["fields"]["depends_on"] = ["TRN-03"]

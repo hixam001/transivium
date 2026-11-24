@@ -20,9 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def workloads():
     def fixture(name):
-        return json.loads((ROOT / f"contracts/fixtures/{name}.json").read_text())[
-            "machine"
-        ]
+        return json.loads((ROOT / f"contracts/fixtures/{name}.json").read_text())["machine"]
 
     cycle = dict(
         kind="dfa",
@@ -72,9 +70,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-url", default="http://127.0.0.1:8000")
     parser.add_argument("--samples", type=int, default=30)
-    parser.add_argument(
-        "--output", type=Path, default=ROOT / "docs/artifacts/performance.json"
-    )
+    parser.add_argument("--output", type=Path, default=ROOT / "docs/artifacts/performance.json")
     args = parser.parse_args()
     if args.samples < 10:
         parser.error("Use at least 10 measured samples per workload.")
@@ -101,10 +97,7 @@ def main():
                 result = json.load(response)
             if "error" in result:
                 return None, result["error"]["code"]
-            if (
-                path == "convert"
-                and result.get("verification", {}).get("equivalent") is not True
-            ):
+            if path == "convert" and result.get("verification", {}).get("equivalent") is not True:
                 return None, "UNCERTIFIED_RESULT"
             return (time.perf_counter() - started) * 1000, None
         except urllib.error.HTTPError as exc:
@@ -139,9 +132,7 @@ def main():
             targetMet=not errors and p95 is not None and p95 <= 2000,
         )
         results.append(result)
-        print(
-            f"{name}: {len(samples)}/{args.samples} succeeded; p95={result['p95Ms']} ms"
-        )
+        print(f"{name}: {len(samples)}/{args.samples} succeeded; p95={result['p95Ms']} ms")
     cpu = "Unknown"
     cpuinfo = Path("/proc/cpuinfo")
     if cpuinfo.exists():

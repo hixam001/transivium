@@ -62,3 +62,11 @@ An actual Tab/Enter/Space/Arrow-key workflow created a complete one-state DFA us
 Backend **158 tests passed**, including deterministic repeated/permuted-array results for all seven operations and all five simulation types. Seven browser reliability cases passed: offline/API deadline failure with retained draft and input plus retry/request ID, delayed simulation/conversion responses after source edits, protected same-page and browser-Back navigation, cancelled transducer adoption, failed diagram loading with table editing still usable, and failed comparison loading with return to the retained editor.
 
 Fixed a same-page navigation path that could clear the comparison dirty flag, added browser-Back guards, surfaced server request IDs, and isolated lazy-load failures so they do not destroy editor state. Asset-load fallbacks preserve the table/editor; they do not silently refresh the page or promise a cached failed module will retry. Frontend lint/build and 17 component checks passed; both fallback renders were inspected.
+
+## Maintainability — TRN-25
+
+Typed API response DTOs and generated OpenAPI/machine contracts now have drift checks; root lint/format configuration, read-only CI and dependency-free Obsidian graph filters are established.
+
+Fresh /tmp checkout copy installed pinned Python/npm dependencies successfully: 160 backend tests, 17 component tests, frontend lint/build, root Ruff/check-format, contract check and nine script tests passed. Hosted CI execution remains unverified. Existing Starlette TestClient deprecation and upstream bundler directive warnings remain documented.
+
+The fresh environment excluded local dependencies, ignored host configuration and credentials. The engine remains independent of FastAPI; unit tests call pure algorithms while integration tests exercise strict HTTP contracts. Privacy scanning now includes explicitly selected application/test/config trees without indexing dependencies or credential directories. Duplicate comparison table IDs were replaced by React-generated IDs while keeping the editor error-focus target stable.

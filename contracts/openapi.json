@@ -1,0 +1,1291 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Transivium",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Content Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/validate": {
+      "post": {
+        "summary": "Validate Machine",
+        "operationId": "validate_machine_api_v1_validate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MachineRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Content Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/simulate": {
+      "post": {
+        "summary": "Simulate Machine",
+        "operationId": "simulate_machine_api_v1_simulate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimulationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SimulationResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Content Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/convert": {
+      "post": {
+        "summary": "Convert Machine",
+        "operationId": "convert_machine_api_v1_convert_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConversionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Content Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/equivalence": {
+      "post": {
+        "summary": "Compare Machines",
+        "operationId": "compare_machines_api_v1_equivalence_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquivalenceRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EquivalenceResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Content Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "415": {
+            "description": "Unsupported Media Type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Acceptor": {
+        "properties": {
+          "alphabet": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Alphabet"
+          },
+          "states": {
+            "items": {
+              "$ref": "#/components/schemas/State"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "States"
+          },
+          "startState": {
+            "type": "string",
+            "title": "Startstate"
+          },
+          "transitions": {
+            "items": {
+              "$ref": "#/components/schemas/Transition"
+            },
+            "type": "array",
+            "title": "Transitions"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "dfa",
+              "nfa",
+              "enfa"
+            ],
+            "title": "Kind"
+          },
+          "finalStates": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Finalstates"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "alphabet",
+          "states",
+          "startState",
+          "transitions",
+          "kind",
+          "finalStates"
+        ],
+        "title": "Acceptor"
+      },
+      "ConversionRequest": {
+        "properties": {
+          "machine": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Acceptor"
+              },
+              {
+                "$ref": "#/components/schemas/Transducer"
+              }
+            ],
+            "title": "Machine",
+            "discriminator": {
+              "propertyName": "kind",
+              "mapping": {
+                "dfa": "#/components/schemas/Acceptor",
+                "enfa": "#/components/schemas/Acceptor",
+                "mealy": "#/components/schemas/Transducer",
+                "moore": "#/components/schemas/Transducer",
+                "nfa": "#/components/schemas/Acceptor"
+              }
+            }
+          },
+          "operation": {
+            "type": "string",
+            "title": "Operation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "machine",
+          "operation"
+        ],
+        "title": "ConversionRequest"
+      },
+      "ConversionResult": {
+        "properties": {
+          "operation": {
+            "type": "string",
+            "enum": [
+              "enfa_to_nfa",
+              "nfa_to_dfa",
+              "enfa_to_dfa",
+              "minimize_dfa",
+              "dfa_to_regex",
+              "mealy_to_moore",
+              "moore_to_mealy"
+            ],
+            "title": "Operation"
+          },
+          "machine": {
+            "anyOf": [
+              {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Acceptor"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Transducer"
+                  }
+                ],
+                "discriminator": {
+                  "propertyName": "kind",
+                  "mapping": {
+                    "dfa": "#/components/schemas/Acceptor",
+                    "enfa": "#/components/schemas/Acceptor",
+                    "mealy": "#/components/schemas/Transducer",
+                    "moore": "#/components/schemas/Transducer",
+                    "nfa": "#/components/schemas/Acceptor"
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Machine"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/DerivationStep"
+            },
+            "type": "array",
+            "title": "Steps"
+          },
+          "verification": {
+            "$ref": "#/components/schemas/Verification"
+          },
+          "regexArtifact": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RegexArtifact"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "operation",
+          "machine",
+          "steps",
+          "verification",
+          "regexArtifact"
+        ],
+        "title": "ConversionResult"
+      },
+      "DerivationStep": {
+        "properties": {
+          "index": {
+            "type": "integer",
+            "title": "Index"
+          },
+          "phase": {
+            "type": "string",
+            "title": "Phase"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "details": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Details"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "index",
+          "phase",
+          "description",
+          "details"
+        ],
+        "title": "DerivationStep"
+      },
+      "EquivalenceRequest": {
+        "properties": {
+          "left": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Acceptor"
+              },
+              {
+                "$ref": "#/components/schemas/Transducer"
+              }
+            ],
+            "title": "Left",
+            "discriminator": {
+              "propertyName": "kind",
+              "mapping": {
+                "dfa": "#/components/schemas/Acceptor",
+                "enfa": "#/components/schemas/Acceptor",
+                "mealy": "#/components/schemas/Transducer",
+                "moore": "#/components/schemas/Transducer",
+                "nfa": "#/components/schemas/Acceptor"
+              }
+            }
+          },
+          "right": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Acceptor"
+              },
+              {
+                "$ref": "#/components/schemas/Transducer"
+              }
+            ],
+            "title": "Right",
+            "discriminator": {
+              "propertyName": "kind",
+              "mapping": {
+                "dfa": "#/components/schemas/Acceptor",
+                "enfa": "#/components/schemas/Acceptor",
+                "mealy": "#/components/schemas/Transducer",
+                "moore": "#/components/schemas/Transducer",
+                "nfa": "#/components/schemas/Acceptor"
+              }
+            }
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "left",
+          "right"
+        ],
+        "title": "EquivalenceRequest"
+      },
+      "EquivalenceResult": {
+        "properties": {
+          "equivalent": {
+            "type": "boolean",
+            "title": "Equivalent"
+          },
+          "counterexample": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Counterexample"
+          },
+          "leftAccepts": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Leftaccepts"
+          },
+          "rightAccepts": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rightaccepts"
+          },
+          "visitedPairs": {
+            "type": "integer",
+            "title": "Visitedpairs"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "equivalent",
+          "counterexample",
+          "leftAccepts",
+          "rightAccepts",
+          "visitedPairs"
+        ],
+        "title": "EquivalenceResult"
+      },
+      "ErrorDetail": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "issues": {
+            "items": {
+              "$ref": "#/components/schemas/Issue"
+            },
+            "type": "array",
+            "title": "Issues"
+          },
+          "requestId": {
+            "type": "string",
+            "title": "Requestid"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "issues",
+          "requestId"
+        ],
+        "title": "ErrorDetail"
+      },
+      "ErrorEnvelope": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorDetail"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "title": "ErrorEnvelope"
+      },
+      "HealthResult": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ok",
+            "title": "Status"
+          },
+          "apiVersion": {
+            "type": "string",
+            "const": "v1",
+            "title": "Apiversion"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "apiVersion"
+        ],
+        "title": "HealthResult"
+      },
+      "Issue": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "code",
+          "path",
+          "message"
+        ],
+        "title": "Issue"
+      },
+      "MachineRequest": {
+        "properties": {
+          "machine": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Acceptor"
+              },
+              {
+                "$ref": "#/components/schemas/Transducer"
+              }
+            ],
+            "title": "Machine",
+            "discriminator": {
+              "propertyName": "kind",
+              "mapping": {
+                "dfa": "#/components/schemas/Acceptor",
+                "enfa": "#/components/schemas/Acceptor",
+                "mealy": "#/components/schemas/Transducer",
+                "moore": "#/components/schemas/Transducer",
+                "nfa": "#/components/schemas/Acceptor"
+              }
+            }
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "machine"
+        ],
+        "title": "MachineRequest"
+      },
+      "RegexArtifact": {
+        "properties": {
+          "schemaVersion": {
+            "type": "integer",
+            "const": 1,
+            "title": "Schemaversion"
+          },
+          "syntax": {
+            "type": "string",
+            "const": "formal-v1",
+            "title": "Syntax"
+          },
+          "regex": {
+            "type": "string",
+            "title": "Regex"
+          },
+          "alphabet": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Alphabet"
+          },
+          "canonicalDfa": {
+            "$ref": "#/components/schemas/Acceptor"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "syntax",
+          "regex",
+          "alphabet",
+          "canonicalDfa"
+        ],
+        "title": "RegexArtifact"
+      },
+      "SimulationRequest": {
+        "properties": {
+          "machine": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Acceptor"
+              },
+              {
+                "$ref": "#/components/schemas/Transducer"
+              }
+            ],
+            "title": "Machine",
+            "discriminator": {
+              "propertyName": "kind",
+              "mapping": {
+                "dfa": "#/components/schemas/Acceptor",
+                "enfa": "#/components/schemas/Acceptor",
+                "mealy": "#/components/schemas/Transducer",
+                "moore": "#/components/schemas/Transducer",
+                "nfa": "#/components/schemas/Acceptor"
+              }
+            }
+          },
+          "input": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Input"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "machine",
+          "input"
+        ],
+        "title": "SimulationRequest"
+      },
+      "SimulationResult": {
+        "properties": {
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/TraceStep"
+            },
+            "type": "array",
+            "title": "Steps"
+          },
+          "accepted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted"
+          },
+          "output": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Output"
+          },
+          "normalizedOutput": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Normalizedoutput"
+          },
+          "initialOutput": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Initialoutput"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "steps",
+          "accepted",
+          "output",
+          "normalizedOutput",
+          "initialOutput"
+        ],
+        "title": "SimulationResult"
+      },
+      "State": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 80
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "output": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Output"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "title": "State"
+      },
+      "TraceStep": {
+        "properties": {
+          "index": {
+            "type": "integer",
+            "title": "Index"
+          },
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Symbol"
+          },
+          "activeStates": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Activestates"
+          },
+          "movedStates": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Movedstates"
+          },
+          "traversed": {
+            "items": {
+              "$ref": "#/components/schemas/Transition"
+            },
+            "type": "array",
+            "title": "Traversed"
+          },
+          "epsilonTraversed": {
+            "items": {
+              "$ref": "#/components/schemas/Transition"
+            },
+            "type": "array",
+            "title": "Epsilontraversed"
+          },
+          "outputPrefix": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outputprefix"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "index",
+          "symbol",
+          "activeStates",
+          "movedStates",
+          "traversed",
+          "epsilonTraversed",
+          "outputPrefix"
+        ],
+        "title": "TraceStep"
+      },
+      "Transducer": {
+        "properties": {
+          "alphabet": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Alphabet"
+          },
+          "states": {
+            "items": {
+              "$ref": "#/components/schemas/State"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "States"
+          },
+          "startState": {
+            "type": "string",
+            "title": "Startstate"
+          },
+          "transitions": {
+            "items": {
+              "$ref": "#/components/schemas/Transition"
+            },
+            "type": "array",
+            "title": "Transitions"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "mealy",
+              "moore"
+            ],
+            "title": "Kind"
+          },
+          "outputAlphabet": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Outputalphabet"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "alphabet",
+          "states",
+          "startState",
+          "transitions",
+          "kind",
+          "outputAlphabet"
+        ],
+        "title": "Transducer"
+      },
+      "Transition": {
+        "properties": {
+          "from": {
+            "type": "string",
+            "title": "From"
+          },
+          "to": {
+            "type": "string",
+            "title": "To"
+          },
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Symbol"
+          },
+          "output": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Output"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "symbol"
+        ],
+        "title": "Transition"
+      },
+      "ValidationResult": {
+        "properties": {
+          "valid": {
+            "type": "boolean",
+            "title": "Valid"
+          },
+          "issues": {
+            "items": {
+              "$ref": "#/components/schemas/Issue"
+            },
+            "type": "array",
+            "title": "Issues"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "valid",
+          "issues"
+        ],
+        "title": "ValidationResult"
+      },
+      "Verification": {
+        "properties": {
+          "equivalent": {
+            "type": "boolean",
+            "const": true,
+            "title": "Equivalent"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "language",
+              "normalized_output"
+            ],
+            "title": "Mode"
+          },
+          "method": {
+            "type": "string",
+            "const": "product_bfs",
+            "title": "Method"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "equivalent",
+          "mode",
+          "method"
+        ],
+        "title": "Verification"
+      }
+    }
+  }
+}

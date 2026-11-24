@@ -1,0 +1,40 @@
+name: Verify
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version-file: .python-version
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: python -m venv backend/.venv
+      - run: backend/.venv/bin/python -m pip install -r backend/requirements.txt
+      - run: npm ci
+        working-directory: frontend
+      - run: backend/.venv/bin/ruff check backend scripts
+      - run: backend/.venv/bin/ruff format --check backend scripts
+      - run: backend/.venv/bin/python scripts/contracts.py check
+      - run: .venv/bin/python -m pytest -q
+        working-directory: backend
+      - run: python scripts/memory.py check
+      - run: python -m unittest discover -s scripts -p 'test_*.py' -q
+      - run: npm run lint && npm test && npm run build
+        working-directory: frontend
+      - run: npx playwright install --with-deps chromium --no-shell
+        working-directory: frontend
+      - run: npm run test:e2e
+        working-directory: frontend

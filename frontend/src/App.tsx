@@ -376,7 +376,8 @@ export default function App() {
               <section className="panel guide" role="alert">
                 <h2>Comparison workspace could not load</h2>
                 <p>
-                  Your editor draft is safe. Return to the workspace to continue editing.
+                  Your editor draft is safe. Return to the workspace to continue
+                  editing.
                 </p>
                 <button onClick={() => navigate("editor")}>
                   Return to workspace
@@ -475,7 +476,11 @@ export default function App() {
                     activeTransitions={highlight.edges}
                   />
                 </section>
-                <TransitionTable machine={machine} update={update} />
+                <TransitionTable
+                  machine={machine}
+                  update={update}
+                  tableId="transition-table"
+                />
                 <Conversion
                   key={`convert-${revision}`}
                   machine={machine}

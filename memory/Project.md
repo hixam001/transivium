@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Reliability hardened with protected same-page/browser-Back navigation, visible request IDs, isolated diagram/route load failures and preserved drafts. Deterministic operation and trace ordering verified."
-next_actions: ["TRN-25"]
+current_state: "Typed API response DTOs and generated OpenAPI/machine contracts now have drift checks; root lint/format configuration, read-only CI and dependency-free Obsidian graph filters are established."
+next_actions: ["TRN-26"]
 ---
 
 # Project state
@@ -85,3 +85,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-23]]: Keyboard/table accessibility improved with skip navigation, named landmarks/graph regions, state descriptions, stronger focus/contrast and natural alphabet-field editing. Next: [[memory/Issues/TRN-24]].
 
 - [[memory/Issues/TRN-24]]: Reliability hardened with protected same-page/browser-Back navigation, visible request IDs, isolated diagram/route load failures and preserved drafts. Deterministic operation and trace ordering verified. Next: [[memory/Issues/TRN-25]].
+
+- [[memory/Issues/TRN-25]]: Typed API response DTOs and generated OpenAPI/machine contracts now have drift checks; root lint/format configuration, read-only CI and dependency-free Obsidian graph filters are established. Next: [[memory/Issues/TRN-26]].

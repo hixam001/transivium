@@ -17,12 +17,22 @@ from app.engine.validation import require_valid, validate
 from app.schemas import (
     Acceptor,
     ConversionRequest,
+    ConversionResult,
     EquivalenceRequest,
+    EquivalenceResult,
+    ErrorEnvelope,
+    HealthResult,
     MachineRequest,
     SimulationRequest,
+    SimulationResult,
+    ValidationResult,
 )
 
-app = FastAPI(title="Transivium", version="0.1.0")
+app = FastAPI(
+    title="Transivium",
+    version="0.1.0",
+    responses={code: {"model": ErrorEnvelope} for code in [400, 413, 415, 422, 500, 503]},
+)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[os.getenv("TRANSIVIUM_ALLOWED_ORIGIN", "http://127.0.0.1:5173")],
@@ -68,28 +78,28 @@ async def http_error(request: Request, exc: HTTPException):
     )
 
 
-@app.get("/api/v1/health")
+@app.get("/api/v1/health", response_model=HealthResult)
 def health() -> dict[str, str]:
     return {"status": "ok", "apiVersion": "v1"}
 
 
-@app.post("/api/v1/validate")
+@app.post("/api/v1/validate", response_model=ValidationResult)
 def validate_machine(request: MachineRequest):
     issues = validate(request.machine)
     return {"valid": not issues, "issues": issues}
 
 
-@app.post("/api/v1/simulate")
+@app.post("/api/v1/simulate", response_model=SimulationResult, response_model_exclude_unset=True)
 def simulate_machine(request: SimulationRequest):
     return simulate(request.machine, request.input)
 
 
-@app.post("/api/v1/convert")
+@app.post("/api/v1/convert", response_model=ConversionResult, response_model_exclude_unset=True)
 def convert_machine(request: ConversionRequest):
     return convert(request.machine, request.operation)
 
 
-@app.post("/api/v1/equivalence")
+@app.post("/api/v1/equivalence", response_model=EquivalenceResult)
 def compare_machines(request: EquivalenceRequest):
     budget = Budget()
     if not isinstance(request.left, Acceptor) or not isinstance(request.right, Acceptor):

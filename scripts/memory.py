@@ -24,17 +24,41 @@ SECRETS = {
     "GitHub token": re.compile(r"\bgh[pousr]_[A-Za-z0-9_]{20,}"),
     "OpenAI key": re.compile(r"\bsk-[A-Za-z0-9_-]{20,}"),
     "AWS access key": re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
-    "credential assignment": re.compile(r"(?i)\b(api[_-]?key|secret|token|password)\s*[:=]\s*['\"]?[^'\"\s]{12,}"),
+    "credential assignment": re.compile(
+        r"(?i)\b(api[_-]?key|secret|token|password)\s*[:=]\s*['\"]?[^'\"\s]{12,}"
+    ),
 }
 EXPECTED_REQS = {f"FR-{i:02}" for i in range(1, 23)} | {f"NFR-{i:02}" for i in range(1, 8)}
-ISSUE_FIELDS = {"issue_type", "summary", "issue_status", "priority", "depends_on", "requirements", "tests", "estimate_person_days"}
+ISSUE_FIELDS = {
+    "issue_type",
+    "summary",
+    "issue_status",
+    "priority",
+    "depends_on",
+    "requirements",
+    "tests",
+    "estimate_person_days",
+}
 
 
 def note_paths(root: Path) -> list[Path]:
-    paths = [root / name for name in ("README.md", "AGENTS.md", "CONTRIBUTING.md", "CHANGELOG.md", "PRODUCT.md", "DESIGN.md")]
+    paths = [
+        root / name
+        for name in (
+            "README.md",
+            "AGENTS.md",
+            "CONTRIBUTING.md",
+            "CHANGELOG.md",
+            "PRODUCT.md",
+            "DESIGN.md",
+        )
+    ]
     paths += list((root / "docs").rglob("*.md"))
-    paths += [p for p in (root / "memory").rglob("*.md")
-              if not ({"Generated", "raw"} & set(p.relative_to(root / "memory").parts))]
+    paths += [
+        p
+        for p in (root / "memory").rglob("*.md")
+        if not ({"Generated", "raw"} & set(p.relative_to(root / "memory").parts))
+    ]
     return sorted(p for p in paths if p.is_file())
 
 
@@ -101,7 +125,15 @@ def validate(notes: dict) -> list[str]:
         if identity in ids:
             errors.append(f"{key}: duplicate id {identity} also in {ids[identity]}")
         ids[identity] = key
-        if f.get("type") not in {"project", "area", "person", "decision", "session", "reference", "proposal"}:
+        if f.get("type") not in {
+            "project",
+            "area",
+            "person",
+            "decision",
+            "session",
+            "reference",
+            "proposal",
+        }:
             errors.append(f"{key}: invalid memory type")
         if f.get("status") not in {"draft", "active", "complete", "superseded", "archived"}:
             errors.append(f"{key}: invalid memory status")
@@ -142,10 +174,14 @@ def validate(notes: dict) -> list[str]:
             if f.get("priority") not in {"P0", "P1", "P2"}:
                 errors.append(f"{key}: invalid issue priority")
             for field in ("depends_on", "requirements", "tests"):
-                if not isinstance(f.get(field), list) or not all(isinstance(v, str) for v in f[field]):
+                if not isinstance(f.get(field), list) or not all(
+                    isinstance(v, str) for v in f[field]
+                ):
                     errors.append(f"{key}: {field} must be a string list")
             estimate = f.get("estimate_person_days")
-            if estimate is not None and (isinstance(estimate, bool) or not isinstance(estimate, (int, float)) or estimate < 0):
+            if estimate is not None and (
+                isinstance(estimate, bool) or not isinstance(estimate, (int, float)) or estimate < 0
+            ):
                 errors.append(f"{key}: estimate must be nonnegative or null")
         if "requirement_id" in f:
             req = f["requirement_id"]
@@ -153,7 +189,9 @@ def validate(notes: dict) -> list[str]:
                 errors.append(f"{key}: duplicate requirement {req}")
             reqs[req] = f
     if set(reqs) != EXPECTED_REQS:
-        errors.append(f"requirement coverage mismatch: missing={sorted(EXPECTED_REQS-set(reqs))}, extra={sorted(set(reqs)-EXPECTED_REQS)}")
+        errors.append(
+            f"requirement coverage mismatch: missing={sorted(EXPECTED_REQS - set(reqs))}, extra={sorted(set(reqs) - EXPECTED_REQS)}"
+        )
     expected_stories = {f"TRN-{i:02}" for i in range(1, 18)}
     if not expected_stories <= issues.keys():
         errors.append("missing original TRN-01–17 issue coverage")
@@ -162,7 +200,9 @@ def validate(notes: dict) -> list[str]:
             if dep not in issues:
                 errors.append(f"{issue}: unknown dependency {dep}")
         epic = f.get("epic")
-        if f.get("issue_type") != "Epic" and (epic not in issues or issues[epic].get("issue_type") != "Epic"):
+        if f.get("issue_type") != "Epic" and (
+            epic not in issues or issues[epic].get("issue_type") != "Epic"
+        ):
             errors.append(f"{issue}: missing or invalid parent epic")
         for req in f.get("requirements", []):
             if req not in reqs:
@@ -201,27 +241,64 @@ def validate(notes: dict) -> list[str]:
 
 
 def outputs(notes: dict) -> dict[str, str]:
-    nodes = [{"id": key, "type": n["fields"]["type"], "status": n["fields"]["status"],
-              "tags": n["fields"]["tags"]} for key, n in sorted(notes.items())]
-    edges = sorted({(key, target_of(link) or key) for key, n in notes.items() for link in LINK.findall(n["body"])})
-    graph = {"schemaVersion": 1, "vaultRoot": ".", "nodes": nodes,
-             "edges": [{"source": a, "target": b} for a, b in edges]}
+    nodes = [
+        {
+            "id": key,
+            "type": n["fields"]["type"],
+            "status": n["fields"]["status"],
+            "tags": n["fields"]["tags"],
+        }
+        for key, n in sorted(notes.items())
+    ]
+    edges = sorted(
+        {
+            (key, target_of(link) or key)
+            for key, n in notes.items()
+            for link in LINK.findall(n["body"])
+        }
+    )
+    graph = {
+        "schemaVersion": 1,
+        "vaultRoot": ".",
+        "nodes": nodes,
+        "edges": [{"source": a, "target": b} for a, b in edges],
+    }
     stream = io.StringIO(newline="")
     writer = csv.writer(stream, lineterminator="\n")
     writer.writerow(["Issue ID", "Issue Type", "Summary", "Description", "Priority", "Labels"])
     issue_notes = [n for n in notes.values() if "issue_key" in n["fields"]]
-    issue_notes.sort(key=lambda n: (n["fields"]["issue_type"] != "Epic", int(n["fields"]["issue_key"].split("-")[1])))
+    issue_notes.sort(
+        key=lambda n: (
+            n["fields"]["issue_type"] != "Epic",
+            int(n["fields"]["issue_key"].split("-")[1]),
+        )
+    )
     for note in issue_notes:
         f = note["fields"]
-        header = f'Local planning key: {f["issue_key"]}\nPlanning status: {f["issue_status"]}\n'
-        header += f'Epic: {f.get("epic", "None (epic)")}\nDepends on: {", ".join(f["depends_on"]) or "None"}\n'
-        header += f'Requirements: {", ".join(f["requirements"]) or "See linked source contracts"}\n'
-        header += f'Estimate (proposed person-days): {f["estimate_person_days"] if f["estimate_person_days"] is not None else "Unestimated"}\n\n'
+        header = f"Local planning key: {f['issue_key']}\nPlanning status: {f['issue_status']}\n"
+        header += f"Epic: {f.get('epic', 'None (epic)')}\nDepends on: {', '.join(f['depends_on']) or 'None'}\n"
+        header += f"Requirements: {', '.join(f['requirements']) or 'See linked source contracts'}\n"
+        header += f"Estimate (proposed person-days): {f['estimate_person_days'] if f['estimate_person_days'] is not None else 'Unestimated'}\n\n"
         body = LINK.sub(lambda m: m.group(1).replace("\\|", "|").replace("|", " — "), note["body"])
-        label = "transivium-" + f["priority"].lower() + ("-deferred" if f["issue_status"] == "Deferred" else "")
-        writer.writerow([int(f["issue_key"].split("-")[1]), f["issue_type"], f["summary"], header+body,
-                         {"P0": "Highest", "P1": "High", "P2": "Low"}[f["priority"]], label])
-    return {"graph.json": json.dumps(graph, indent=2, ensure_ascii=False)+"\n", "jira-import.csv": stream.getvalue()}
+        label = (
+            "transivium-"
+            + f["priority"].lower()
+            + ("-deferred" if f["issue_status"] == "Deferred" else "")
+        )
+        writer.writerow(
+            [
+                int(f["issue_key"].split("-")[1]),
+                f["issue_type"],
+                f["summary"],
+                header + body,
+                {"P0": "Highest", "P1": "High", "P2": "Low"}[f["priority"]],
+                label,
+            ]
+        )
+    return {
+        "graph.json": json.dumps(graph, indent=2, ensure_ascii=False) + "\n",
+        "jira-import.csv": stream.getvalue(),
+    }
 
 
 def main() -> int:
@@ -231,7 +308,21 @@ def main() -> int:
     notes, errors = collect(ROOT)
     errors += validate(notes)
     # Scan code/config as well as notes; never print matching secret values.
-    extra = list((ROOT / "scripts").glob("*.py")) + list((ROOT / ".obsidian").glob("*.json"))
+    extra = list((ROOT / "scripts").glob("*.py")) + list((ROOT / "scripts").glob("*.mjs"))
+    for folder in (
+        ".obsidian",
+        "backend/app",
+        "backend/tests",
+        "frontend/src",
+        "frontend/e2e",
+        "contracts",
+        ".github",
+    ):
+        extra.extend(
+            path
+            for path in (ROOT / folder).rglob("*")
+            if path.is_file() and path.suffix in {".py", ".json", ".ts", ".tsx", ".css", ".yml"}
+        )
     for path in extra:
         text = path.read_text(encoding="utf-8")
         for label, pattern in SECRETS.items():
@@ -257,7 +348,9 @@ def main() -> int:
         print("\n".join(errors), file=sys.stderr)
         return 1
     issue_count = sum("issue_key" in n["fields"] for n in notes.values())
-    print(f'{args.command}: OK — {len(notes)} notes, {len(EXPECTED_REQS)} requirements, {issue_count} Jira-style issues; graph/CSV current')
+    print(
+        f"{args.command}: OK — {len(notes)} notes, {len(EXPECTED_REQS)} requirements, {issue_count} Jira-style issues; graph/CSV current"
+    )
     return 0
 
 

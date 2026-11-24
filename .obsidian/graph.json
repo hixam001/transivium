@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "-path:memory/Generated -path:.agent -path:.agents -path:.claude -path:.codex -path:.gemini -path:.opencode -path:.aws -path:.impeccable",
+  "search": "-path:memory/Generated -path:.agent -path:.agents -path:.claude -path:.codex -path:.gemini -path:.opencode -path:.aws -path:.impeccable -path:node_modules -path:dist -path:test-results -path:playwright-report -path:coverage -path:.venv",
   "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
