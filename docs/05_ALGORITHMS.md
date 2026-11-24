@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # Algorithm & Regex Interoperability Specification
 
-Version 0.1 | Mathematical baseline / proposed implementation
+Version 0.1 | Implemented mathematical baseline; executable modules in backend/app/engine and evidence in [[docs/TEST_EVIDENCE]]
 
 ## 1. Notation
 Acceptor M = (Q, Σ, δ, q0, F); Q finite nonempty, Σ finite, one start, F subset Q. DFA δ: Q×Σ→Q (total); NFA δ: Q×Σ→P(Q); ε-NFA adds ε to transition labels. Mealy has output alphabet Γ and output λ: Q×Σ→Γ. Moore λ: Q→Γ. Both transducers total; compare post-input output streams. No literal epsilon input token; epsilon edges consume nothing.
@@ -43,7 +43,7 @@ For every incoming edge with target r and output o, create state pair (r,o) (ded
 Validate and minimize complete DFA. Add fresh start S (no incoming) and final T (no outgoing). Add S→oldStart labelled ε; every old final→T labelled ε. Combine parallel symbol edges using union. All absent edge labels are ∅. No direct incoming to S or outgoing from T. Use sparse maps for labels and an AST, not text substitution.
 
 ### 8.2 Elimination
-For each original state k in canonical BFS order (proposed deterministic policy), for every remaining pair i,j update:
+For each original state k in canonical BFS order (implemented deterministic policy), for every remaining pair i,j update:
 `R_ij ← R_ij | R_ik (R_kk)* R_kj`
 Use snapshot of labels involving k before deletion. Remove k and its incident labels only after all updates. Once only S,T remain, result is R_ST (∅ if absent). Proof invariant: label from i to j denotes all paths whose interior states have been eliminated, including repetitions handled by star. Inductively final label recognizes exactly original language. Worst-case expression size exponential; check budget throughout.
 

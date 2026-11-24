@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "P0 integration gate evaluated all seven NFR tasks and current-source browser/API workflows. Added six browser cases for remaining acceptor conversions, empty-branch rejection and nonempty shortest-witness replay; all pass."
-next_actions: ["TRN-17"]
+current_state: "All P0 implementation tasks are complete as an internally verified local release candidate. Guides match the running app; TC-01–39 have explicit evidence/status; the executable HTTP demo passes all five machine kinds and seven operations."
+next_actions: []
 ---
 
 # Transivium memory home

@@ -15,15 +15,15 @@ tags: ["transivium", "reference"]
 
 | Area | Current evidence | Next action |
 |---|---|---|
-| Stack/runtime | React/TypeScript/Vite/React Flow and Python/FastAPI/Pydantic selected for implementation | TRN-02 pins and tests versions; no stakeholder approval invented |
-| Engine design | Pure coursework algorithms; independent parser/Thompson design proposed | Implement and test; retain exact verification requirement |
+| Stack/runtime | React/TypeScript/Vite/React Flow and Python/FastAPI/Pydantic selected for implementation | Versions pinned and fresh setup/CI verified; no stakeholder approval invented |
+| Engine design | Pure coursework algorithms; independent parser/Thompson implemented | Automated gate passed; independent human review pending |
 | External exchange | formal-v1 grammar and fixtures documented; partner agreement absent | Track agreement and external test separately; do not contact others without authorization |
 | Schedule/capacity | Relative six weeks and 53 P0 person-days proposed | Confirm team size/deadline; no invented dates or assignees |
-| Resource limits | SAD/API caps proposed; no profiling | Test boundaries and latency on recorded hardware |
+| Resource limits | SAD/API caps enforced; API/browser measurements recorded | Retain limits and reference-workload caveats; see [[docs/TEST_EVIDENCE]] |
 | Release policy | Local stateless MVP, no public deployment | Separate decision/review if public hosting is requested |
 | Governance | License and branch protection unspecified | Resolve before a release; follow authorized normal main pushes subject to remote rules |
 | P2 scope | FR-21/22 have no detailed tests or estimates | Keep deferred; elaborate only when authorized |
-| Verification dependency | Shared checker implemented in TRN-07 | TRN-08 uses it; TRN-09 public API/witness acceptance remains |
+| Verification dependency | Shared checker implemented in TRN-07 | TRN-08/09 and integration gates pass; preserve independent text verification |
 
 ## Links
 

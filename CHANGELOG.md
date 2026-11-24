@@ -13,16 +13,15 @@ tags: ["transivium", "documentation"]
 
 Track actual changes here; planned functionality is not a released feature.
 
-## [Unreleased]
-- Implemented: Mealy/Moore simulation and both conversions, with separate initial Moore output and exact normalized-output certification. All five machine kinds and seven operations are integrated.
-- Implemented: certified acceptor conversions/minimization, shortest distinguishing strings, bounded GNFA regex generation and independent parser/Thompson exact export verification.
-- Implemented: strict machine validation, bounded API errors, responsive five-kind graph/table editor, and DFA/NFA/epsilon-NFA simulation with finite closure traces.
-- Added: repository-root Obsidian vault, linked FR/NFR requirement notes, Jira-style backlog/export, task handoffs, decision memory and deterministic documentation checks.
-- Changed: contribution workflow now reads memory, writes a pre-implementation handoff, and commits/pushes task-owned changes to main without added contributor attribution.
-- Clarified: exact verification integration dependencies and P1 gate; application remains unimplemented and application tests remain NOT RUN.
-- Planned: implementation scaffold, formal machine models, editor, all five simulation types, required conversions, exact equivalence, verified DFA-to-regex export.
-- Planned: test execution, UI integration, local setup verification, cross-team regex exchange demonstration.
-- Decisions pending: final stack/dependency versions, team capacity/deadline, exchange syntax agreement, deployment policy, license.
+## [Unreleased] — local P0 release candidate, 2026-11-24
+
+- Implemented all five machine kinds, seven exactly certified operations, step playback, shortest language witnesses and independent serialized-regex reconstruction/verification.
+- Added responsive graph/table editing, explicit adoption, stale-response and navigation protection, request IDs and recoverable diagram/route loading errors.
+- Added strict typed request/response schemas, bounded JSON/algorithm/trace/regex work, deterministic results and exact contract drift checks.
+- Added generated Jira-style requirement coverage, Obsidian memory/handoffs/graph, pinned setup, read-only CI, performance measurements and a reproducible HTTP demonstration.
+- Verified engine/API, components, browser workflows, accessibility scans and fresh setup; full counts/case mapping are in [[docs/TEST_EVIDENCE]].
+- Pending: independent peer review, external simulator agreement/exchange, five-learner study, license and actual schedule decisions. No v1.0 tag or public deployment is claimed.
+- Deferred: P1 machine JSON/history; P2 persistence/library and advanced editing.
 
 ## [0.1-docs] — 2026-11-24
 Documentation baseline only.

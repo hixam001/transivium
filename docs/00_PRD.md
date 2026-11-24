@@ -13,9 +13,9 @@ tags: ["transivium", "documentation"]
 
 **Full name:** Transivium — Finite Automata & Transducer Simulation Studio\
 **Tagline:** Construct. Convert. Simulate. Verify.\
-**Version:** 0.1 — proposed baseline for review\
+**Version:** 0.1 — requirements baseline with local release-candidate evidence\
 **Project:** University Theory of Automata course\
-**Status:** Scope previously agreed; implementation decisions and numerical targets proposed, not approved or tested.
+**Status:** P0 implemented and internally verified; targets and pending external evidence are evaluated in [[docs/TEST_EVIDENCE]]. Stakeholder approval is not inferred.
 
 ## 1. Problem statement
 Students often learn finite automata through static diagrams, handwritten tables and isolated conversion exercises. These methods make it difficult to observe nondeterministic branching, epsilon closure, state equivalence and output-producing machines. They also make it difficult to verify that an expression derived from a DFA describes precisely the same language rather than merely matching a few example strings.
@@ -32,7 +32,7 @@ Transivium provides a single interactive educational environment for constructin
 | G5 | Deliver a reproducible university demonstration | All P0 acceptance tests pass; a fresh setup can run the scripted demonstration |
 
 ## 3. Success metrics
-These are release targets, not measured outcomes.
+These remain the release targets. Executed outcomes, including measured latency and the unavailable learner study, are in [[docs/TEST_EVIDENCE]].
 
 | Metric | Target / measurement |
 |---|---|
@@ -114,7 +114,7 @@ A student builds a complete binary-output transducer, simulates `0101`, converts
 - NFR-07 Scalability: bounded state/transition/trace/regex sizes; no claim of production-scale capacity.
 
 ## 10. Dependencies and constraints
-University scope; standard finite-automata semantics; browser UI; local development/demo proposed. No external service required. Proposed stack: React + TypeScript, React Flow, Python/FastAPI, pytest and frontend tests; decision register in SAD. Instructor's actual deadline, team size, deployment policy and budget remain [DECIDE].
+University scope; standard finite-automata semantics; browser UI; local development/demo proposed. No external service required. Implemented stack: React + TypeScript, React Flow, Python/FastAPI, pytest, Vitest and Playwright; decision register in SAD. Instructor's actual deadline, team size, deployment policy and budget remain [DECIDE].
 
 ## 11. Timeline
 Relative plan (proposed six weeks; adapt to actual deadline): W1 formal model and editor foundation; W2 simulation; W3 acceptor conversions/minimization/equivalence; W4 regex export and exact verification; W5 transducers and integration; W6 test, docs and demo. P1 only after P0 gate. See [Project Plan](06_PROJECT_PLAN.md).

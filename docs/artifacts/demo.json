@@ -1,0 +1,322 @@
+{
+  "sourceCommit": "69645a673b9096784b051c62170a98163af0a41d",
+  "status": "PASS",
+  "simulations": [
+    {
+      "fixture": "D01",
+      "input": [
+        "1",
+        "0",
+        "1"
+      ],
+      "accepted": true,
+      "output": null,
+      "normalizedOutput": null,
+      "initialOutput": null
+    },
+    {
+      "fixture": "D01",
+      "input": [
+        "1",
+        "0"
+      ],
+      "accepted": false,
+      "output": null,
+      "normalizedOutput": null,
+      "initialOutput": null
+    },
+    {
+      "fixture": "D01",
+      "input": [],
+      "accepted": false,
+      "output": null,
+      "normalizedOutput": null,
+      "initialOutput": null
+    },
+    {
+      "fixture": "D01",
+      "input": [
+        "0",
+        "1"
+      ],
+      "accepted": true,
+      "output": null,
+      "normalizedOutput": null,
+      "initialOutput": null
+    },
+    {
+      "fixture": "N01",
+      "input": [
+        "0",
+        "1"
+      ],
+      "accepted": true,
+      "output": null,
+      "normalizedOutput": null,
+      "initialOutput": null
+    },
+    {
+      "fixture": "N01",
+      "input": [
+        "1"
+      ],
+      "accepted": false,
+      "output": null,
+      "normalizedOutput": null,
+      "initialOutput": null
+    },
+    {
+      "fixture": "E01",
+      "input": [],
+      "accepted": true,
+      "output": null,
+      "normalizedOutput": null,
+      "initialOutput": null
+    },
+    {
+      "fixture": "E01",
+      "input": [
+        "a",
+        "a"
+      ],
+      "accepted": true,
+      "output": null,
+      "normalizedOutput": null,
+      "initialOutput": null
+    },
+    {
+      "fixture": "M01",
+      "input": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "accepted": null,
+      "output": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "normalizedOutput": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "initialOutput": null
+    },
+    {
+      "fixture": "M01",
+      "input": [],
+      "accepted": null,
+      "output": [],
+      "normalizedOutput": [],
+      "initialOutput": null
+    },
+    {
+      "fixture": "O01",
+      "input": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "accepted": null,
+      "output": [
+        "0",
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "normalizedOutput": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "initialOutput": "0"
+    },
+    {
+      "fixture": "O01",
+      "input": [],
+      "accepted": null,
+      "output": [
+        "0"
+      ],
+      "normalizedOutput": [],
+      "initialOutput": "0"
+    }
+  ],
+  "conversions": [
+    {
+      "fixture": "E01",
+      "operation": "enfa_to_nfa",
+      "verification": {
+        "equivalent": true,
+        "mode": "language",
+        "method": "product_bfs"
+      },
+      "derivationSteps": 7
+    },
+    {
+      "fixture": "N01",
+      "operation": "nfa_to_dfa",
+      "verification": {
+        "equivalent": true,
+        "mode": "language",
+        "method": "product_bfs"
+      },
+      "derivationSteps": 5
+    },
+    {
+      "fixture": "E01",
+      "operation": "enfa_to_dfa",
+      "verification": {
+        "equivalent": true,
+        "mode": "language",
+        "method": "product_bfs"
+      },
+      "derivationSteps": 3
+    },
+    {
+      "fixture": "D02",
+      "operation": "minimize_dfa",
+      "verification": {
+        "equivalent": true,
+        "mode": "language",
+        "method": "product_bfs"
+      },
+      "derivationSteps": 4
+    },
+    {
+      "fixture": "D01",
+      "operation": "dfa_to_regex",
+      "verification": {
+        "equivalent": true,
+        "mode": "language",
+        "method": "product_bfs"
+      },
+      "derivationSteps": 8
+    },
+    {
+      "fixture": "M01",
+      "operation": "mealy_to_moore",
+      "verification": {
+        "equivalent": true,
+        "mode": "normalized_output",
+        "method": "product_bfs"
+      },
+      "derivationSteps": 4
+    },
+    {
+      "fixture": "O01",
+      "operation": "moore_to_mealy",
+      "verification": {
+        "equivalent": true,
+        "mode": "normalized_output",
+        "method": "product_bfs"
+      },
+      "derivationSteps": 5
+    }
+  ],
+  "comparisons": [
+    {
+      "left": "D01",
+      "right": "D02",
+      "equivalent": true,
+      "counterexample": null,
+      "leftAccepts": null,
+      "rightAccepts": null,
+      "visitedPairs": 4
+    },
+    {
+      "left": "D03",
+      "right": "D04",
+      "equivalent": false,
+      "counterexample": [],
+      "leftAccepts": true,
+      "rightAccepts": false,
+      "visitedPairs": 1
+    },
+    {
+      "left": "D01",
+      "right": "D04",
+      "equivalent": false,
+      "counterexample": [
+        "0",
+        "1"
+      ],
+      "leftAccepts": true,
+      "rightAccepts": false,
+      "visitedPairs": 3
+    }
+  ],
+  "verifiedRegex": {
+    "schemaVersion": 1,
+    "syntax": "formal-v1",
+    "regex": "1*00*1((0|11*0)0*1)*",
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "canonicalDfa": {
+      "alphabet": [
+        "0",
+        "1"
+      ],
+      "states": [
+        {
+          "id": "q0"
+        },
+        {
+          "id": "q1"
+        },
+        {
+          "id": "q2"
+        }
+      ],
+      "startState": "q0",
+      "transitions": [
+        {
+          "from": "q0",
+          "to": "q1",
+          "symbol": "0"
+        },
+        {
+          "from": "q0",
+          "to": "q0",
+          "symbol": "1"
+        },
+        {
+          "from": "q1",
+          "to": "q1",
+          "symbol": "0"
+        },
+        {
+          "from": "q1",
+          "to": "q2",
+          "symbol": "1"
+        },
+        {
+          "from": "q2",
+          "to": "q1",
+          "symbol": "0"
+        },
+        {
+          "from": "q2",
+          "to": "q0",
+          "symbol": "1"
+        }
+      ],
+      "kind": "dfa",
+      "finalStates": [
+        "q2"
+      ]
+    }
+  },
+  "externalExchange": "NOT RUN",
+  "volunteerStudy": "NOT RUN"
+}

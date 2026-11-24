@@ -38,3 +38,21 @@ jobs:
         working-directory: frontend
       - run: npm run test:e2e
         working-directory: frontend
+      - name: Reproduce HTTP demonstration
+        run: |
+          backend/.venv/bin/python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000 &
+          demo_api_pid=$!
+          trap 'kill "$demo_api_pid"' EXIT
+          python - <<'PYTHON'
+          import time
+          from urllib.request import urlopen
+          for attempt in range(50):
+              try:
+                  with urlopen("http://127.0.0.1:8000/api/v1/health", timeout=1):
+                      break
+              except OSError:
+                  time.sleep(0.1)
+          else:
+              raise SystemExit("Demo API did not become ready")
+          PYTHON
+          python scripts/demo.py > /tmp/transivium-demo.json

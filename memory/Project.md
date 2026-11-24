@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "P0 integration gate evaluated all seven NFR tasks and current-source browser/API workflows. Added six browser cases for remaining acceptor conversions, empty-branch rejection and nonempty shortest-witness replay; all pass."
-next_actions: ["TRN-17"]
+current_state: "All P0 implementation tasks are complete as an internally verified local release candidate. Guides match the running app; TC-01–39 have explicit evidence/status; the executable HTTP demo passes all five machine kinds and seven operations."
+next_actions: []
 ---
 
 # Project state
@@ -20,7 +20,7 @@ Transivium is a university finite automata/transducer studio. P0 covers all five
 
 ## Current state
 
-The initial repository contained specifications and guides only, no application source, manifests, executable tests or commits. The Obsidian vault and formal fixtures are implemented; application implementation progress and actual evidence are recorded below. No full release is claimed. The original proposed P0 estimate is 53 person-days, not an approved timeline.
+The repository began with specifications only. All P0 application features and internal automated gates are now implemented; the local release candidate, evidence and external limitations are recorded in [[docs/TEST_EVIDENCE]]. No public or externally approved v1.0 release is claimed. The original proposed P0 estimate is 53 person-days, not an approved timeline.
 
 ## Durable decisions
 
@@ -91,3 +91,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-26]]: Resource bounds now include both synthetic GNFA states before construction. Cap tests cover generation, UTF-8 regex bytes, trace append, exact verification and shared deadlines without returning partial certified artifacts. Next: [[memory/Issues/TRN-15]].
 
 - [[memory/Issues/TRN-15]]: P0 integration gate evaluated all seven NFR tasks and current-source browser/API workflows. Added six browser cases for remaining acceptor conversions, empty-branch rejection and nonempty shortest-witness replay; all pass. Next: [[memory/Issues/TRN-17]].
+
+- [[memory/Issues/TRN-17]]: All P0 implementation tasks are complete as an internally verified local release candidate. Guides match the running app; TC-01–39 have explicit evidence/status; the executable HTTP demo passes all five machine kinds and seven operations. Next: [[memory/Issues/TRN-16]].

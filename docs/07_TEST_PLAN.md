@@ -78,16 +78,18 @@ Accept `ε`, `∅`, `0`, `(0|1)*01`, `0**`, `ε|0`, and nested valid groups with
 ## 5. Traceability / release checklist
 FR-01–18 mapped above; NFR-01 correctness TC-08–24,33–35; NFR-02 performance TC-28–29,38; NFR-03 security TC-30; NFR-04 accessibility TC-32,39; NFR-05 reliability TC-29,31; NFR-06 maintainability review + TC-38; NFR-07 bounded scale TC-28. No authorization test for accounts (not in scope); validate local CORS and bind address in setup review.
 
-- [ ] Fresh setup, lint, build and all required automated tests pass.
-- [ ] Build and simulate each machine kind, run seven operations and compare languages.
-- [ ] Show verified D01 regex, negative equivalence witness, empty/universal/ε cases.
-- [ ] Validate errors, offline recovery, limit/deadline behavior and no stale UI response.
-- [ ] Confirm keyboard/table access, no secrets or server tracebacks.
-- [ ] Record performance/usability targets and known limitations; external fixture test status explicit.
-- [ ] Record test run date, commit, environment, pass/fail/skipped, defects and reviewer.
+- [x] Fresh setup, lint, build and all required automated tests pass.
+- [x] Build and simulate each machine kind, run seven operations and compare languages.
+- [x] Show verified D01 regex, negative equivalence witness, empty/universal/ε cases.
+- [x] Validate errors, offline recovery, limit/deadline behavior and no stale UI response.
+- [x] Confirm keyboard/table access, no secrets or server tracebacks.
+- [x] Record performance/usability targets and known limitations; external fixture test status explicit.
+- [x] Record test run date, commit, environment, pass/fail/skipped, defects and reviewer.
+
+The checklist records internal candidate evaluation; partner TC-35, learner TC-39 and independent human review remain NOT RUN. No full external-release approval is implied.
 
 ## 6. Test evidence template
-`case ID | commit | environment | expected | actual | status (PASS/FAIL/BLOCKED/NOT RUN) | issue | evidence`. All cases in this document start NOT RUN. Fix blocking mathematical correctness issues before release; no production-readiness claim.
+`case ID | commit | environment | expected | actual | status (PASS/FAIL/BLOCKED/NOT RUN) | issue | evidence`. The original baseline started all cases NOT RUN. Current case-by-case status is in [[docs/TEST_EVIDENCE]]; this plan does not replace executed evidence. Fix blocking mathematical correctness issues before release; no production-readiness claim.
 
 ## Memory links
 

@@ -11,16 +11,16 @@ tags: ["transivium", "documentation"]
 
 # Application Flow — Transivium
 
-Version 0.1 | Core editor/help/compare routes implemented through TRN-12; the flow below remains the release acceptance target. No accounts.
+Version 0.1 | Implemented P0 navigation and recovery behavior. No accounts.
 
 ## 1. Entry points
-Direct local URL `/` opens welcome screen with machine choices and demo examples. `/editor`, `/compare`, `/help` are direct routes. A refresh/revisit opens a new in-memory session unless P1 file import is used. No email notifications, OAuth, search indexing, marketing or account onboarding in MVP. Local maintainer starts services outside app.
+Direct local URL `/` opens the editor workspace with the D01 example; machine choices and examples live in the sidebar/toolbar. There is no separate welcome screen. `/editor`, `/compare`, `/help` are direct routes. A refresh/revisit opens a new in-memory session unless P1 file import is used. No email notifications, OAuth, search indexing, marketing or account onboarding in MVP. Local maintainer starts services outside app.
 
 ## 2. Core user flows
 ### Flow A — Create/edit/validate machine
 | Step / screen | Action and UI | System response / validation | Next |
 |---|---|---|---|
-| 1 Home | Select DFA/NFA/ε-NFA/Mealy/Moore | Initialize draft; explain chosen model | Editor |
+| 1 Workspace | Select type or sidebar example | Confirm replacement when needed; initialize draft | Editor |
 | 2 Editor | Define alphabet, add named states, set start and finals or output alphabet/state outputs | Form checks symbols and IDs; draft may be incomplete | Editor |
 | 3 Editor | Draw edge or edit table cell, add symbol/output | Update single draft, table and graph; warn on illegal edge | Editor |
 | 4 Editor | Click Validate | API validates; issues link to fields; mark valid only if complete | Editor ready |
@@ -58,7 +58,7 @@ On connection error, show disconnected message and retry; no successful state un
 
 ## 3. Navigation map
 ```text
-/ Home [local/public]
+/ Workspace (editor) [local/public]
 ├── /editor [local/public]
 │   ├── Machine editor + transition table
 │   ├── Simulation panel
@@ -67,12 +67,12 @@ On connection error, show disconnected message and retry; no successful state un
 ├── /compare [local/public] ↔ editor snapshots
 └── /help [local/public] → syntax, conventions, limitations
 ```
-Local/public means any user of running local instance, not internet-hosted. Panels are tabs within route, not separate mandatory URLs.
+Local/public means any user of running local instance, not internet-hosted. Editor panels are sections within the route, not separate URLs or tabs.
 
 ## 4. Screen inventory
 | Route/panel | Purpose | Elements/actions | Variants |
 |---|---|---|---|
-| `/` | Entry | Machine types, examples, help | Ready, API offline notice |
+| `/` | Editor entry | D01 draft, type selector, examples, help | Draft, valid/invalid, loading/error |
 | `/editor` | Construct | Graph, table, state form, alphabet, validate | Empty, dirty, valid, invalid, loading |
 | `/editor` simulation | Execute | Input, trace cursor, controls, output/result | Idle, loading, accepted/rejected/output, error, stale |
 | `/editor` conversion | Transform | Operation selector, trace, side-by-side, adopt | Idle, loading, verified, error, stale |

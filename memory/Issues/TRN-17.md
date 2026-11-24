@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-17"
 issue_type: "Task"
 summary: "QA, guides, release candidate, demo"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-104"
 depends_on: ["TRN-15"]
@@ -27,9 +27,9 @@ As a maintainer, I want qa, guides, release candidate, demo, so that the documen
 
 ## Acceptance criteria
 
-- [ ] Record actual environment, commit, expected/actual results and status for release checks; no planned case counts as passing.
-- [ ] Run fresh setup and all five simulation/seven operation paths, negative witness and verified regex demonstrations.
-- [ ] Record performance/usability limitations and partner exchange status separately; declare P0 gate only with supporting evidence.
+- [x] Record actual environment, commit, expected/actual results and status for release checks; no planned case counts as passing.
+- [x] Run fresh setup and all five simulation/seven operation paths, negative witness and verified regex demonstrations.
+- [x] Record performance/usability limitations and partner exchange status separately; declare P0 gate only with supporting evidence.
 
 Baseline done condition: Release gates met, test evidence recorded
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -44,7 +44,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-08, TC-09, TC-10, TC-11, TC-12, TC-13, TC-14, TC-15, TC-16, TC-17, TC-18, TC-19, TC-20, TC-21, TC-22, TC-23, TC-24, TC-28, TC-29, TC-30, TC-31, TC-32, TC-33, TC-34, TC-35, TC-38, TC-39
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 4 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -70,3 +70,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+All P0 implementation tasks are complete as an internally verified local release candidate. Guides match the running app; TC-01–39 have explicit evidence/status; the executable HTTP demo passes all five machine kinds and seven operations.
+
+Hosted Verify run 45357991995 passed for 69645a6: 169 backend, 17 component, 28 browser and nine script tests plus lint/build/contracts/memory. Local demo passed 12 simulations, seven operations and three comparisons; Ruff/format, contracts, privacy scan and script checks pass. TC-35/TC-39 and independent human review remain NOT RUN; P1/P2 deferred, no public release/tag or license invented.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

@@ -15,7 +15,7 @@ tags: ["transivium", "decision"]
 
 React + TypeScript + Vite with @xyflow/react for the graph; Python 3.12+ with FastAPI and Pydantic v2; pytest for engine/API tests, Vitest/Testing Library for components and Playwright for browser flows. The current build host is Python 3.14.10, Node 26.13.1 and npm 12.2.3; exact packages and lockfiles are pinned and tested at TRN-02. No database, accounts or external runtime services.
 
-Pure functions implement the coursework algorithms. Generation and independent text parsing/Thompson reconstruction are separate modules. One request owns a shared cooperative budget across conversion and verification; a failure returns no certified artifact. Model JSON is shared through generated backend OpenAPI plus matching frontend types.
+Pure functions implement the coursework algorithms. Generation and independent text parsing/Thompson reconstruction are separate modules. One request owns a shared cooperative budget across conversion and verification; a failure returns no certified artifact. Model JSON is shared through generated backend OpenAPI plus matching frontend types; incomplete editor drafts are intentionally broader than validated API models.
 
 ## Contract artifacts
 
@@ -23,7 +23,7 @@ Pure functions implement the coursework algorithms. Generation and independent t
 
 ## Review status
 
-These are implementation choices under the user's instruction to start work, not claimed stakeholder or partner signoff. Formal conventions remain mandatory. External syntax agreement, demonstration and the five-learner usability study remain pending. Staffing/deadline and license do not block local coding. Proposed caps become runtime guards but still require boundary and performance evidence.
+These are implementation choices under the user's instruction to start work, not claimed stakeholder or partner signoff. Formal conventions remain mandatory. External syntax agreement, demonstration and the five-learner usability study remain pending. Staffing/deadline and license do not block local coding. Runtime caps and measured reference latency are verified in [[docs/TEST_EVIDENCE]]. Human peer review remains pending.
 
 ## Upstream references
 

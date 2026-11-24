@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # Software Requirements Specification (SRD/SRS) — Transivium
 
-Version 0.1 | Proposed baseline | Reference: 00_PRD.md
+Version 0.1 | Implemented P0 baseline; evidence and limitations in [[docs/TEST_EVIDENCE]] | Reference: 00_PRD.md
 
 ## Goal
 Provide an interactive, mathematically correct environment for finite automata and transducers, including independently verifiable DFA-to-regex export for cross-simulator use.
@@ -19,7 +19,7 @@ Provide an interactive, mathematically correct environment for finite automata a
 ## Users
 - Student: builds, runs and converts machines, checks language equivalence.
 - Instructor/TA: demonstrates algorithms and verifies examples.
-- Local maintainer: installs and operates the application; not an app administrator. No account system in proposed MVP.
+- Local maintainer: installs and operates the application; not an app administrator. No account system in MVP.
 
 ## MVP workflow
 1. Open editor and choose DFA, NFA, ε-NFA, Mealy or Moore.

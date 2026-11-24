@@ -80,3 +80,7 @@ See [[memory/Issues/Backlog]] for full Jira-style issue notes, requirement/test 
 
 - [[memory/Home]]
 - [[memory/References/Documentation-Review]]
+
+## Executed local P0 gate — 2026-11-24
+
+TRN-01–15, TRN-17 and cross-cutting TRN-20–26 are complete for the internal local release candidate; [[docs/TEST_EVIDENCE]] contains case statuses and hosted verification. All P0 functionality is implemented and NFR targets evaluated. Partner exchange and volunteer study remain NOT RUN with limitations recorded; independent human review remains pending. No v1.0 tag/public deployment is declared. P1 TRN-16 is eligible but deferred; P2 stays deferred. Original estimates above remain planning history, not actual effort or team approval.

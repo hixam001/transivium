@@ -16,14 +16,14 @@ Version 0.1 | Architecture selected for implementation; see [[docs/IMPLEMENTATIO
 ## 1. Architectural goals
 Keep mathematical algorithms independent of rendering, use a shared typed contract, produce reproducible traces, and verify language correctness separately from conversion. Prefer simple local deployment over infrastructure unrelated to coursework.
 
-## 2. Proposed stack and decision register
+## 2. Implemented stack and decision register
 | ADR | Decision | Rationale / status |
 |---|---|---|
-| ADR-01 | React + TypeScript + Vite; React Flow for diagrams | Proposed; interactive graph and typed state |
-| ADR-02 | Python 3.12+ (tested version to be pinned), FastAPI, Pydantic | Proposed; readable formal algorithms and JSON validation |
-| ADR-03 | Stateless HTTP API, in-memory frontend session | Proposed; no user accounts or DB needed |
-| ADR-04 | Pure algorithms, no library doing coursework conversions | Proposed; transparent derivation and testability; graph/render/framework libraries permitted |
-| ADR-05 | Formal regex AST and independent parser + Thompson verifier | Required outcome; design proposed |
+| ADR-01 | React + TypeScript + Vite; React Flow for diagrams | Implemented; interactive graph and typed state |
+| ADR-02 | Python 3.12+ (tested 3.14.10), FastAPI, Pydantic | Implemented; readable formal algorithms and JSON validation |
+| ADR-03 | Stateless HTTP API, in-memory frontend session | Implemented; no user accounts or DB needed |
+| ADR-04 | Pure algorithms, no library doing coursework conversions | Implemented; transparent derivation and testability; graph/render/framework libraries permitted |
+| ADR-05 | Formal regex AST and independent parser + Thompson verifier | Implemented and independently reconstructed from serialized text |
 | ADR-06 | Complete DFA, shared alphabet and canonical BFS numbering | Formal interoperability convention |
 | ADR-07 | Moore initial output excluded from normalized equivalence | Formal conversion convention |
 | ADR-08 | Relative six-week plan, local-only default | Proposed; deadline, team size, budget and public deployment [DECIDE] |
@@ -61,23 +61,23 @@ No service-to-service call to the other team. The external simulator is outside 
 | Independent verifier | Parse emitted text, Thompson construction, determinize, exact product equivalence; share tested primitives but never reuse GNFA result as proof |
 | Budget guard | Cooperative deadline, state/work/trace/regex caps; typed resource error |
 
-## 5. Proposed repository layout
+## 5. Repository layout
 ```text
 transivium/
   README.md
   CHANGELOG.md
   docs/                       # this documentation set
   frontend/
-    src/{app,components,features,lib,types}/
-    tests/
+    src/                      # React components, draft types, styles, component tests
+    e2e/                      # Playwright acceptance cases
     package.json
   backend/
-    app/{main.py,api,schemas,engine}/
+    app/{main.py,boundary.py,schemas.py,engine/}
     app/engine/{validation.py,acceptors.py,transducers.py,regex_ast.py,gnfa.py,regex_parser.py,thompson.py,budget.py}
-    tests/{unit,integration,fixtures}/
+    tests/                    # pure engine and HTTP integration tests
     requirements.txt
 ```
-This is a target layout, not a claim that files other than the documentation exist.
+Shared formal fixtures and generated schemas live in `contracts/`; maintenance/demo/performance tools in `scripts/`; requirement/handoff/session notes in `memory/`; read-only verification in `.github/workflows/ci.yml`.
 
 ## 6. Execution and data flow
 ### 6.1 Editor/simulation
@@ -113,13 +113,13 @@ sequenceDiagram
 Frontend is source of truth for editable draft and layout. Table and diagram are projections, not duplicate models. API is stateless and stores no user machines. P0 in-memory only; refresh may lose work (explicit UI notice). P1 local JSON machine download/import and session trace history; no cloud or database. Regex JSON export P0. No user/admin accounts. P1 imported layout is optional; formal equality ignores it.
 
 ## 8. Boundaries and failure handling
-Proposed limits: 256 states per formal machine, 16 input/output symbols each, 16,384 transitions, 512 input tokens, 512 KiB request, 64 KiB serialized regex (UTF-8), 50,000 regex AST nodes/work allocations, 65,536 reachable product pairs, 2,000 derivation steps and 2 MiB serialized response. Generated intermediate automata also bounded at 256 states. Simulation steps ≤ 513. Deadline 5 s per operation (cooperative monotonic checks; all loops and recursive work bounded; no claim of hard real-time interruption). Regex parsing uses explicit stack or depth guard (128 nesting levels). No partial verified result when a cap is exceeded. Ordinary reference workloads defined in PRD; evaluate limits after profiling. Limit checks must avoid allocating huge structures first. Return structured errors; frontend retains source, gives retry/reduce-size advice, discards obsolete responses. Use request IDs and avoid logging full machines/strings by default.
+Enforced limits: 256 states per formal machine, 16 input/output symbols each, 16,384 transitions, 512 input tokens, 512 KiB request, 64 KiB serialized regex (UTF-8), 50,000 regex AST nodes/work allocations, 65,536 reachable product pairs, 2,000 derivation steps and 2 MiB serialized response. Generated intermediate automata also bounded at 256 states. Simulation steps ≤ 513. Deadline 5 s per operation (cooperative monotonic checks; all loops and recursive work bounded; no claim of hard real-time interruption). Regex parsing uses explicit stack or depth guard (128 nesting levels). No partial verified result when a cap is exceeded. Ordinary reference workloads defined in PRD; evaluate limits after profiling. Limit checks must avoid allocating huge structures first. Return structured errors; frontend retains source, gives retry/reduce-size advice, discards obsolete responses. Use request IDs and avoid logging full machines/strings by default.
 
 ## 9. Security / accessibility / deployment
 - Strict schema, bounded body reader, no eval, no regex execution against host engine, render labels as text, safe file parsing, no secrets required.
 - Local API bind 127.0.0.1; CORS restricted to configured frontend origin; production sharing requires separate review and is not in MVP.
 - Keyboard form/table editor, visible focus, accessible labels, text status, playback controls; animation is optional and respects reduced-motion preference.
-- Backend unit tests plus API integration; frontend component and end-to-end tests. Pin actual dependency versions after selecting stack; no version claims here.
+- Backend unit tests plus API integration; frontend component and end-to-end tests. Exact dependencies and runtimes are pinned; see [[docs/SETUP_GUIDE]] and [[docs/TEST_EVIDENCE]].
 
 ## 10. Risks and mitigations
 | Risk | Mitigation |

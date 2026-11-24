@@ -11,9 +11,9 @@ tags: ["transivium", "documentation"]
 
 # API & Technical Contract — Transivium
 
-Version 0.1 | All five routes implemented through TRN-09. Simulation supports all five machine kinds through TRN-13; four machine acceptor conversions and regex export are available. Independently verified DFA-to-regex export is now implemented at TRN-11; both transducer conversions are now implemented at TRN-14 with exact normalized-output verification. Contract below is the implementation target.
+Version 0.1 | All five routes, five simulation types and seven operations are implemented. Generated strict DTO schemas are in `contracts/openapi.json` and `contracts/machine.schema.json`; see [[docs/SETUP_GUIDE]] for refresh/drift checks.
 
-Base: `/api/v1` | JSON UTF-8 | Stateless local server | No auth in proposed MVP. All POST requests use `Content-Type: application/json`. Machine and result schemas defined in 03_DATA_MODEL.md. Examples omit no required fields unless explicitly marked as a field reference. Validate complete request on server; UI hints are not authoritative.
+Base: `/api/v1` | JSON UTF-8 | Stateless local server | No auth in local MVP. All POST requests use `Content-Type: application/json`. Machine and result schemas defined in 03_DATA_MODEL.md. Examples omit no required fields unless explicitly marked as a field reference. Validate complete request on server; UI hints are not authoritative.
 
 ## 1. Routes
 | Method / path | Purpose | Request | Success 200 |
@@ -115,7 +115,7 @@ This example describes a start-state mismatch. When equivalent, `counterexample`
 Framework routes may also return 404/405 using same envelope (`NOT_FOUND`, `METHOD_NOT_ALLOWED`). No client access to exception internals. Network failures have no HTTP envelope; frontend shows connection/retry message.
 
 ## 7. Limits / determinism
-256 states, 16 input/output symbols, 16,384 transitions, 512 tokens, 512 KiB request, 64 KiB UTF-8 regex, 50,000 AST work allocations, parser nesting 128, 65,536 product pairs, 2,000 derivation steps, 2 MiB response, 5 s cooperative deadline. Intermediate machines obey state/transition limits; budget guards apply before expansion. All limits proposed and tested before release. Sort symbols ASCII and IDs consistently for predictable traces; canonically number minimized DFAs by BFS. Do not silently discard output, approximate equivalence or mark failed export verified.
+256 states, 16 input/output symbols, 16,384 transitions, 512 tokens, 512 KiB request, 64 KiB UTF-8 regex, 50,000 AST work allocations, parser nesting 128, 65,536 product pairs, 2,000 derivation steps, 2 MiB response, 5 s cooperative deadline. Intermediate machines obey state/transition limits; budget guards apply before expansion. Limits are enforced and acceptance-tested; see [[docs/TEST_EVIDENCE]]. GNFA state count includes its two synthetic states. Sort symbols ASCII and IDs consistently for predictable traces; canonically number minimized DFAs by BFS. Do not silently discard output, approximate equivalence or mark failed export verified.
 
 ## Memory links
 

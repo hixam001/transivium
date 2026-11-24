@@ -14,7 +14,7 @@ tags: ["transivium", "documentation"]
 **Finite Automata & Transducer Simulation Studio**\
 Construct. Convert. Simulate. Verify.
 
-> Implementation in progress. The frontend and local FastAPI health service run; core automata features are tracked in the linked backlog. No full application release is claimed.
+> Local P0 release candidate: all five machine kinds, seven operations, exact comparison and verified regex export are implemented. See [executed evidence](docs/TEST_EVIDENCE.md) for results and pending external reviews. No public deployment or v1.0 release is claimed.
 
 Transivium is an interactive Theory of Automata university project for constructing, simulating and converting DFA, NFA, ε-NFA, Mealy and Moore machines. Its signature feature is DFA-to-regular-expression export with exact language-equivalence verification and an exchange format for an independent simulator.
 
@@ -31,7 +31,7 @@ Open this repository folder as an Obsidian vault and start at [[memory/Home]]. S
 - Optional after P0: machine JSON import/export and session history.
 
 ## Implementation stack
-React + TypeScript + Vite + React Flow; Python + FastAPI + Pydantic; pytest and frontend test tooling. Local stateless backend, no accounts or database. Exact dependency versions and platform prerequisites to be pinned during implementation.
+React + TypeScript + Vite + React Flow; Python + FastAPI + Pydantic; pytest and frontend test tooling. Local stateless backend, no accounts or database. Dependencies are pinned in requirements.txt and package-lock.json; tested runtimes are Python 3.14.10 and Node 26.13.1. See the setup guide for checks and browser installation.
 
 ## Quick start
 See [Setup Guide](docs/SETUP_GUIDE.md). Install `backend/requirements.txt` in a virtual environment and run `python -m uvicorn app.main:app --host 127.0.0.1 --port 8000` from `backend/`. In a second terminal run `npm ci` and `npm run dev` from `frontend/`. Open http://127.0.0.1:5173. Tests: backend `python -m pytest`; frontend `npm run lint`, `npm test`, `npm run build`.
@@ -48,7 +48,7 @@ See [Setup Guide](docs/SETUP_GUIDE.md). Install `backend/requirements.txt` in a 
 | [Project Plan](docs/06_PROJECT_PLAN.md) | Scope, milestones, Jira-style work breakdown and budget |
 | [Test Plan](docs/07_TEST_PLAN.md) | Planned test cases and release gates |
 | [Application Flow](docs/APP_FLOW.md) | Navigation, screens, state and recovery |
-| [Setup Guide](docs/SETUP_GUIDE.md) | Installation and configuration target |
+| [Setup Guide](docs/SETUP_GUIDE.md) | Verified local installation and configuration |
 | [User Guide](docs/USER_GUIDE.md) | Learner and instructor usage, demo |
 | [Maintainer Guide](docs/ADMIN_GUIDE.md) | Local operator responsibilities and troubleshooting |
 | [Changelog](CHANGELOG.md) | Documentation baseline and future release tracking |
