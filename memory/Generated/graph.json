@@ -1,0 +1,3908 @@
+{
+  "schemaVersion": 1,
+  "vaultRoot": ".",
+  "nodes": [
+    {
+      "id": "AGENTS",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "workflow"
+      ]
+    },
+    {
+      "id": "CHANGELOG",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "CONTRIBUTING",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "README",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/00_PRD",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/01_SRD",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/02_SAD",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/03_DATA_MODEL",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/04_API_CONTRACT",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/05_ALGORITHMS",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/06_PROJECT_PLAN",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/07_TEST_PLAN",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/ADMIN_GUIDE",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/APP_FLOW",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/SETUP_GUIDE",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "docs/USER_GUIDE",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "documentation"
+      ]
+    },
+    {
+      "id": "memory/Decisions/Formal-Conventions",
+      "type": "decision",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "decision"
+      ]
+    },
+    {
+      "id": "memory/Decisions/Open-Decisions",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Decisions/Working-Agreement",
+      "type": "decision",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "decision"
+      ]
+    },
+    {
+      "id": "memory/Handoffs/Current",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Handoffs/MEM-001",
+      "type": "session",
+      "status": "complete",
+      "tags": [
+        "memory",
+        "handoff"
+      ]
+    },
+    {
+      "id": "memory/Handoffs/TRN-01",
+      "type": "session",
+      "status": "draft",
+      "tags": [
+        "transivium",
+        "session"
+      ]
+    },
+    {
+      "id": "memory/Home",
+      "type": "project",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "project"
+      ]
+    },
+    {
+      "id": "memory/Issues/Backlog",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-01",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-02",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-03",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-04",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-05",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-06",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-07",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-08",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-09",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-10",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-100",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-101",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-102",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-103",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-104",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-105",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-11",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-12",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-13",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-14",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-15",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-16",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-17",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-18",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-19",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-20",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-21",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-22",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-23",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-24",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-25",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-26",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Project",
+      "type": "project",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "project"
+      ]
+    },
+    {
+      "id": "memory/References/Documentation-Review",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-01",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-02",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-03",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-04",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-05",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-06",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-07",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-08",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-09",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-10",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-11",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-12",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-13",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-14",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-15",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-16",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-17",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-18",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-19",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-20",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-21",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/FR-22",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/Index",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/NFR-01",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/NFR-02",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/NFR-03",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/NFR-04",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/NFR-05",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/NFR-06",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Requirements/NFR-07",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Sessions/2026-11-24-Memory-Bootstrap",
+      "type": "session",
+      "status": "complete",
+      "tags": [
+        "transivium",
+        "session"
+      ]
+    },
+    {
+      "id": "memory/Templates/Jira-Issue",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Templates/Task-Handoff",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Workflow",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "AGENTS",
+      "target": "memory/Decisions/Working-Agreement"
+    },
+    {
+      "source": "AGENTS",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "AGENTS",
+      "target": "memory/Home"
+    },
+    {
+      "source": "AGENTS",
+      "target": "memory/Project"
+    },
+    {
+      "source": "AGENTS",
+      "target": "memory/Workflow"
+    },
+    {
+      "source": "CHANGELOG",
+      "target": "memory/Home"
+    },
+    {
+      "source": "CHANGELOG",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "CONTRIBUTING",
+      "target": "memory/Home"
+    },
+    {
+      "source": "CONTRIBUTING",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "CONTRIBUTING",
+      "target": "memory/Workflow"
+    },
+    {
+      "source": "README",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "README",
+      "target": "memory/Home"
+    },
+    {
+      "source": "README",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "README",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "README",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "docs/00_PRD",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/00_PRD",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/01_SRD",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/01_SRD",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/02_SAD",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/02_SAD",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/03_DATA_MODEL",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/03_DATA_MODEL",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/04_API_CONTRACT",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/04_API_CONTRACT",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/05_ALGORITHMS",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/05_ALGORITHMS",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/06_PROJECT_PLAN",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/06_PROJECT_PLAN",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "docs/06_PROJECT_PLAN",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/07_TEST_PLAN",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/07_TEST_PLAN",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/ADMIN_GUIDE",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/ADMIN_GUIDE",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/APP_FLOW",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/APP_FLOW",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/SETUP_GUIDE",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/SETUP_GUIDE",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "docs/USER_GUIDE",
+      "target": "memory/Home"
+    },
+    {
+      "source": "docs/USER_GUIDE",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "memory/Decisions/Formal-Conventions",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Decisions/Formal-Conventions",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Decisions/Formal-Conventions",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Decisions/Formal-Conventions",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Decisions/Formal-Conventions",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Decisions/Formal-Conventions",
+      "target": "memory/Decisions/Open-Decisions"
+    },
+    {
+      "source": "memory/Decisions/Formal-Conventions",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Decisions/Open-Decisions",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Decisions/Open-Decisions",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Decisions/Open-Decisions",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Decisions/Open-Decisions",
+      "target": "memory/Handoffs/TRN-01"
+    },
+    {
+      "source": "memory/Decisions/Open-Decisions",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Decisions/Open-Decisions",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Decisions/Working-Agreement",
+      "target": "AGENTS"
+    },
+    {
+      "source": "memory/Decisions/Working-Agreement",
+      "target": "CONTRIBUTING"
+    },
+    {
+      "source": "memory/Decisions/Working-Agreement",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Decisions/Working-Agreement",
+      "target": "memory/Workflow"
+    },
+    {
+      "source": "memory/Handoffs/Current",
+      "target": "memory/Handoffs/MEM-001"
+    },
+    {
+      "source": "memory/Handoffs/Current",
+      "target": "memory/Handoffs/TRN-01"
+    },
+    {
+      "source": "memory/Handoffs/Current",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Handoffs/Current",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Handoffs/Current",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Handoffs/Current",
+      "target": "memory/Sessions/2026-11-24-Memory-Bootstrap"
+    },
+    {
+      "source": "memory/Handoffs/Current",
+      "target": "memory/Workflow"
+    },
+    {
+      "source": "memory/Handoffs/MEM-001",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Handoffs/MEM-001",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Handoffs/MEM-001",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Handoffs/MEM-001",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Handoffs/MEM-001",
+      "target": "memory/Handoffs/TRN-01"
+    },
+    {
+      "source": "memory/Handoffs/MEM-001",
+      "target": "memory/Sessions/2026-11-24-Memory-Bootstrap"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "memory/Decisions/Formal-Conventions"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "memory/Decisions/Open-Decisions"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "memory/Decisions/Working-Agreement"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "memory/Issues/TRN-02"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Handoffs/TRN-01",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Home",
+      "target": "README"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Decisions/Formal-Conventions"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Decisions/Open-Decisions"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Decisions/Working-Agreement"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Sessions/2026-11-24-Memory-Bootstrap"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Templates/Jira-Issue"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Templates/Task-Handoff"
+    },
+    {
+      "source": "memory/Home",
+      "target": "memory/Workflow"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Handoffs/TRN-01"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-02"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-03"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-04"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-05"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-06"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-08"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-09"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-10"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-100"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-101"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-102"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-103"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-105"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-11"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-12"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-13"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-14"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-16"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-18"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-19"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-20"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-21"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-22"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-23"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-24"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-25"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-26"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Issues/TRN-01",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-01",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-01",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-01",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-01",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-01",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-01",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-01",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-01",
+      "target": "memory/Issues/TRN-100"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Issues/TRN-02",
+      "target": "memory/Issues/TRN-100"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "memory/Issues/TRN-02"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "memory/Issues/TRN-100"
+    },
+    {
+      "source": "memory/Issues/TRN-03",
+      "target": "memory/Requirements/FR-17"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "memory/Issues/TRN-02"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "memory/Issues/TRN-101"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "memory/Requirements/FR-01"
+    },
+    {
+      "source": "memory/Issues/TRN-04",
+      "target": "memory/Requirements/FR-15"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "memory/Issues/TRN-03"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "memory/Issues/TRN-101"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "memory/Requirements/FR-02"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "memory/Requirements/FR-03"
+    },
+    {
+      "source": "memory/Issues/TRN-05",
+      "target": "memory/Requirements/FR-04"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "memory/Issues/TRN-04"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "memory/Issues/TRN-05"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "memory/Issues/TRN-101"
+    },
+    {
+      "source": "memory/Issues/TRN-06",
+      "target": "memory/Requirements/FR-16"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "memory/Issues/TRN-03"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "memory/Issues/TRN-05"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "memory/Issues/TRN-102"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "memory/Requirements/FR-07"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "memory/Requirements/FR-08"
+    },
+    {
+      "source": "memory/Issues/TRN-07",
+      "target": "memory/Requirements/FR-09"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "memory/Issues/TRN-03"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "memory/Issues/TRN-102"
+    },
+    {
+      "source": "memory/Issues/TRN-08",
+      "target": "memory/Requirements/FR-10"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "memory/Issues/TRN-102"
+    },
+    {
+      "source": "memory/Issues/TRN-09",
+      "target": "memory/Requirements/FR-14"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "memory/Issues/TRN-08"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "memory/Issues/TRN-102"
+    },
+    {
+      "source": "memory/Issues/TRN-10",
+      "target": "memory/Requirements/FR-13"
+    },
+    {
+      "source": "memory/Issues/TRN-100",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-100",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Issues/TRN-100",
+      "target": "memory/Issues/TRN-02"
+    },
+    {
+      "source": "memory/Issues/TRN-100",
+      "target": "memory/Issues/TRN-03"
+    },
+    {
+      "source": "memory/Issues/TRN-100",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Issues/TRN-101",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-101",
+      "target": "memory/Issues/TRN-04"
+    },
+    {
+      "source": "memory/Issues/TRN-101",
+      "target": "memory/Issues/TRN-05"
+    },
+    {
+      "source": "memory/Issues/TRN-101",
+      "target": "memory/Issues/TRN-06"
+    },
+    {
+      "source": "memory/Issues/TRN-101",
+      "target": "memory/Issues/TRN-13"
+    },
+    {
+      "source": "memory/Issues/TRN-101",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Issues/TRN-102",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-102",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Issues/TRN-102",
+      "target": "memory/Issues/TRN-08"
+    },
+    {
+      "source": "memory/Issues/TRN-102",
+      "target": "memory/Issues/TRN-09"
+    },
+    {
+      "source": "memory/Issues/TRN-102",
+      "target": "memory/Issues/TRN-10"
+    },
+    {
+      "source": "memory/Issues/TRN-102",
+      "target": "memory/Issues/TRN-11"
+    },
+    {
+      "source": "memory/Issues/TRN-102",
+      "target": "memory/Issues/TRN-14"
+    },
+    {
+      "source": "memory/Issues/TRN-102",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Issues/TRN-103",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-103",
+      "target": "memory/Issues/TRN-12"
+    },
+    {
+      "source": "memory/Issues/TRN-103",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/TRN-20"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/TRN-21"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/TRN-22"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/TRN-23"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/TRN-24"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/TRN-25"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Issues/TRN-26"
+    },
+    {
+      "source": "memory/Issues/TRN-104",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Issues/TRN-105",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-105",
+      "target": "memory/Issues/TRN-16"
+    },
+    {
+      "source": "memory/Issues/TRN-105",
+      "target": "memory/Issues/TRN-18"
+    },
+    {
+      "source": "memory/Issues/TRN-105",
+      "target": "memory/Issues/TRN-19"
+    },
+    {
+      "source": "memory/Issues/TRN-105",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "memory/Issues/TRN-09"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "memory/Issues/TRN-10"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "memory/Issues/TRN-102"
+    },
+    {
+      "source": "memory/Issues/TRN-11",
+      "target": "memory/Requirements/FR-13"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "memory/Issues/TRN-04"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "memory/Issues/TRN-08"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "memory/Issues/TRN-09"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "memory/Issues/TRN-10"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "memory/Issues/TRN-103"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "memory/Issues/TRN-11"
+    },
+    {
+      "source": "memory/Issues/TRN-12",
+      "target": "memory/Requirements/FR-18"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "memory/Issues/TRN-03"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "memory/Issues/TRN-06"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "memory/Issues/TRN-101"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "memory/Requirements/FR-05"
+    },
+    {
+      "source": "memory/Issues/TRN-13",
+      "target": "memory/Requirements/FR-06"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "memory/Issues/TRN-102"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "memory/Issues/TRN-13"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "memory/Requirements/FR-11"
+    },
+    {
+      "source": "memory/Issues/TRN-14",
+      "target": "memory/Requirements/FR-12"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-03"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-04"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-05"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-06"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-08"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-09"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-10"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-11"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-12"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-13"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-14"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-20"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-21"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-22"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-23"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-24"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-25"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Issues/TRN-26"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Requirements/NFR-01"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Requirements/NFR-02"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Requirements/NFR-03"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Requirements/NFR-04"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Requirements/NFR-05"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Requirements/NFR-06"
+    },
+    {
+      "source": "memory/Issues/TRN-15",
+      "target": "memory/Requirements/NFR-07"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "memory/Issues/TRN-105"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "memory/Requirements/FR-19"
+    },
+    {
+      "source": "memory/Issues/TRN-16",
+      "target": "memory/Requirements/FR-20"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Requirements/NFR-01"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Requirements/NFR-02"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Requirements/NFR-03"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Requirements/NFR-04"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Requirements/NFR-05"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Requirements/NFR-06"
+    },
+    {
+      "source": "memory/Issues/TRN-17",
+      "target": "memory/Requirements/NFR-07"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "memory/Issues/TRN-105"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Issues/TRN-18",
+      "target": "memory/Requirements/FR-21"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "memory/Issues/TRN-105"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Issues/TRN-19",
+      "target": "memory/Requirements/FR-22"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-20",
+      "target": "memory/Requirements/NFR-01"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-21",
+      "target": "memory/Requirements/NFR-02"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-22",
+      "target": "memory/Requirements/NFR-03"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-23",
+      "target": "memory/Requirements/NFR-04"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-24",
+      "target": "memory/Requirements/NFR-05"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-25",
+      "target": "memory/Requirements/NFR-06"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-26",
+      "target": "memory/Requirements/NFR-07"
+    },
+    {
+      "source": "memory/Project",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Project",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Decisions/Formal-Conventions"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Decisions/Open-Decisions"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Decisions/Working-Agreement"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Handoffs/TRN-01"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Issues/TRN-01"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Issues/TRN-02"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "CHANGELOG"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "CONTRIBUTING"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "README"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/02_SAD"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/03_DATA_MODEL"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/04_API_CONTRACT"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/06_PROJECT_PLAN"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/ADMIN_GUIDE"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/APP_FLOW"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/SETUP_GUIDE"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "docs/USER_GUIDE"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "memory/Decisions/Open-Decisions"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/References/Documentation-Review",
+      "target": "memory/Sessions/2026-11-24-Memory-Bootstrap"
+    },
+    {
+      "source": "memory/Requirements/FR-01",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-01",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-01",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-01",
+      "target": "memory/Issues/TRN-04"
+    },
+    {
+      "source": "memory/Requirements/FR-01",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-02",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-02",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-02",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-02",
+      "target": "memory/Issues/TRN-05"
+    },
+    {
+      "source": "memory/Requirements/FR-02",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-03",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-03",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-03",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-03",
+      "target": "memory/Issues/TRN-05"
+    },
+    {
+      "source": "memory/Requirements/FR-03",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-04",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-04",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-04",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-04",
+      "target": "memory/Issues/TRN-05"
+    },
+    {
+      "source": "memory/Requirements/FR-04",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-05",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-05",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-05",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-05",
+      "target": "memory/Issues/TRN-13"
+    },
+    {
+      "source": "memory/Requirements/FR-05",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-06",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-06",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-06",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-06",
+      "target": "memory/Issues/TRN-13"
+    },
+    {
+      "source": "memory/Requirements/FR-06",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-07",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-07",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-07",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-07",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Requirements/FR-07",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-08",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-08",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-08",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-08",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Requirements/FR-08",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-09",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-09",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-09",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-09",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Requirements/FR-09",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-10",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-10",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-10",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-10",
+      "target": "memory/Issues/TRN-08"
+    },
+    {
+      "source": "memory/Requirements/FR-10",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-11",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-11",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-11",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-11",
+      "target": "memory/Issues/TRN-14"
+    },
+    {
+      "source": "memory/Requirements/FR-11",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-12",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-12",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-12",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-12",
+      "target": "memory/Issues/TRN-14"
+    },
+    {
+      "source": "memory/Requirements/FR-12",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-13",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-13",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-13",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-13",
+      "target": "memory/Issues/TRN-10"
+    },
+    {
+      "source": "memory/Requirements/FR-13",
+      "target": "memory/Issues/TRN-11"
+    },
+    {
+      "source": "memory/Requirements/FR-13",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-14",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-14",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-14",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-14",
+      "target": "memory/Issues/TRN-09"
+    },
+    {
+      "source": "memory/Requirements/FR-14",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-15",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-15",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-15",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-15",
+      "target": "memory/Issues/TRN-04"
+    },
+    {
+      "source": "memory/Requirements/FR-15",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-16",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-16",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-16",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-16",
+      "target": "memory/Issues/TRN-06"
+    },
+    {
+      "source": "memory/Requirements/FR-16",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-17",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-17",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-17",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-17",
+      "target": "memory/Issues/TRN-03"
+    },
+    {
+      "source": "memory/Requirements/FR-17",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-18",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-18",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-18",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-18",
+      "target": "memory/Issues/TRN-12"
+    },
+    {
+      "source": "memory/Requirements/FR-18",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-19",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-19",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-19",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-19",
+      "target": "memory/Issues/TRN-16"
+    },
+    {
+      "source": "memory/Requirements/FR-19",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-20",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-20",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-20",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-20",
+      "target": "memory/Issues/TRN-16"
+    },
+    {
+      "source": "memory/Requirements/FR-20",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-21",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-21",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-21",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-21",
+      "target": "memory/Issues/TRN-18"
+    },
+    {
+      "source": "memory/Requirements/FR-21",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/FR-22",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/FR-22",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/FR-22",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/FR-22",
+      "target": "memory/Issues/TRN-19"
+    },
+    {
+      "source": "memory/Requirements/FR-22",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-03"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-04"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-05"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-06"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-07"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-08"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-09"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-10"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-11"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-12"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-13"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-14"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-16"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-18"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-19"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-20"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-21"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-22"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-23"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-24"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-25"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Issues/TRN-26"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-01"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-02"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-03"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-04"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-05"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-06"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-07"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-08"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-09"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-10"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-11"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-12"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-13"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-14"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-15"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-16"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-17"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-18"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-19"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-20"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-21"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/FR-22"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/NFR-01"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/NFR-02"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/NFR-03"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/NFR-04"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/NFR-05"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/NFR-06"
+    },
+    {
+      "source": "memory/Requirements/Index",
+      "target": "memory/Requirements/NFR-07"
+    },
+    {
+      "source": "memory/Requirements/NFR-01",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-01",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-01",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/NFR-01",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Requirements/NFR-01",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Requirements/NFR-01",
+      "target": "memory/Issues/TRN-20"
+    },
+    {
+      "source": "memory/Requirements/NFR-01",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/NFR-02",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-02",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-02",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/NFR-02",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Requirements/NFR-02",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Requirements/NFR-02",
+      "target": "memory/Issues/TRN-21"
+    },
+    {
+      "source": "memory/Requirements/NFR-02",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/NFR-03",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-03",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-03",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/NFR-03",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Requirements/NFR-03",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Requirements/NFR-03",
+      "target": "memory/Issues/TRN-22"
+    },
+    {
+      "source": "memory/Requirements/NFR-03",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/NFR-04",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-04",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-04",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/NFR-04",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Requirements/NFR-04",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Requirements/NFR-04",
+      "target": "memory/Issues/TRN-23"
+    },
+    {
+      "source": "memory/Requirements/NFR-04",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/NFR-05",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-05",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-05",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/NFR-05",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Requirements/NFR-05",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Requirements/NFR-05",
+      "target": "memory/Issues/TRN-24"
+    },
+    {
+      "source": "memory/Requirements/NFR-05",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/NFR-06",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-06",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-06",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/NFR-06",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Requirements/NFR-06",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Requirements/NFR-06",
+      "target": "memory/Issues/TRN-25"
+    },
+    {
+      "source": "memory/Requirements/NFR-06",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Requirements/NFR-07",
+      "target": "docs/00_PRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-07",
+      "target": "docs/01_SRD"
+    },
+    {
+      "source": "memory/Requirements/NFR-07",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "memory/Requirements/NFR-07",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "memory/Requirements/NFR-07",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "memory/Requirements/NFR-07",
+      "target": "memory/Issues/TRN-26"
+    },
+    {
+      "source": "memory/Requirements/NFR-07",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-Memory-Bootstrap",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-Memory-Bootstrap",
+      "target": "memory/Handoffs/MEM-001"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-Memory-Bootstrap",
+      "target": "memory/Handoffs/TRN-01"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-Memory-Bootstrap",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-Memory-Bootstrap",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-Memory-Bootstrap",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-Memory-Bootstrap",
+      "target": "memory/References/Documentation-Review"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-Memory-Bootstrap",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Templates/Jira-Issue",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Templates/Jira-Issue",
+      "target": "memory/Requirements/Index"
+    },
+    {
+      "source": "memory/Templates/Jira-Issue",
+      "target": "memory/Workflow"
+    },
+    {
+      "source": "memory/Templates/Task-Handoff",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Templates/Task-Handoff",
+      "target": "memory/Workflow"
+    },
+    {
+      "source": "memory/Workflow",
+      "target": "AGENTS"
+    },
+    {
+      "source": "memory/Workflow",
+      "target": "memory/Decisions/Working-Agreement"
+    },
+    {
+      "source": "memory/Workflow",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Workflow",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Workflow",
+      "target": "memory/Issues/Backlog"
+    },
+    {
+      "source": "memory/Workflow",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Workflow",
+      "target": "memory/Templates/Jira-Issue"
+    },
+    {
+      "source": "memory/Workflow",
+      "target": "memory/Templates/Task-Handoff"
+    }
+  ]
+}

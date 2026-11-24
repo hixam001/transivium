@@ -1,0 +1,15 @@
+.git/
+.agent/
+.agents/
+.claude/
+.codex/
+.gemini/
+.opencode/
+.impeccable/
+.aws/
+.obsidian/
+.venv/
+node_modules/
+memory/Inbox/raw/
+memory/Inbox/Web Clips/raw/
+memory/Generated/

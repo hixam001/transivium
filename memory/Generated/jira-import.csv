@@ -1,0 +1,1590 @@
+Issue ID,Issue Type,Summary,Description,Priority,Labels
+100,Epic,Foundation and formal contracts,"Local planning key: TRN-100
+Planning status: To Do
+Epic: None (epic)
+Depends on: None
+Requirements: See linked source contracts
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-100 — Foundation and formal contracts
+
+## Outcome
+
+Foundation and formal contracts. Completion requires evidence from every in-scope child issue; deferred work stays deferred.
+
+## Issues
+
+- memory/Issues/TRN-01
+- memory/Issues/TRN-02
+- memory/Issues/TRN-03
+
+## Links
+
+- memory/Issues/Backlog
+- memory/Requirements/Index
+",Highest,transivium-p0
+101,Epic,Editor and simulation,"Local planning key: TRN-101
+Planning status: To Do
+Epic: None (epic)
+Depends on: None
+Requirements: See linked source contracts
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-101 — Editor and simulation
+
+## Outcome
+
+Editor and simulation. Completion requires evidence from every in-scope child issue; deferred work stays deferred.
+
+## Issues
+
+- memory/Issues/TRN-04
+- memory/Issues/TRN-05
+- memory/Issues/TRN-06
+- memory/Issues/TRN-13
+
+## Links
+
+- memory/Issues/Backlog
+- memory/Requirements/Index
+",Highest,transivium-p0
+102,Epic,Conversions and exact verification,"Local planning key: TRN-102
+Planning status: To Do
+Epic: None (epic)
+Depends on: None
+Requirements: See linked source contracts
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-102 — Conversions and exact verification
+
+## Outcome
+
+Conversions and exact verification. Completion requires evidence from every in-scope child issue; deferred work stays deferred.
+
+## Issues
+
+- memory/Issues/TRN-07
+- memory/Issues/TRN-08
+- memory/Issues/TRN-09
+- memory/Issues/TRN-10
+- memory/Issues/TRN-11
+- memory/Issues/TRN-14
+
+## Links
+
+- memory/Issues/Backlog
+- memory/Requirements/Index
+",Highest,transivium-p0
+103,Epic,Exchange and integrated UI,"Local planning key: TRN-103
+Planning status: To Do
+Epic: None (epic)
+Depends on: None
+Requirements: See linked source contracts
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-103 — Exchange and integrated UI
+
+## Outcome
+
+Exchange and integrated UI. Completion requires evidence from every in-scope child issue; deferred work stays deferred.
+
+## Issues
+
+- memory/Issues/TRN-12
+
+## Links
+
+- memory/Issues/Backlog
+- memory/Requirements/Index
+",Highest,transivium-p0
+104,Epic,Quality and release,"Local planning key: TRN-104
+Planning status: To Do
+Epic: None (epic)
+Depends on: None
+Requirements: See linked source contracts
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-104 — Quality and release
+
+## Outcome
+
+Quality and release. Completion requires evidence from every in-scope child issue; deferred work stays deferred.
+
+## Issues
+
+- memory/Issues/TRN-15
+- memory/Issues/TRN-17
+- memory/Issues/TRN-20
+- memory/Issues/TRN-21
+- memory/Issues/TRN-22
+- memory/Issues/TRN-23
+- memory/Issues/TRN-24
+- memory/Issues/TRN-25
+- memory/Issues/TRN-26
+
+## Links
+
+- memory/Issues/Backlog
+- memory/Requirements/Index
+",Highest,transivium-p0
+105,Epic,Deferred enhancements,"Local planning key: TRN-105
+Planning status: To Do
+Epic: None (epic)
+Depends on: None
+Requirements: See linked source contracts
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-105 — Deferred enhancements
+
+## Outcome
+
+Deferred enhancements. Completion requires evidence from every in-scope child issue; deferred work stays deferred.
+
+## Issues
+
+- memory/Issues/TRN-16
+- memory/Issues/TRN-18
+- memory/Issues/TRN-19
+
+## Links
+
+- memory/Issues/Backlog
+- memory/Requirements/Index
+",High,transivium-p1
+1,Task,"Agree formal semantics, schema and regex exchange format","Local planning key: TRN-01
+Planning status: To Do
+Epic: TRN-100
+Depends on: None
+Requirements: See linked source contracts
+Estimate (proposed person-days): 1
+
+
+# TRN-01 — Agree formal semantics, schema and regex exchange format
+
+## User story / outcome
+
+As a maintainer, I want agree formal semantics, schema and regex exchange format, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Record ADR statuses and explicitly separate required formal conventions from proposed stack choices.
+- [ ] Prepare formal-v1 exchange fixtures and record external agreement as pending until confirmed; do not invent stakeholder signoff.
+
+Baseline done condition: ADRs and fixtures reviewed; external agreement tracked
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+No hard issue prerequisites recorded; review linked source contracts before implementation.
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 1 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+
+- memory/Issues/TRN-100
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+2,Task,"Bootstrap repo, lint, test, local setup","Local planning key: TRN-02
+Planning status: To Do
+Epic: TRN-100
+Depends on: TRN-01
+Requirements: See linked source contracts
+Estimate (proposed person-days): 2
+
+
+# TRN-02 — Bootstrap repo, lint, test, local setup
+
+## User story / outcome
+
+As a maintainer, I want bootstrap repo, lint, test, local setup, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Create backend/frontend manifests and lockfiles, pin tested runtime/dependency versions, and document a clean local checkout.
+- [ ] Implement health endpoint and runnable lint/test/build commands with local proxy/bind configuration.
+
+Baseline done condition: Clean checkout starts both services and tests
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-01
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 2 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+
+- memory/Issues/TRN-100
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+3,Story,Formal models and validator (FR-17),"Local planning key: TRN-03
+Planning status: To Do
+Epic: TRN-100
+Depends on: TRN-01, TRN-02
+Requirements: FR-17
+Estimate (proposed person-days): 3
+
+
+# TRN-03 — Formal models and validator (FR-17)
+
+## User story / outcome
+
+As a learner or instructor, I want formal models and validator (fr-17), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Validate all five discriminated machine schemas and reject unknown fields, invalid references, illegal epsilon/output fields and incomplete deterministic machines.
+- [ ] Implement /validate structural versus semantic error behavior and preserve incomplete frontend drafts.
+
+Baseline done condition: All validation fixtures pass
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-01
+- memory/Issues/TRN-02
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-02, TC-25, TC-26, TC-27
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 3 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-17
+- memory/Issues/TRN-100
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+4,Story,"Graph/table editor (FR-01,15)","Local planning key: TRN-04
+Planning status: To Do
+Epic: TRN-101
+Depends on: TRN-01, TRN-02
+Requirements: FR-01, FR-15
+Estimate (proposed person-days): 5
+
+
+# TRN-04 — Graph/table editor (FR-01,15)
+
+## User story / outcome
+
+As a learner or instructor, I want graph/table editor (fr-01,15), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Support all five kinds using one draft model with table/graph projections, safe reference deletion and keyboard form alternatives.
+- [ ] Dirty replacement requires confirmation; revision increments invalidate obsolete results.
+
+Baseline done condition: Five kinds editable; synchronized views
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-01
+- memory/Issues/TRN-02
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-01, TC-02
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 5 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-01
+- memory/Requirements/FR-15
+- memory/Issues/TRN-101
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+5,Story,DFA/NFA/ε-NFA simulation (FR-02–04),"Local planning key: TRN-05
+Planning status: To Do
+Epic: TRN-101
+Depends on: TRN-03
+Requirements: FR-02, FR-03, FR-04
+Estimate (proposed person-days): 3
+
+
+# TRN-05 — DFA/NFA/ε-NFA simulation (FR-02–04)
+
+## User story / outcome
+
+As a learner or instructor, I want dfa/nfa/ε-nfa simulation (fr-02–04), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Return exactly input length + 1 configurations, including empty input, empty NFA branches and finite epsilon-cycle closure.
+- [ ] Reject invalid input as input error, with no acceptance result; use the agreed trace DTOs.
+
+Baseline done condition: Acceptance/closure traces correct
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-03
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-03, TC-04, TC-05
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 3 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-02
+- memory/Requirements/FR-03
+- memory/Requirements/FR-04
+- memory/Issues/TRN-101
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+6,Story,Playback and simulation UI (FR-16),"Local planning key: TRN-06
+Planning status: To Do
+Epic: TRN-101
+Depends on: TRN-04, TRN-05
+Requirements: FR-16
+Estimate (proposed person-days): 3
+
+
+# TRN-06 — Playback and simulation UI (FR-16)
+
+## User story / outcome
+
+As a learner or instructor, I want playback and simulation ui (fr-16), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Provide Next, Previous, Play/Pause and Reset with initial state, consumed symbol, text result and closure visualization.
+- [ ] Ignore responses for old revisions, stop playback on route exit and retain the draft on network or server errors.
+
+Baseline done condition: Step/back/play/reset and errors work
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-04
+- memory/Issues/TRN-05
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-03, TC-31
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 3 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-16
+- memory/Issues/TRN-101
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+7,Story,ε removal and determinization (FR-07–09),"Local planning key: TRN-07
+Planning status: To Do
+Epic: TRN-102
+Depends on: TRN-03, TRN-05
+Requirements: FR-07, FR-08, FR-09
+Estimate (proposed person-days): 4
+
+
+# TRN-07 — ε removal and determinization (FR-07–09)
+
+## User story / outcome
+
+As a learner or instructor, I want ε removal and determinization (fr-07–09), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Generate complete reachable subset DFAs including the empty sink when reached; epsilon removal propagates finals using closures.
+- [ ] Implement primitives before TRN-09 if needed; final completion is blocked until TRN-09 exact product verification is integrated.
+
+Baseline done condition: Verified equivalent conversions, sink handling
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-03
+- memory/Issues/TRN-05
+
+Verification integration with TRN-09 is an additional completion blocker, not a prerequisite to writing the primitive algorithms.
+
+
+## Test and delivery evidence
+
+Planned cases: TC-08, TC-09, TC-10, TC-34
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 4 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-07
+- memory/Requirements/FR-08
+- memory/Requirements/FR-09
+- memory/Issues/TRN-102
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+8,Story,Minimization and canonicalization (FR-10),"Local planning key: TRN-08
+Planning status: To Do
+Epic: TRN-102
+Depends on: TRN-03, TRN-07
+Requirements: FR-10
+Estimate (proposed person-days): 3
+
+
+# TRN-08 — Minimization and canonicalization (FR-10)
+
+## User story / outcome
+
+As a learner or instructor, I want minimization and canonicalization (fr-10), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Remove unreachable states, refine partitions, handle empty alphabet, and emit complete minimal DFA with sorted-symbol BFS IDs.
+- [ ] Do not close the issue until exact verification via TRN-09 is available.
+
+Baseline done condition: Reachability, partition and canonical fixtures
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-03
+- memory/Issues/TRN-07
+
+Verification integration with TRN-09 is an additional completion blocker, not a prerequisite to writing the primitive algorithms.
+
+
+## Test and delivery evidence
+
+Planned cases: TC-11, TC-12, TC-34
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 3 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-10
+- memory/Issues/TRN-102
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+9,Story,Exact equivalence and shortest witness (FR-14),"Local planning key: TRN-09
+Planning status: To Do
+Epic: TRN-102
+Depends on: TRN-07
+Requirements: FR-14
+Estimate (proposed person-days): 3
+
+
+# TRN-09 — Exact equivalence and shortest witness (FR-14)
+
+## User story / outcome
+
+As a learner or instructor, I want exact equivalence and shortest witness (fr-14), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Require identical declared alphabets; product BFS returns shortest sorted-tie witness, including [] at initial mismatch.
+- [ ] Prove equality by queue exhaustion; limits and deadlines produce errors, never equality. Integrate this checker into TRN-07 and TRN-08 before closing those stories.
+
+Baseline done condition: Positive and negative cases, ε witness
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-07
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-21, TC-22, TC-23, TC-24
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 3 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-14
+- memory/Issues/TRN-102
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+10,Story,"GNFA AST, simplifier, serializer (FR-13)","Local planning key: TRN-10
+Planning status: To Do
+Epic: TRN-102
+Depends on: TRN-08
+Requirements: FR-13
+Estimate (proposed person-days): 4
+
+
+# TRN-10 — GNFA AST, simplifier, serializer (FR-13)
+
+## User story / outcome
+
+As a learner or instructor, I want gnfa ast, simplifier, serializer (fr-13), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Use GNFA state elimination with snapshot labels, formal AST identities and deterministic precedence-aware text serialization.
+- [ ] Check AST/work/UTF-8 size budgets while generating; generation alone does not certify export.
+
+Baseline done condition: Correct elimination traces and grammar output
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-08
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-16, TC-17, TC-18, TC-19, TC-20, TC-33, TC-35
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 4 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-13
+- memory/Issues/TRN-102
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+11,Story,Independent regex parser/Thompson verifier (FR-13),"Local planning key: TRN-11
+Planning status: To Do
+Epic: TRN-102
+Depends on: TRN-07, TRN-09, TRN-10
+Requirements: FR-13
+Estimate (proposed person-days): 4
+
+
+# TRN-11 — Independent regex parser/Thompson verifier (FR-13)
+
+## User story / outcome
+
+As a learner or instructor, I want independent regex parser/thompson verifier (fr-13), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Parse emitted text independently of the generator AST, Thompson-construct, determinize and compare exactly to the original.
+- [ ] Catch mutated expressions; empty, universal, epsilon and omitted-alphabet-symbol cases pass; failed verification yields no verified artifact.
+
+Baseline done condition: Exact round-trip fixtures, negative mutation detected
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-07
+- memory/Issues/TRN-09
+- memory/Issues/TRN-10
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-16, TC-17, TC-18, TC-19, TC-20, TC-33, TC-35
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 4 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-13
+- memory/Issues/TRN-102
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+12,Story,Conversion/equivalence UI and regex export (FR-18),"Local planning key: TRN-12
+Planning status: To Do
+Epic: TRN-103
+Depends on: TRN-04, TRN-07, TRN-08, TRN-09, TRN-10, TRN-11
+Requirements: FR-18
+Estimate (proposed person-days): 5
+
+
+# TRN-12 — Conversion/equivalence UI and regex export (FR-18)
+
+## User story / outcome
+
+As a learner or instructor, I want conversion/equivalence ui and regex export (fr-18), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Integrate conversion, compare and help routes, source/result panels, meaningful derivations and explicit adopt confirmation.
+- [ ] Enable copy/download only for current verified artifacts; include full alphabet, canonical minimal DFA and verification envelope.
+- [ ] Show shortest witnesses including epsilon; allow running them on both inputs; handle clipboard denial and stale/offline/errors.
+
+Baseline done condition: Side-by-side results, verified copy/download
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-04
+- memory/Issues/TRN-07
+- memory/Issues/TRN-08
+- memory/Issues/TRN-09
+- memory/Issues/TRN-10
+- memory/Issues/TRN-11
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-16, TC-18, TC-35
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 5 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-18
+- memory/Issues/TRN-103
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+13,Story,"Mealy/Moore simulation (FR-05,06)","Local planning key: TRN-13
+Planning status: To Do
+Epic: TRN-101
+Depends on: TRN-03, TRN-06
+Requirements: FR-05, FR-06
+Estimate (proposed person-days): 2
+
+
+# TRN-13 — Mealy/Moore simulation (FR-05,06)
+
+## User story / outcome
+
+As a learner or instructor, I want mealy/moore simulation (fr-05,06), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Produce one Mealy output per input and show Moore initial output separately from normalized post-input output.
+- [ ] Empty input emits [] for Mealy and initial-only full Moore output; transducer acceptance is null.
+
+Baseline done condition: Full and normalized outputs correct
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-03
+- memory/Issues/TRN-06
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-06, TC-07
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 2 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-05
+- memory/Requirements/FR-06
+- memory/Issues/TRN-101
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+14,Story,"Transducer conversions (FR-11,12)","Local planning key: TRN-14
+Planning status: To Do
+Epic: TRN-102
+Depends on: TRN-13
+Requirements: FR-11, FR-12
+Estimate (proposed person-days): 3
+
+
+# TRN-14 — Transducer conversions (FR-11,12)
+
+## User story / outcome
+
+As a learner or instructor, I want transducer conversions (fr-11,12), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Split Mealy target states by incoming output with synthetic initial state; Moore-to-Mealy emits destination output.
+- [ ] Exact normalized-output product search verifies conversions, including empty input and multiple incoming outputs.
+
+Baseline done condition: Exact normalized-output checks pass
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-13
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-13, TC-14, TC-15, TC-34
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 3 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-11
+- memory/Requirements/FR-12
+- memory/Issues/TRN-102
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+15,Task,"Limits, errors, accessibility and integration","Local planning key: TRN-15
+Planning status: To Do
+Epic: TRN-104
+Depends on: TRN-03, TRN-04, TRN-05, TRN-06, TRN-07, TRN-08, TRN-09, TRN-10, TRN-11, TRN-12, TRN-13, TRN-14, TRN-20, TRN-21, TRN-22, TRN-23, TRN-24, TRN-25, TRN-26
+Requirements: NFR-01, NFR-02, NFR-03, NFR-04, NFR-05, NFR-06, NFR-07
+Estimate (proposed person-days): 4
+
+
+# TRN-15 — Limits, errors, accessibility and integration
+
+## User story / outcome
+
+As a maintainer, I want limits, errors, accessibility and integration, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Evaluate all seven linked NFR tasks, bounds before allocation, unified API error envelopes, local bind/CORS and privacy of logs.
+- [ ] Verify keyboard/table interaction, reduced motion, text outcomes, race handling and source preservation across all P0 workflows.
+
+Baseline done condition: Stress/error and keyboard flows pass
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-03
+- memory/Issues/TRN-04
+- memory/Issues/TRN-05
+- memory/Issues/TRN-06
+- memory/Issues/TRN-07
+- memory/Issues/TRN-08
+- memory/Issues/TRN-09
+- memory/Issues/TRN-10
+- memory/Issues/TRN-11
+- memory/Issues/TRN-12
+- memory/Issues/TRN-13
+- memory/Issues/TRN-14
+- memory/Issues/TRN-20
+- memory/Issues/TRN-21
+- memory/Issues/TRN-22
+- memory/Issues/TRN-23
+- memory/Issues/TRN-24
+- memory/Issues/TRN-25
+- memory/Issues/TRN-26
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-08, TC-09, TC-10, TC-11, TC-12, TC-13, TC-14, TC-15, TC-16, TC-17, TC-18, TC-19, TC-20, TC-21, TC-22, TC-23, TC-24, TC-28, TC-29, TC-30, TC-31, TC-32, TC-33, TC-34, TC-35, TC-38, TC-39
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 4 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/NFR-01
+- memory/Requirements/NFR-02
+- memory/Requirements/NFR-03
+- memory/Requirements/NFR-04
+- memory/Requirements/NFR-05
+- memory/Requirements/NFR-06
+- memory/Requirements/NFR-07
+- memory/Issues/TRN-104
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+16,Story,"Optional machine JSON and history (FR-19,20)","Local planning key: TRN-16
+Planning status: To Do
+Epic: TRN-105
+Depends on: TRN-17
+Requirements: FR-19, FR-20
+Estimate (proposed person-days): 3
+
+
+# TRN-16 — Optional machine JSON and history (FR-19,20)
+
+## User story / outcome
+
+As a learner or instructor, I want optional machine json and history (fr-19,20), so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Start only after recorded P0 gate evidence from TRN-17, not merely a scheduled date.
+- [ ] Versioned machine JSON round-trips; invalid/oversized/unknown-version files preserve the draft; history retains up to 20 immutable session snapshots.
+
+Baseline done condition: Valid round-trip and snapshot history
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-17
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-36, TC-37
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 3 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-19
+- memory/Requirements/FR-20
+- memory/Issues/TRN-105
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",High,transivium-p1
+17,Task,"QA, guides, release candidate, demo","Local planning key: TRN-17
+Planning status: To Do
+Epic: TRN-104
+Depends on: TRN-15
+Requirements: NFR-01, NFR-02, NFR-03, NFR-04, NFR-05, NFR-06, NFR-07
+Estimate (proposed person-days): 4
+
+
+# TRN-17 — QA, guides, release candidate, demo
+
+## User story / outcome
+
+As a maintainer, I want qa, guides, release candidate, demo, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Record actual environment, commit, expected/actual results and status for release checks; no planned case counts as passing.
+- [ ] Run fresh setup and all five simulation/seven operation paths, negative witness and verified regex demonstrations.
+- [ ] Record performance/usability limitations and partner exchange status separately; declare P0 gate only with supporting evidence.
+
+Baseline done condition: Release gates met, test evidence recorded
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-15
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: TC-08, TC-09, TC-10, TC-11, TC-12, TC-13, TC-14, TC-15, TC-16, TC-17, TC-18, TC-19, TC-20, TC-21, TC-22, TC-23, TC-24, TC-28, TC-29, TC-30, TC-31, TC-32, TC-33, TC-34, TC-35, TC-38, TC-39
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: 4 person-days.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/NFR-01
+- memory/Requirements/NFR-02
+- memory/Requirements/NFR-03
+- memory/Requirements/NFR-04
+- memory/Requirements/NFR-05
+- memory/Requirements/NFR-06
+- memory/Requirements/NFR-07
+- memory/Issues/TRN-104
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+18,Task,Saved projects and example library,"Local planning key: TRN-18
+Planning status: Deferred
+Epic: TRN-105
+Depends on: TRN-17
+Requirements: FR-21
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-18 — Saved projects and example library
+
+## User story / outcome
+
+As a learner or instructor, I want saved projects and example library, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Optional persistence and curated examples beyond basic demo fixtures
+- [ ] Deferred; detailed design, effort and test cases are not specified by the baseline.
+
+Baseline done condition: Scope and acceptance criteria agreed before any implementation.
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-17
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: Unestimated; do not interpret as zero.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-21
+- memory/Issues/TRN-105
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Low,transivium-p2-deferred
+19,Task,Advanced editing and diagram image export,"Local planning key: TRN-19
+Planning status: Deferred
+Epic: TRN-105
+Depends on: TRN-17
+Requirements: FR-22
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-19 — Advanced editing and diagram image export
+
+## User story / outcome
+
+As a learner or instructor, I want advanced editing and diagram image export, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] Optional layout presets, undo/redo and SVG/PNG export
+- [ ] Deferred; detailed design, effort and test cases are not specified by the baseline.
+
+Baseline done condition: Scope and acceptance criteria agreed before any implementation.
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+- memory/Issues/TRN-17
+
+
+
+
+## Test and delivery evidence
+
+Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: Unestimated; do not interpret as zero.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/FR-22
+- memory/Issues/TRN-105
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Low,transivium-p2-deferred
+20,Task,Verify correctness,"Local planning key: TRN-20
+Planning status: To Do
+Epic: TRN-104
+Depends on: None
+Requirements: NFR-01
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-20 — Verify correctness
+
+## User story / outcome
+
+As a maintainer, I want verify correctness, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] exact algorithmic checks and explicit formal conventions; no approximation passed off as equivalence.
+- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+
+Baseline done condition: exact algorithmic checks and explicit formal conventions; no approximation passed off as equivalence.
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+No hard issue prerequisites recorded; review linked source contracts before implementation.
+
+
+This task verifies cross-cutting requirements as component work lands; it does not duplicate the implementation estimate.
+
+## Test and delivery evidence
+
+Planned cases: TC-08, TC-09, TC-10, TC-11, TC-12, TC-13, TC-14, TC-15, TC-16, TC-17, TC-18, TC-19, TC-20, TC-21, TC-22, TC-23, TC-24, TC-33, TC-34, TC-35
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: Unestimated; do not interpret as zero.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/NFR-01
+- memory/Issues/TRN-104
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+21,Task,Verify responsiveness,"Local planning key: TRN-21
+Planning status: To Do
+Epic: TRN-104
+Depends on: None
+Requirements: NFR-02
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-21 — Verify responsiveness
+
+## User story / outcome
+
+As a maintainer, I want verify responsiveness, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] proposed p95 ≤ 2 s for ordinary reference workloads; bounded expensive operations with a clear failure state.
+- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+
+Baseline done condition: proposed p95 ≤ 2 s for ordinary reference workloads; bounded expensive operations with a clear failure state.
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+No hard issue prerequisites recorded; review linked source contracts before implementation.
+
+
+This task verifies cross-cutting requirements as component work lands; it does not duplicate the implementation estimate.
+
+## Test and delivery evidence
+
+Planned cases: TC-28, TC-29, TC-38
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: Unestimated; do not interpret as zero.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/NFR-02
+- memory/Issues/TRN-104
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+22,Task,Verify safety,"Local planning key: TRN-22
+Planning status: To Do
+Epic: TRN-104
+Depends on: None
+Requirements: NFR-03
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-22 — Verify safety
+
+## User story / outcome
+
+As a maintainer, I want verify safety, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] validate every backend request, reject oversized payloads, never execute user strings as code, avoid exposing stack traces; local-only binding by default.
+- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+
+Baseline done condition: validate every backend request, reject oversized payloads, never execute user strings as code, avoid exposing stack traces; local-only binding by default.
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+No hard issue prerequisites recorded; review linked source contracts before implementation.
+
+
+This task verifies cross-cutting requirements as component work lands; it does not duplicate the implementation estimate.
+
+## Test and delivery evidence
+
+Planned cases: TC-30
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: Unestimated; do not interpret as zero.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/NFR-03
+- memory/Issues/TRN-104
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+23,Task,Verify accessibility,"Local planning key: TRN-23
+Planning status: To Do
+Epic: TRN-104
+Depends on: None
+Requirements: NFR-04
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-23 — Verify accessibility
+
+## User story / outcome
+
+As a maintainer, I want verify accessibility, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] keyboard-operable essential controls, text/table alternative to graph, visible focus, semantic labels, acceptance not indicated by color alone.
+- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+
+Baseline done condition: keyboard-operable essential controls, text/table alternative to graph, visible focus, semantic labels, acceptance not indicated by color alone.
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+No hard issue prerequisites recorded; review linked source contracts before implementation.
+
+
+This task verifies cross-cutting requirements as component work lands; it does not duplicate the implementation estimate.
+
+## Test and delivery evidence
+
+Planned cases: TC-32, TC-39
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: Unestimated; do not interpret as zero.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/NFR-04
+- memory/Issues/TRN-104
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+24,Task,Verify reliability,"Local planning key: TRN-24
+Planning status: To Do
+Epic: TRN-104
+Depends on: None
+Requirements: NFR-05
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-24 — Verify reliability
+
+## User story / outcome
+
+As a maintainer, I want verify reliability, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] conversions never overwrite source silently; errors preserve draft; repeated identical operations deterministic in ordering where specified.
+- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+
+Baseline done condition: conversions never overwrite source silently; errors preserve draft; repeated identical operations deterministic in ordering where specified.
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+No hard issue prerequisites recorded; review linked source contracts before implementation.
+
+
+This task verifies cross-cutting requirements as component work lands; it does not duplicate the implementation estimate.
+
+## Test and delivery evidence
+
+Planned cases: TC-29, TC-31
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: Unestimated; do not interpret as zero.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/NFR-05
+- memory/Issues/TRN-104
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+25,Task,Verify maintainability,"Local planning key: TRN-25
+Planning status: To Do
+Epic: TRN-104
+Depends on: None
+Requirements: NFR-06
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-25 — Verify maintainability
+
+## User story / outcome
+
+As a maintainer, I want verify maintainability, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] pure algorithm modules, versioned JSON contract, independent unit and integration tests.
+- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+
+Baseline done condition: pure algorithm modules, versioned JSON contract, independent unit and integration tests.
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+No hard issue prerequisites recorded; review linked source contracts before implementation.
+
+
+This task verifies cross-cutting requirements as component work lands; it does not duplicate the implementation estimate.
+
+## Test and delivery evidence
+
+Planned cases: TC-38
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: Unestimated; do not interpret as zero.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/NFR-06
+- memory/Issues/TRN-104
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0
+26,Task,Verify scalability,"Local planning key: TRN-26
+Planning status: To Do
+Epic: TRN-104
+Depends on: None
+Requirements: NFR-07
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-26 — Verify scalability
+
+## User story / outcome
+
+As a maintainer, I want verify scalability, so that the documented Transivium workflow is reliable and reproducible.
+
+## Acceptance criteria
+
+- [ ] bounded state/transition/trace/regex sizes; no claim of production-scale capacity.
+- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+
+Baseline done condition: bounded state/transition/trace/regex sizes; no claim of production-scale capacity.
+All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
+
+## Dependencies and sequencing
+
+No hard issue prerequisites recorded; review linked source contracts before implementation.
+
+
+This task verifies cross-cutting requirements as component work lands; it does not duplicate the implementation estimate.
+
+## Test and delivery evidence
+
+Planned cases: TC-28
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Proposed estimate: Unestimated; do not interpret as zero.
+Record actual commands, environment, evidence, limitations and review before marking Done.
+External partner results must be recorded separately from internal verification.
+
+## Requirements and epic
+
+- memory/Requirements/NFR-07
+- memory/Issues/TRN-104
+- memory/Issues/Backlog
+
+## Sources
+
+- docs/06_PROJECT_PLAN
+- docs/02_SAD
+- docs/03_DATA_MODEL
+- docs/04_API_CONTRACT
+- docs/05_ALGORITHMS
+- docs/APP_FLOW
+- docs/07_TEST_PLAN
+",Highest,transivium-p0

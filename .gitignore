@@ -1,0 +1,33 @@
+# Local agent installations and host configuration
+.agent/
+.agents/
+.claude/
+.codex/
+.gemini/
+.opencode/
+.impeccable/
+.aws/
+
+# Secrets, dependencies and generated application output
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+coverage/
+
+# Obsidian user state; shared graph settings remain versioned
+.obsidian/workspace*.json
+.obsidian/cache/
+.obsidian/plugins/
+.obsidian/appearance.json
+.trash/
+memory/Inbox/raw/
+memory/Inbox/Web Clips/raw/
