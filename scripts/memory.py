@@ -31,7 +31,7 @@ ISSUE_FIELDS = {"issue_type", "summary", "issue_status", "priority", "depends_on
 
 
 def note_paths(root: Path) -> list[Path]:
-    paths = [root / name for name in ("README.md", "AGENTS.md", "CONTRIBUTING.md", "CHANGELOG.md")]
+    paths = [root / name for name in ("README.md", "AGENTS.md", "CONTRIBUTING.md", "CHANGELOG.md", "PRODUCT.md", "DESIGN.md")]
     paths += list((root / "docs").rglob("*.md"))
     paths += [p for p in (root / "memory").rglob("*.md")
               if not ({"Generated", "raw"} & set(p.relative_to(root / "memory").parts))]

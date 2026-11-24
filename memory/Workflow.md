@@ -45,7 +45,7 @@ The portable repository checker includes equivalent secret-pattern checks. Inspe
 
 ## Graph and Jira outputs
 
-`refresh` derives `memory/Generated/graph.json` and `memory/Generated/jira-import.csv` from canonical Markdown in README/AGENTS/CONTRIBUTING/CHANGELOG, docs and memory. No timestamps or machine-specific absolute paths enter generated outputs. Obsidian builds its native graph live from wikilinks. [[memory/Issues/Backlog]] explains Jira import field mapping and relationship limitations.
+`refresh` derives `memory/Generated/graph.json` and `memory/Generated/jira-import.csv` from canonical Markdown in README/AGENTS/CONTRIBUTING/CHANGELOG/PRODUCT/DESIGN, docs and memory. No timestamps or machine-specific absolute paths enter generated outputs. Obsidian builds its native graph live from wikilinks. [[memory/Issues/Backlog]] explains Jira import field mapping and relationship limitations.
 
 ## Links
 
