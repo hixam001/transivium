@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # Application Flow — Transivium
 
-Version 0.1 | Proposed UI routes, no accounts
+Version 0.1 | Core editor/help/compare routes implemented through TRN-12; the flow below remains the release acceptance target. No accounts.
 
 ## 1. Entry points
 Direct local URL `/` opens welcome screen with machine choices and demo examples. `/editor`, `/compare`, `/help` are direct routes. A refresh/revisit opens a new in-memory session unless P1 file import is used. No email notifications, OAuth, search indexing, marketing or account onboarding in MVP. Local maintainer starts services outside app.

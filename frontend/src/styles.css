@@ -835,3 +835,255 @@ footer {
     gap: 10px;
   }
 }
+.conversion-body {
+  padding: 20px;
+}
+.conversion-form {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.conversion-form label {
+  flex: 1;
+  min-width: 180px;
+}
+.result-heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 22px 0 18px;
+}
+.result-heading p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 65ch;
+}
+.regex-export {
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 18px;
+}
+.regex-export h3 {
+  font-size: 15px;
+  margin: 0 0 15px;
+}
+.regex-export textarea {
+  width: 100%;
+  font:
+    15px/1.7 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  resize: vertical;
+  margin-bottom: 10px;
+  color: #224c98;
+  overflow-wrap: anywhere;
+}
+.regex-export > p {
+  font-size: 13px;
+}
+.export-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.feedback {
+  min-height: 20px;
+  margin-top: 9px;
+  color: #42654b;
+  font-size: 12px !important;
+}
+.result-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+.result-pair > div {
+  min-width: 0;
+}
+.result-pair h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+.result-pair .graph {
+  height: 250px;
+  background: #fafcff;
+}
+.derivation {
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.derivation summary {
+  cursor: pointer;
+  line-height: 1.6;
+}
+.derivation > summary {
+  font-weight: 600;
+}
+.derivation ol {
+  padding-left: 22px;
+  max-height: 480px;
+  overflow: auto;
+}
+.derivation li {
+  padding: 9px 0;
+  font-size: 13px;
+}
+.derivation dl > div {
+  margin: 12px 0;
+}
+.derivation dt {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: capitalize;
+}
+.derivation dd {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.compare-intro {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 80ch;
+  margin-bottom: 24px;
+}
+.compare-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.compare-side {
+  min-width: 0;
+}
+.compare-fields {
+  padding: 18px;
+  display: grid;
+  gap: 18px;
+}
+.compare-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.compare-options select {
+  flex: 1;
+  min-width: 120px;
+}
+.compare-options button {
+  font-size: 12px;
+}
+.compare-options .checkbox-label {
+  margin-right: auto;
+}
+.field-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.field-row > label {
+  flex: 1;
+  min-width: 100px;
+}
+.compare-side .graph {
+  height: 240px;
+}
+.compare-side .panel {
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+}
+.compare-side .panel-heading {
+  padding: 16px;
+}
+.compare-side .panel-heading p {
+  max-width: 40ch;
+}
+.compare-side th,
+.compare-side td {
+  padding: 10px;
+}
+.compare-validation {
+  padding: 16px;
+  border-top: 1px solid var(--line);
+}
+.compare-validation p {
+  font-size: 12px;
+  margin-top: 12px;
+}
+.compare-result {
+  margin-top: 22px;
+  padding: 22px;
+}
+.compare-result-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.compare-result-actions p {
+  color: var(--muted);
+  font-size: 12px;
+}
+.compare-result h2 {
+  margin: 18px 0 8px;
+}
+.compare-result p {
+  margin-bottom: 12px;
+}
+.witness code {
+  display: inline-block;
+  padding: 6px 10px;
+  background: #edf3fe;
+  border-radius: 5px;
+  color: #2456bd;
+}
+.witness-replay {
+  margin-top: 12px;
+  color: #315e4a;
+}
+@media (max-width: 1250px) {
+  .compare-pair {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .sidebar nav {
+    flex-wrap: wrap;
+  }
+  .nav-item {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .conversion-body {
+    padding: 15px;
+  }
+  .result-pair {
+    grid-template-columns: 1fr;
+  }
+  .conversion-form > button {
+    width: 100%;
+  }
+  .compare-result {
+    padding: 18px;
+  }
+  .compare-fields {
+    padding: 15px;
+  }
+  .result-pair .graph {
+    height: 220px;
+  }
+}
+.nav-item {
+  text-align: left;
+}

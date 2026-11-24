@@ -21,7 +21,7 @@ Transivium is an interactive Theory of Automata university project for construct
 ## Project memory and implementation backlog
 Open this repository folder as an Obsidian vault and start at [[memory/Home]]. See [[memory/Issues/Backlog]] for Jira-style stories and CSV import guidance, [[memory/Requirements/Index]] for requirement traceability, and [[memory/Handoffs/Current]] for the next task. Follow [AGENTS.md](AGENTS.md) for the memory-first workflow. Validate with `python3 scripts/memory.py refresh` then `python3 scripts/memory.py check`.
 
-## Planned features
+## Feature scope
 - Visual graph and transition-table editor; formal validation.
 - Step-by-step simulations for all five machine kinds.
 - ε-NFA → NFA, NFA → DFA, ε-NFA → DFA, DFA minimization, Mealy ↔ Moore.
@@ -30,7 +30,7 @@ Open this repository folder as an Obsidian vault and start at [[memory/Home]]. S
 - Verified regex copy/download with declared alphabet and canonical minimal DFA.
 - Optional after P0: machine JSON import/export and session history.
 
-## Proposed stack
+## Implementation stack
 React + TypeScript + Vite + React Flow; Python + FastAPI + Pydantic; pytest and frontend test tooling. Local stateless backend, no accounts or database. Exact dependency versions and platform prerequisites to be pinned during implementation.
 
 ## Quick start

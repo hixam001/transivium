@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Independent iterative formal-v1 parser and Thompson constructor implemented; DFA-to-regex API now emits artifacts only after exact reconstruction and canonical-reference checks."
-next_actions: ["TRN-12"]
+current_state: "Conversion/results and educational derivations implemented with confirmed adoption, independently verified regex copy/JSON download, canonical reference diagrams, and a two-sided editable comparison workspace with witness replay. Navigation protects unsaved comparison edits."
+next_actions: ["TRN-13"]
 ---
 
 # Project state
@@ -69,3 +69,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-10]]: Bounded formal regex AST, sound simplifier, precedence-aware deterministic serialization and GNFA elimination traces implemented. No regex export is certified or exposed yet. Next: [[memory/Issues/TRN-11]].
 
 - [[memory/Issues/TRN-11]]: Independent iterative formal-v1 parser and Thompson constructor implemented; DFA-to-regex API now emits artifacts only after exact reconstruction and canonical-reference checks. Next: [[memory/Issues/TRN-12]].
+
+- [[memory/Issues/TRN-12]]: Conversion/results and educational derivations implemented with confirmed adoption, independently verified regex copy/JSON download, canonical reference diagrams, and a two-sided editable comparison workspace with witness replay. Navigation protects unsaved comparison edits. Next: [[memory/Issues/TRN-13]].

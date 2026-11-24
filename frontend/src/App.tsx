@@ -8,12 +8,15 @@ import {
   Plus,
   ShieldCheck,
   Trash2,
+  ArrowRightLeft,
 } from "lucide-react";
 import type { Connection } from "@xyflow/react";
 import { api, ApiError } from "./api";
 import Graph from "./Graph";
 import TransitionTable from "./TransitionTable";
 import Simulation from "./Simulation";
+import Conversion from "./Conversion";
+import Compare from "./Compare";
 import type { Highlight } from "./Simulation";
 import type { Issue, Kind, Machine } from "./model";
 import {
@@ -25,6 +28,12 @@ import {
   removeState,
 } from "./model";
 import "./styles.css";
+const currentPage = () =>
+  location.pathname === "/help"
+    ? "help"
+    : location.pathname === "/compare"
+      ? "compare"
+      : "editor";
 
 export default function App() {
   const [machine, setMachine] = useState<Machine>(() =>
@@ -33,6 +42,7 @@ export default function App() {
   const [title, setTitle] = useState("Ends in 01");
   const [selected, setSelected] = useState("q0");
   const [dirty, setDirty] = useState(false);
+  const [compareDirty, setCompareDirty] = useState(false);
   const [revision, setRevision] = useState(0);
   const [highlight, setHighlight] = useState<Highlight>({
     states: [],
@@ -43,27 +53,37 @@ export default function App() {
     "draft" | "pending" | "valid" | "invalid"
   >("draft");
   const [error, setError] = useState("");
-  const [page, setPage] = useState(
-    location.pathname === "/help" ? "help" : "editor",
-  );
+  const [page, setPage] = useState(currentPage);
   const generation = useRef(0);
   const state = machine.states.find((s) => s.id === selected);
   useEffect(() => {
     function warn(e: BeforeUnloadEvent) {
-      if (dirty) {
+      if (dirty || compareDirty) {
         e.preventDefault();
         e.returnValue = "";
       }
     }
     window.addEventListener("beforeunload", warn);
     return () => window.removeEventListener("beforeunload", warn);
-  }, [dirty]);
+  }, [dirty, compareDirty]);
   useEffect(() => {
-    const changed = () =>
-      setPage(location.pathname === "/help" ? "help" : "editor");
+    const changed = () => {
+      if (
+        page === "compare" &&
+        compareDirty &&
+        !window.confirm(
+          "Leave comparison? Unsaved comparison edits will be lost.",
+        )
+      ) {
+        history.pushState({}, "", "/compare");
+        return;
+      }
+      setCompareDirty(false);
+      setPage(currentPage());
+    };
     window.addEventListener("popstate", changed);
     return () => window.removeEventListener("popstate", changed);
-  }, []);
+  }, [compareDirty, page]);
   function update(next: Machine) {
     setHighlight({ states: [], edges: [] });
     generation.current++;
@@ -76,24 +96,31 @@ export default function App() {
   }
   function replace(next: Machine, name: string) {
     if (
-      dirty &&
-      !window.confirm("Replace the current draft? Unsaved edits will be lost.")
+      (dirty || compareDirty) &&
+      !window.confirm(
+        "Replace the current draft? Unsaved editor or comparison edits will be lost.",
+      )
     )
-      return;
+      return false;
+    setCompareDirty(false);
     update(structuredClone(next));
     setTitle(name);
     setSelected(next.states[0]?.id ?? "");
     setDirty(false);
+    return true;
   }
   function navigate(next: string) {
     if (
-      dirty &&
+      (dirty || compareDirty) &&
       !window.confirm(
-        "Leave the editor? Your draft stays in this session, but refreshing will lose it.",
+        compareDirty
+          ? "Leave comparison? Unsaved comparison edits will be lost; the editor draft stays in this session."
+          : "Leave the editor? Your draft stays in this session, but refreshing will lose it.",
       )
     )
       return;
-    history.pushState({}, "", next === "help" ? "/help" : "/editor");
+    setCompareDirty(false);
+    history.pushState({}, "", `/${next}`);
     setPage(next);
   }
   function addState() {
@@ -113,6 +140,17 @@ export default function App() {
       ],
     });
     setSelected(id);
+  }
+  function adopt(next: Machine) {
+    if (
+      !window.confirm(
+        "Adopt the verified result and replace the current draft?",
+      )
+    )
+      return;
+    update(structuredClone(next));
+    setTitle("Converted machine");
+    setSelected(next.states[0]?.id ?? "");
   }
   function connect(c: Connection) {
     if (!c.source || !c.target) return;
@@ -207,6 +245,13 @@ export default function App() {
             Workspace
           </button>
           <button
+            className={page === "compare" ? "nav-item selected" : "nav-item"}
+            onClick={() => navigate("compare")}
+          >
+            <ArrowRightLeft size={18} />
+            Compare languages
+          </button>
+          <button
             className={page === "help" ? "nav-item selected" : "nav-item"}
             onClick={() => navigate("help")}
           >
@@ -222,7 +267,7 @@ export default function App() {
               <button
                 key={e.id}
                 onClick={() => {
-                  replace(e.machine, exampleNames[e.id]);
+                  if (!replace(e.machine, exampleNames[e.id])) return;
                   if (page !== "editor") {
                     history.pushState({}, "", "/editor");
                     setPage("editor");
@@ -247,7 +292,11 @@ export default function App() {
         <header className="page-heading">
           <div>
             <h1>
-              {page === "help" ? "Guide & notation" : "Machine workspace"}
+              {page === "help"
+                ? "Guide & notation"
+                : page === "compare"
+                  ? "Compare languages"
+                  : "Machine workspace"}
             </h1>
             <p>
               {page === "help"
@@ -311,6 +360,11 @@ export default function App() {
               export.
             </p>
           </section>
+        ) : page === "compare" ? (
+          <Compare
+            editorMachine={machine}
+            onEdit={() => setCompareDirty(true)}
+          />
         ) : (
           <>
             <section className="machine-toolbar">
@@ -394,6 +448,12 @@ export default function App() {
                   />
                 </section>
                 <TransitionTable machine={machine} update={update} />
+                <Conversion
+                  key={`convert-${revision}`}
+                  machine={machine}
+                  valid={validation === "valid"}
+                  onAdopt={adopt}
+                />
                 {isAcceptor(machine) && (
                   <Simulation
                     key={revision}

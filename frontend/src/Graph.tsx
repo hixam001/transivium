@@ -102,16 +102,21 @@ export default function Graph({
   connect,
   activeStates = [],
   activeTransitions = [],
+  readOnly = false,
 }: {
   machine: Machine;
   select: (id: string) => void;
   connect: (c: Connection) => void;
   activeStates?: string[];
   activeTransitions?: Transition[];
+  readOnly?: boolean;
 }) {
   const [positions, setPositions] = useState<
     Record<string, { x: number; y: number }>
   >({});
+  const viewOptions = readOnly
+    ? { padding: { top: 60, bottom: 60, x: 35 }, maxZoom: 1 }
+    : fitOptions;
   const flow = useRef<(() => void) | null>(null);
   useEffect(() => {
     const refit = () => {
@@ -181,7 +186,7 @@ export default function Graph({
         onConnect={connect}
         onInit={(instance) => {
           flow.current = () => {
-            void instance.fitView(fitOptions);
+            void instance.fitView(viewOptions);
           };
         }}
         onNodesChange={(changes) =>
@@ -195,17 +200,21 @@ export default function Graph({
           })
         }
         fitView
-        fitViewOptions={fitOptions}
+        fitViewOptions={viewOptions}
         minZoom={0.2}
         maxZoom={2}
         deleteKeyCode={null}
+        nodesDraggable={!readOnly}
+        nodesConnectable={!readOnly}
       >
         <Background color="#d8e0ec" gap={22} size={1.2} />
-        <Controls showInteractive={false} fitViewOptions={fitOptions} />
+        <Controls showInteractive={false} fitViewOptions={viewOptions} />
       </ReactFlow>
-      <span className="canvas-hint">
-        Drag states to arrange · connect handles to add an edge
-      </span>
+      {!readOnly && (
+        <span className="canvas-hint">
+          Drag states to arrange · connect handles to add an edge
+        </span>
+      )}
     </div>
   );
 }
