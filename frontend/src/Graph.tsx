@@ -12,7 +12,7 @@ import {
 } from "@xyflow/react";
 import type { Connection, NodeProps, EdgeProps } from "@xyflow/react";
 import { ArrowRight } from "lucide-react";
-import type { Machine } from "./model";
+import type { Machine, Transition } from "./model";
 import "@xyflow/react/dist/style.css";
 
 function MachineNode({ data }: NodeProps) {
@@ -76,8 +76,8 @@ function MachineEdge(props: EdgeProps) {
         path={String(path)}
         markerEnd={markerEnd}
         style={{
-          stroke: props.selected ? "#245cd6" : "#8292ac",
-          strokeWidth: 1.8,
+          stroke: props.data?.active ? "#245cd6" : "#8292ac",
+          strokeWidth: props.data?.active ? 3 : 1.8,
         }}
       />
       <EdgeLabelRenderer>
@@ -101,11 +101,13 @@ export default function Graph({
   select,
   connect,
   activeStates = [],
+  activeTransitions = [],
 }: {
   machine: Machine;
   select: (id: string) => void;
   connect: (c: Connection) => void;
   activeStates?: string[];
+  activeTransitions?: Transition[];
 }) {
   const [positions, setPositions] = useState<
     Record<string, { x: number; y: number }>
@@ -160,9 +162,14 @@ export default function Graph({
       target: e.target,
       label: e.labels.join(", "),
       type: "machine",
+      data: {
+        active: activeTransitions.some(
+          (t) => t.from === e.source && t.to === e.target,
+        ),
+      },
       markerEnd: { type: MarkerType.ArrowClosed, color: "#8292ac" },
     }));
-  }, [machine.transitions]);
+  }, [machine.transitions, activeTransitions]);
   return (
     <div className="graph" role="region" aria-label="Machine graph">
       <ReactFlow

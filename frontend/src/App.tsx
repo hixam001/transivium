@@ -13,6 +13,8 @@ import type { Connection } from "@xyflow/react";
 import { api, ApiError } from "./api";
 import Graph from "./Graph";
 import TransitionTable from "./TransitionTable";
+import Simulation from "./Simulation";
+import type { Highlight } from "./Simulation";
 import type { Issue, Kind, Machine } from "./model";
 import {
   blank,
@@ -32,6 +34,10 @@ export default function App() {
   const [selected, setSelected] = useState("q0");
   const [dirty, setDirty] = useState(false);
   const [revision, setRevision] = useState(0);
+  const [highlight, setHighlight] = useState<Highlight>({
+    states: [],
+    edges: [],
+  });
   const [issues, setIssues] = useState<Issue[]>([]);
   const [validation, setValidation] = useState<
     "draft" | "pending" | "valid" | "invalid"
@@ -59,6 +65,7 @@ export default function App() {
     return () => window.removeEventListener("popstate", changed);
   }, []);
   function update(next: Machine) {
+    setHighlight({ states: [], edges: [] });
     generation.current++;
     setMachine(next);
     setRevision((r) => r + 1);
@@ -382,9 +389,19 @@ export default function App() {
                     machine={machine}
                     select={setSelected}
                     connect={connect}
+                    activeStates={highlight.states}
+                    activeTransitions={highlight.edges}
                   />
                 </section>
                 <TransitionTable machine={machine} update={update} />
+                {isAcceptor(machine) && (
+                  <Simulation
+                    key={revision}
+                    machine={machine}
+                    valid={validation === "valid"}
+                    onStep={setHighlight}
+                  />
+                )}
               </div>
               <aside className="inspector panel">
                 <h2>Machine definition</h2>

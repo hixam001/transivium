@@ -22,6 +22,8 @@ __pycache__/
 .pytest_cache/
 dist/
 coverage/
+frontend/test-results/
+frontend/playwright-report/
 
 # Obsidian user state; shared graph settings remain versioned
 .obsidian/workspace*.json

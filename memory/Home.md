@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Documentation and memory baseline; application not implemented"
-next_actions: ["Review TRN-01 handoff", "Resolve formal and stack decisions", "Implement scaffold through TRN-02"]
+current_state: "Acceptor editor, validation, simulation and playback implemented; conversions next"
+next_actions: ["TRN-07"]
 ---
 
 # Transivium memory home

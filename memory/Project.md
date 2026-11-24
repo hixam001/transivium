@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "DFA/NFA/epsilon-NFA simulation and POST /simulate implemented with immutable initial-plus-n traces, closure edges and bounded response construction."
-next_actions: ["TRN-06"]
+current_state: "Acceptor playback implemented with initial/next/back/reset/play/pause controls, state/edge highlights, trace navigation, explicit empty input and safe error/stale handling."
+next_actions: ["TRN-07"]
 ---
 
 # Project state
@@ -57,3 +57,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-04]]: Responsive five-kind graph/table editor implemented with state/edge editing, safe deletion/replacement, sample machines, keyboard forms and revision-aware validation. Product/design context recorded from the supplied brief. Next: [[memory/Issues/TRN-05]].
 
 - [[memory/Issues/TRN-05]]: DFA/NFA/epsilon-NFA simulation and POST /simulate implemented with immutable initial-plus-n traces, closure edges and bounded response construction. Next: [[memory/Issues/TRN-06]].
+
+- [[memory/Issues/TRN-06]]: Acceptor playback implemented with initial/next/back/reset/play/pause controls, state/edge highlights, trace navigation, explicit empty input and safe error/stale handling. Next: [[memory/Issues/TRN-07]].

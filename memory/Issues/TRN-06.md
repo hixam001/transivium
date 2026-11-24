@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-06"
 issue_type: "Story"
 summary: "Playback and simulation UI (FR-16)"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-101"
 depends_on: ["TRN-04", "TRN-05"]
@@ -27,8 +27,8 @@ As a learner or instructor, I want playback and simulation ui (fr-16), so that t
 
 ## Acceptance criteria
 
-- [ ] Provide Next, Previous, Play/Pause and Reset with initial state, consumed symbol, text result and closure visualization.
-- [ ] Ignore responses for old revisions, stop playback on route exit and retain the draft on network or server errors.
+- [x] Provide Next, Previous, Play/Pause and Reset with initial state, consumed symbol, text result and closure visualization.
+- [x] Ignore responses for old revisions, stop playback on route exit and retain the draft on network or server errors.
 
 Baseline done condition: Step/back/play/reset and errors work
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -64,3 +64,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Acceptor playback implemented with initial/next/back/reset/play/pause controls, state/edge highlights, trace navigation, explicit empty input and safe error/stale handling.
+
+11 frontend component tests, lint and build passed. Three live Chromium acceptance checks passed: D01 playback/graph highlight/edit invalidation, epsilon empty-input closure and invalid-token error recovery, and 390px table/layout. Inspected rendered playback. Backend suite remains 44 passing tests.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
