@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-24"
 issue_type: "Task"
 summary: "Verify reliability"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-104"
 depends_on: []
@@ -27,8 +27,8 @@ As a maintainer, I want verify reliability, so that the documented Transivium wo
 
 ## Acceptance criteria
 
-- [ ] conversions never overwrite source silently; errors preserve draft; repeated identical operations deterministic in ordering where specified.
-- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+- [x] conversions never overwrite source silently; errors preserve draft; repeated identical operations deterministic in ordering where specified.
+- [x] Record reproducible evidence and any unmet target before the P0 release gate.
 
 Baseline done condition: conversions never overwrite source silently; errors preserve draft; repeated identical operations deterministic in ordering where specified.
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -43,7 +43,7 @@ This task verifies cross-cutting requirements as component work lands; it does n
 ## Test and delivery evidence
 
 Planned cases: TC-29, TC-31
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: Unestimated; do not interpret as zero.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -63,3 +63,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Reliability hardened with protected same-page/browser-Back navigation, visible request IDs, isolated diagram/route load failures and preserved drafts. Deterministic operation and trace ordering verified.
+
+158 backend tests passed. Seven browser reliability cases passed: offline/deadline retry, late simulation and conversion, dirty navigation, cancelled adoption and recoverable graph/compare chunk failures. Frontend lint/build and 17 component checks passed. Inspected fallback renders; cached module failure does not trigger a silent reload or a false retry promise.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

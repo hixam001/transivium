@@ -1110,3 +1110,13 @@ footer {
 .skip-link:focus {
   top: 12px;
 }
+.graph-unavailable {
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  color: #963343;
+  text-align: center;
+}
+.guide > button {
+  margin-top: 18px;
+}

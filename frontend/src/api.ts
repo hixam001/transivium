@@ -7,7 +7,7 @@ export class ApiError extends Error {
     public issues: Issue[] = [],
     public requestId?: string,
   ) {
-    super(message);
+    super(requestId ? `${message} Request ID: ${requestId}.` : message);
   }
 }
 export async function api<T>(path: string, body?: unknown): Promise<T> {

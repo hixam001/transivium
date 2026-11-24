@@ -28,6 +28,7 @@ import {
   removeState,
 } from "./model";
 import AlphabetInput from "./AlphabetInput";
+import LoadBoundary from "./LoadBoundary";
 import "./styles.css";
 const currentPage = () =>
   location.pathname === "/help"
@@ -69,22 +70,26 @@ export default function App() {
   }, [dirty, compareDirty]);
   useEffect(() => {
     const changed = () => {
+      const next = currentPage();
+      if (next === page) return;
       if (
-        page === "compare" &&
-        compareDirty &&
+        ((page === "compare" && compareDirty) ||
+          (page === "editor" && dirty)) &&
         !window.confirm(
-          "Leave comparison? Unsaved comparison edits will be lost.",
+          page === "compare"
+            ? "Leave comparison? Unsaved comparison edits will be lost."
+            : "Leave the editor? Your draft stays in this session, but refreshing will lose it.",
         )
       ) {
-        history.pushState({}, "", "/compare");
+        history.pushState({}, "", `/${page}`);
         return;
       }
       setCompareDirty(false);
-      setPage(currentPage());
+      setPage(next);
     };
     window.addEventListener("popstate", changed);
     return () => window.removeEventListener("popstate", changed);
-  }, [compareDirty, page]);
+  }, [compareDirty, dirty, page]);
   function update(next: Machine) {
     setHighlight({ states: [], edges: [] });
     generation.current++;
@@ -111,6 +116,7 @@ export default function App() {
     return true;
   }
   function navigate(next: string) {
+    if (next === page) return;
     if (
       (dirty || compareDirty) &&
       !window.confirm(
@@ -365,14 +371,28 @@ export default function App() {
             </p>
           </section>
         ) : page === "compare" ? (
-          <Suspense
-            fallback={<p role="status">Loading comparison workspace…</p>}
+          <LoadBoundary
+            fallback={
+              <section className="panel guide" role="alert">
+                <h2>Comparison workspace could not load</h2>
+                <p>
+                  Your editor draft is safe. Return to the workspace to continue editing.
+                </p>
+                <button onClick={() => navigate("editor")}>
+                  Return to workspace
+                </button>
+              </section>
+            }
           >
-            <Compare
-              editorMachine={machine}
-              onEdit={() => setCompareDirty(true)}
-            />
-          </Suspense>
+            <Suspense
+              fallback={<p role="status">Loading comparison workspace…</p>}
+            >
+              <Compare
+                editorMachine={machine}
+                onEdit={() => setCompareDirty(true)}
+              />
+            </Suspense>
+          </LoadBoundary>
         ) : (
           <>
             <section className="machine-toolbar">
@@ -499,6 +519,7 @@ export default function App() {
                 <label>
                   Start state
                   <select
+                    aria-label="Start state"
                     value={machine.startState}
                     onChange={(e) =>
                       update({ ...machine, startState: e.target.value })
@@ -517,6 +538,7 @@ export default function App() {
                 <label>
                   Selected state
                   <select
+                    aria-label="Selected state"
                     value={selected}
                     onChange={(e) => setSelected(e.target.value)}
                   >

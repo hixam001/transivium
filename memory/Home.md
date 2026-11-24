@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Keyboard/table accessibility improved with skip navigation, named landmarks/graph regions, state descriptions, stronger focus/contrast and natural alphabet-field editing."
-next_actions: ["TRN-24"]
+current_state: "Reliability hardened with protected same-page/browser-Back navigation, visible request IDs, isolated diagram/route load failures and preserved drafts. Deterministic operation and trace ordering verified."
+next_actions: ["TRN-25"]
 ---
 
 # Transivium memory home
