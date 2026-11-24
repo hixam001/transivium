@@ -1,0 +1,1 @@
+"""Transivium stateless automata service."""

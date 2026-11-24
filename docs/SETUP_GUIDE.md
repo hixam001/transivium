@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # Setup & Development Guide — Transivium
 
-Version 0.1 | Proposed commands for future scaffold; no runnable app in this package.
+Version 0.1 | Scaffold implemented; feature implementation is tracked in [[memory/Project]]. Tested on Python 3.14.10, Node 26.13.1, npm 12.2.3. Frontend packages are pinned in package.json/package-lock.json; all backend runtime and development dependencies are pinned in requirements.txt.
 
 ## 1. Prerequisites
 - Git, Python (proposed 3.12 or a supported later version), Node.js active LTS compatible with selected Vite version, npm.
@@ -44,7 +44,7 @@ npm run dev -- --host 127.0.0.1 --port 5173 --strictPort
 `npm ci` requires committed lockfile; initial scaffold creation generates it with npm install. Visit `http://127.0.0.1:5173`. The frontend uses `/api/v1` via Vite proxy to port 8000 (configure target during scaffold). No frontend secret variables. Proposed dev configuration: `VITE_API_BASE_URL=/api/v1`; optional `TRANSIVIUM_ALLOWED_ORIGIN=http://127.0.0.1:5173` for backend direct-origin access. Exact variable loading must be implemented and documented before release. Local same-origin proxy preferred; do not use permissive CORS wildcard for public deployment.
 
 ## 5. Run checks (target scripts)
-Backend from `backend/` after activation: `python -m pytest`. Frontend from `frontend/`: `npm run lint`, `npm run test`, `npm run build`. Add these scripts during TRN-02. End-to-end runner selection [DECIDE]; document installation and exact invocation when integrated. Test reports must include environment, dependency versions and commit. None of these commands has been executed against application source in this documentation package.
+Backend from `backend/` after activation: `python -m pytest`. Frontend from `frontend/`: `npm run lint`, `npm run test`, `npm run build`. Add these scripts during TRN-02. End-to-end runner selection [DECIDE]; document installation and exact invocation when integrated. Test reports must include environment, dependency versions and commit. The scaffold health and frontend smoke tests, lint and build have run. Detailed evidence is in [[memory/Issues/TRN-02]]. In this coding sandbox, threaded TestClient requires the elevated execution path; normal local execution passes.
 
 ## 6. Troubleshooting
 | Symptom | Check / recovery |

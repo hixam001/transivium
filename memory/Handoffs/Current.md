@@ -11,16 +11,8 @@ tags: ["transivium", "reference"]
 
 # Current handoff
 
-## Current closeout
+Active task: [[memory/Handoffs/TRN-02]] → [[memory/Issues/TRN-02]].
 
-[[memory/Handoffs/MEM-001]] records the memory bootstrap. Its durable closeout is [[memory/Sessions/2026-11-24-Memory-Bootstrap]]. Git history and remote verification establish publication; no self-referential commit-hash rewrite is required.
+Read [[memory/Project]] and [[memory/Workflow]] before implementation.
 
-## Next implementation task
-
-[[memory/Handoffs/TRN-01]] → [[memory/Issues/TRN-01]]. Read the handoff and required memory before implementing. Update Current to a new task handoff before the next task's implementation.
-
-## Links
-
-- [[memory/Project]]
-- [[memory/Workflow]]
 - [[memory/Home]]

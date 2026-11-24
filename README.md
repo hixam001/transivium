@@ -14,7 +14,7 @@ tags: ["transivium", "documentation"]
 **Finite Automata & Transducer Simulation Studio**\
 Construct. Convert. Simulate. Verify.
 
-> Documentation baseline v0.1 — proposed implementation. This package contains specifications and guides, not runnable application source. No test or release is represented as complete.
+> Implementation in progress. The frontend and local FastAPI health service run; core automata features are tracked in the linked backlog. No full application release is claimed.
 
 Transivium is an interactive Theory of Automata university project for constructing, simulating and converting DFA, NFA, ε-NFA, Mealy and Moore machines. Its signature feature is DFA-to-regular-expression export with exact language-equivalence verification and an exchange format for an independent simulator.
 
@@ -33,8 +33,8 @@ Open this repository folder as an Obsidian vault and start at [[memory/Home]]. S
 ## Proposed stack
 React + TypeScript + Vite + React Flow; Python + FastAPI + Pydantic; pytest and frontend test tooling. Local stateless backend, no accounts or database. Exact dependency versions and platform prerequisites to be pinned during implementation.
 
-## Quick start (planned, after scaffold exists)
-See [Setup Guide](docs/SETUP_GUIDE.md) for prerequisites, commands and configuration. Once source and dependency manifests exist, install backend requirements in a virtual environment and frontend dependencies via npm, then run local API and Vite in separate terminals. The current documentation-only package does not include those manifests or services, so these commands cannot run yet.
+## Quick start
+See [Setup Guide](docs/SETUP_GUIDE.md). Install `backend/requirements.txt` in a virtual environment and run `python -m uvicorn app.main:app --host 127.0.0.1 --port 8000` from `backend/`. In a second terminal run `npm ci` and `npm run dev` from `frontend/`. Open http://127.0.0.1:5173. Tests: backend `python -m pytest`; frontend `npm run lint`, `npm test`, `npm run build`.
 
 ## Documentation index
 | Document | Purpose |

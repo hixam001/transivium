@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-02"
 issue_type: "Task"
 summary: "Bootstrap repo, lint, test, local setup"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-100"
 depends_on: ["TRN-01"]
@@ -27,8 +27,8 @@ As a maintainer, I want bootstrap repo, lint, test, local setup, so that the doc
 
 ## Acceptance criteria
 
-- [ ] Create backend/frontend manifests and lockfiles, pin tested runtime/dependency versions, and document a clean local checkout.
-- [ ] Implement health endpoint and runnable lint/test/build commands with local proxy/bind configuration.
+- [x] Create backend/frontend manifests and lockfiles, pin tested runtime/dependency versions, and document a clean local checkout.
+- [x] Implement health endpoint and runnable lint/test/build commands with local proxy/bind configuration.
 
 Baseline done condition: Clean checkout starts both services and tests
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -63,3 +63,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Runnable React/Vite and FastAPI scaffold implemented with exact package pins and lockfile, local proxy and health endpoint.
+
+Backend health test passed; Ruff passed; frontend lint, one Vitest test and production build passed; both local servers started and returned expected content. Python 3.14.10/Node 26.13.1/npm 12.2.3. Backend TestClient needs elevated execution in this sandbox.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

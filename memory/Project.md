@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Formal contracts and ten reference fixtures implemented; architecture selected for local implementation, with partner agreement explicitly pending."
-next_actions: ["TRN-02"]
+current_state: "Runnable React/Vite and FastAPI scaffold implemented with exact package pins and lockfile, local proxy and health endpoint."
+next_actions: ["TRN-03"]
 ---
 
 # Project state
@@ -20,7 +20,7 @@ Transivium is a university finite automata/transducer studio. P0 covers all five
 
 ## Current state
 
-The initial repository contained specifications and guides only, no application source, manifests, executable tests or commits. This bootstrap adds an Obsidian vault, Jira-style requirements/backlog, repeatable validation and task instructions. It does not implement the application. No FR/NFR is marked delivered. The original proposed P0 estimate is 53 person-days, not an approved timeline.
+The initial repository contained specifications and guides only, no application source, manifests, executable tests or commits. The Obsidian vault and formal fixtures are implemented; application implementation progress and actual evidence are recorded below. No full release is claimed. The original proposed P0 estimate is 53 person-days, not an approved timeline.
 
 ## Durable decisions
 
@@ -30,8 +30,8 @@ The initial repository contained specifications and guides only, no application 
 
 ## Next actions
 
-1. Start [[memory/Handoffs/TRN-01]] and [[memory/Issues/TRN-01]]; record decisions/fixtures without inventing stakeholder approval.
-2. Implement [[memory/Issues/TRN-02]] once its contract prerequisite is satisfied; pin and verify actual dependencies.
+1. Follow the active [[memory/Handoffs/Current]] and latest implementation progress below.
+2. Use the pinned scaffold and formal fixtures; do not invent stakeholder approval.
 3. Follow [[memory/Issues/Backlog]]; close conversions only after exact verification integration.
 
 ## Evidence and limitations
@@ -49,3 +49,5 @@ Documentation checks are separate from application tests. TC-01–39 remain NOT 
 ## Implementation progress
 
 - [[memory/Issues/TRN-01]]: Formal contracts and ten reference fixtures implemented; architecture selected for local implementation, with partner agreement explicitly pending. Next: [[memory/Issues/TRN-02]].
+
+- [[memory/Issues/TRN-02]]: Runnable React/Vite and FastAPI scaffold implemented with exact package pins and lockfile, local proxy and health endpoint. Next: [[memory/Issues/TRN-03]].
