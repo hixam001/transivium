@@ -1,7 +1,7 @@
 ---
 id: "memory-handoffs-trn-28"
 type: "session"
-status: "active"
+status: "complete"
 created: "2026-11-24"
 updated: "2026-11-24"
 confidence: "high"
@@ -30,7 +30,11 @@ Inspect canonical contracts and current source; implement the selected issue; ad
 
 ## Closeout
 
-Version metadata, MIT source license, release notes and external validation guide are ready. A clean source-only install built the frontend and ran the HTTP demo with 12 simulation samples, seven conversions and three comparisons. Await hosted checks on the exact candidate commit before creating v1.0.0.
+Version metadata, MIT source license, release notes and external validation guide are ready. A clean source-only install built the frontend and ran the HTTP demo with 12 simulation samples, seven conversions and three comparisons.
+
+Release tag e107d41 matches the exact tested main commit. [Hosted Verify](https://github.com/hixam001/transivium/actions/runs/45367093559) passed all checks. Fresh source-only install and build passed, and the demo verified 12 simulations, seven conversions and three comparisons. [Published release](https://github.com/hixam001/transivium/releases/tag/v1.0.0). Partner TC-35, learners TC-39 and independent human review are NOT RUN.
+
+Final handoff: [[memory/Handoffs/Release]].
 
 ## Links
 

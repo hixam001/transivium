@@ -1,7 +1,7 @@
 ---
 id: "memory-handoffs-release-candidate"
 type: "reference"
-status: "active"
+status: "superseded"
 created: "2026-11-24"
 updated: "2026-11-24"
 confidence: "high"
@@ -10,6 +10,8 @@ tags: ["transivium", "reference"]
 ---
 
 # Local P0 release-candidate handoff
+
+This is the historical P0 checkpoint. See [[memory/Handoffs/Release]] for the shipped version.
 
 ## Read before any next task
 

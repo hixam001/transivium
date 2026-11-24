@@ -11,8 +11,7 @@ tags: ["transivium", "reference"]
 
 # Current handoff
 
-Active task: [[memory/Handoffs/TRN-28]] → [[memory/Issues/TRN-28]].
-
-Read [[memory/Project]] and [[memory/Workflow]] before implementation.
+v1.0.0 is published. See [[memory/Handoffs/Release]] for verification and pending external evidence.
 
 - [[memory/Home]]
+- [[memory/Project]]

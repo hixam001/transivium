@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Focused security, dependency, correctness and interface reviews completed. Added local Host validation, a five-second upload deadline, bounded table rendering and XML-safe diagram labels."
-next_actions: ["TRN-104"]
+current_state: "Transivium v1.0.0 is published on GitHub Releases under the MIT License. All documented P0, P1 and P2 software features are implemented and verified."
+next_actions: []
 ---
 
 # Transivium memory home

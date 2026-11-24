@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Focused security, dependency, correctness and interface reviews completed. Added local Host validation, a five-second upload deadline, bounded table rendering and XML-safe diagram labels."
-next_actions: ["TRN-104"]
+current_state: "Transivium v1.0.0 is published on GitHub Releases under the MIT License. All documented P0, P1 and P2 software features are implemented and verified."
+next_actions: []
 ---
 
 # Project state
@@ -20,7 +20,7 @@ Transivium is a university finite automata/transducer studio. P0 covers all five
 
 ## Current state
 
-The repository began with specifications only. All P0 application features and internal automated gates are now implemented; the local release candidate, evidence and external limitations are recorded in [[docs/TEST_EVIDENCE]]. No public or externally approved v1.0 release is claimed. The original proposed P0 estimate is 53 person-days, not an approved timeline.
+The repository began with specifications only. The MIT-licensed v1.0.0 source release contains all documented software features. Release verification and external evidence status are in [[memory/Handoffs/Release]]. The original proposed P0 estimate is 53 person-days, not an approved timeline.
 
 ## Durable decisions
 
@@ -100,4 +100,6 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 
 - [[memory/Issues/TRN-19]]: Grid, row and circle layouts, bounded undo/redo and SVG/PNG downloads are implemented. Formal edits invalidate stale results and layout-only edits preserve validation. Next: [[memory/Issues/TRN-105]].
 
-- [[memory/Issues/TRN-27]]: Focused security, dependency, correctness and interface reviews completed. Added local Host validation, a five-second upload deadline, bounded table rendering and XML-safe diagram labels. Next: [[memory/Issues/TRN-104]].
+- [[memory/Issues/TRN-27]]: Focused security, dependency, correctness and interface reviews completed. Added local Host validation, a five-second upload deadline, bounded table rendering and XML-safe diagram labels.
+
+- [[memory/Issues/TRN-28]]: Transivium v1.0.0 is published on GitHub Releases under the MIT License. All documented P0, P1 and P2 software features are implemented and verified.
