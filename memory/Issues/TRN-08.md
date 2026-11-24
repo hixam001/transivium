@@ -28,7 +28,7 @@ As a learner or instructor, I want minimization and canonicalization (fr-10), so
 ## Acceptance criteria
 
 - [ ] Remove unreachable states, refine partitions, handle empty alphabet, and emit complete minimal DFA with sorted-symbol BFS IDs.
-- [ ] Do not close the issue until exact verification via TRN-09 is available.
+- [ ] Use the shared exact product checker implemented in TRN-07 before certifying minimization.
 
 Baseline done condition: Reachability, partition and canonical fixtures
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -38,7 +38,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 - [[memory/Issues/TRN-03]]
 - [[memory/Issues/TRN-07]]
 
-Verification integration with TRN-09 is an additional completion blocker, not a prerequisite to writing the primitive algorithms.
+The shared exact product checker was brought forward into TRN-07 and is integrated before conversion success. TRN-09 retains public comparison endpoint and witness acceptance work.
 
 
 ## Test and delivery evidence

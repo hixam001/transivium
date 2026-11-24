@@ -74,7 +74,7 @@ Every story has requirement IDs, reproducible tests and review evidence. P0 gate
 
 ## Linked delivery backlog
 
-See [[memory/Issues/Backlog]] for full Jira-style issue notes, requirement/test traceability and CSV import. TRN-07/08 primitives precede TRN-09, but their final exact-verification acceptance depends on its integration. TRN-16 begins only after TRN-17 records the P0 gate. Added NFR verification tasks share existing integration/QA effort; no extra estimates are asserted.
+See [[memory/Issues/Backlog]] for full Jira-style issue notes, requirement/test traceability and CSV import. Shared exact verification landed in TRN-07 before certifying conversions; TRN-08 reuses it and TRN-09 retains public endpoint/witness acceptance. TRN-16 begins only after TRN-17 records the P0 gate. Added NFR verification tasks share existing integration/QA effort; no extra estimates are asserted.
 
 ## Memory links
 

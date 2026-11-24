@@ -8,10 +8,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException
 
 from app.boundary import Boundary, error_response
+from app.engine.conversion import convert
 from app.engine.errors import EngineError
 from app.engine.simulation import simulate
 from app.engine.validation import validate
-from app.schemas import MachineRequest, SimulationRequest
+from app.schemas import ConversionRequest, MachineRequest, SimulationRequest
 
 app = FastAPI(title="Transivium", version="0.1.0")
 app.add_middleware(
@@ -69,3 +70,8 @@ def validate_machine(request: MachineRequest):
 @app.post("/api/v1/simulate")
 def simulate_machine(request: SimulationRequest):
     return simulate(request.machine, request.input)
+
+
+@app.post("/api/v1/convert")
+def convert_machine(request: ConversionRequest):
+    return convert(request.machine, request.operation)

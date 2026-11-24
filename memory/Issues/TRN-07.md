@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-07"
 issue_type: "Story"
 summary: "ε removal and determinization (FR-07–09)"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-102"
 depends_on: ["TRN-03", "TRN-05"]
@@ -27,8 +27,8 @@ As a learner or instructor, I want ε removal and determinization (fr-07–09), 
 
 ## Acceptance criteria
 
-- [ ] Generate complete reachable subset DFAs including the empty sink when reached; epsilon removal propagates finals using closures.
-- [ ] Implement primitives before TRN-09 if needed; final completion is blocked until TRN-09 exact product verification is integrated.
+- [x] Generate complete reachable subset DFAs including the empty sink when reached; epsilon removal propagates finals using closures.
+- [x] Integrate the shared exact product checker before certifying results; its core lands here ahead of the TRN-09 public endpoint.
 
 Baseline done condition: Verified equivalent conversions, sink handling
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -38,7 +38,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 - [[memory/Issues/TRN-03]]
 - [[memory/Issues/TRN-05]]
 
-Verification integration with TRN-09 is an additional completion blocker, not a prerequisite to writing the primitive algorithms.
+The shared exact product checker was brought forward into TRN-07 and is integrated before conversion success. TRN-09 retains public comparison endpoint and witness acceptance work.
 
 
 ## Test and delivery evidence
@@ -66,3 +66,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Epsilon removal and reachable subset construction implemented with final propagation, empty sinks, deterministic derivations and exact product certification. Shared checker brought forward to satisfy certification dependency.
+
+52 backend tests passed, including 24 fixed-seed NFAs/epsilon-NFAs compared with direct simulation for every binary input through length four, direct/indirect conversion equality, sink completeness, incompatible operation and generated-state cap. Ruff passed. Public comparison endpoint remains TRN-09.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

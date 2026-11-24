@@ -23,7 +23,7 @@ tags: ["transivium", "reference"]
 | Release policy | Local stateless MVP, no public deployment | Separate decision/review if public hosting is requested |
 | Governance | License and branch protection unspecified | Resolve before a release; follow authorized normal main pushes subject to remote rules |
 | P2 scope | FR-21/22 have no detailed tests or estimates | Keep deferred; elaborate only when authorized |
-| Verification dependency | TRN-07/08 need downstream TRN-09 for completion | Build primitives first; integrate exact checker before closing conversions |
+| Verification dependency | Shared checker implemented in TRN-07 | TRN-08 uses it; TRN-09 public API/witness acceptance remains |
 
 ## Links
 

@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Acceptor editor, validation, simulation and playback implemented; conversions next"
-next_actions: ["TRN-07"]
+current_state: "Epsilon removal and reachable subset construction implemented with final propagation, empty sinks, deterministic derivations and exact product certification. Shared checker brought forward to satisfy certification dependency."
+next_actions: ["TRN-08"]
 ---
 
 # Transivium memory home

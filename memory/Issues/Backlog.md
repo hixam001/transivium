@@ -55,7 +55,7 @@ These are **local planning IDs**, not issues created in a connected Jira project
 
 ## Sequencing corrections
 
-- TRN-07 and TRN-08 can implement primitives before TRN-09, but cannot finish until its exact checker is integrated. This two-stage plan resolves the source plan's implicit verification cycle without substituting sampling for proof.
+- The shared exact checker was brought forward into TRN-07 to certify conversions immediately. TRN-08 reuses it; TRN-09 retains public endpoint and witness acceptance. This resolves the implicit verification cycle without substituting sampling for proof.
 - TRN-16 now names TRN-17's evidenced P0 gate as prerequisite. P1 remains optional after P0, not a release blocker.
 - NFR verification tasks contribute evidence to TRN-15, then TRN-17. Their effort is included in existing integration/QA estimates pending re-estimation.
 - TRN-01 stakeholder/external agreement remains open; the first implementation handoff is [[memory/Handoffs/TRN-01]].

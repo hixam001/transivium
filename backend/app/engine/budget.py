@@ -1,5 +1,6 @@
 """One cooperative budget shared by generation, traces and verification."""
 
+import json
 import time
 from dataclasses import dataclass
 from typing import Callable
@@ -32,6 +33,7 @@ class Budget:
         self.clock = clock
         self.deadline = clock() + limits.deadline_seconds
         self.work = 0
+        self.trace_bytes = 1024
 
     def check(self, amount: int = 0, maximum: int | None = None, label: str = "Work"):
         if self.clock() >= self.deadline:
@@ -47,4 +49,9 @@ class Budget:
 
     def step(self, steps: list, phase: str, description: str, **details):
         self.check(len(steps) + 1, self.limits.derivation_steps, "Derivation trace")
-        steps.append(dict(index=len(steps), phase=phase, description=description, details=details))
+        step = dict(index=len(steps), phase=phase, description=description, details=details)
+        self.trace_bytes += (
+            len(json.dumps(step, ensure_ascii=False, separators=(",", ":")).encode("utf-8")) + 1
+        )
+        self.check(self.trace_bytes, self.limits.response_bytes, "Derivation response")
+        steps.append(step)
