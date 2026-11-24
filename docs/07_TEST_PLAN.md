@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # Test Plan & Test Cases — Transivium
 
-Version 0.1 | All cases planned / NOT RUN. No implementation or pass claims.
+Version 0.1 | Cases below define release acceptance; actual implementation evidence is recorded per issue in [[memory/Project]]. Do not infer full-case PASS from a partial unit check.
 
 ## 1. Strategy
 Unit tests for pure algorithms, API contract tests for validation/errors, frontend component tests for editing/trace state, end-to-end demo tests for critical workflows. Exact product equivalence, independent parser and known reference fixtures are the release oracle; bounded sample strings are supplemental, never proof. Use generated small automata with fixed seeds; log seed and machine on failure. Include hand-calculated cases so shared algorithm defects are not hidden by round-trip checks.

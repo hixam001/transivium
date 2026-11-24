@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # API & Technical Contract — Transivium
 
-Version 0.1 | Proposed; no implemented endpoints claimed
+Version 0.1 | Health and validation routes implemented at TRN-03; remaining routes follow the backlog. Contract below is the implementation target.
 
 Base: `/api/v1` | JSON UTF-8 | Stateless local server | No auth in proposed MVP. All POST requests use `Content-Type: application/json`. Machine and result schemas defined in 03_DATA_MODEL.md. Examples omit no required fields unless explicitly marked as a field reference. Validate complete request on server; UI hints are not authoritative.
 

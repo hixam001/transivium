@@ -1,0 +1,220 @@
+{
+  "$defs": {
+    "Acceptor": {
+      "additionalProperties": false,
+      "properties": {
+        "alphabet": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alphabet",
+          "type": "array"
+        },
+        "states": {
+          "items": {
+            "$ref": "#/$defs/State"
+          },
+          "minItems": 1,
+          "title": "States",
+          "type": "array"
+        },
+        "startState": {
+          "title": "Startstate",
+          "type": "string"
+        },
+        "transitions": {
+          "items": {
+            "$ref": "#/$defs/Transition"
+          },
+          "title": "Transitions",
+          "type": "array"
+        },
+        "kind": {
+          "enum": [
+            "dfa",
+            "nfa",
+            "enfa"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "finalStates": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Finalstates",
+          "type": "array"
+        }
+      },
+      "required": [
+        "alphabet",
+        "states",
+        "startState",
+        "transitions",
+        "kind",
+        "finalStates"
+      ],
+      "title": "Acceptor",
+      "type": "object"
+    },
+    "State": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "output": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "State",
+      "type": "object"
+    },
+    "Transducer": {
+      "additionalProperties": false,
+      "properties": {
+        "alphabet": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alphabet",
+          "type": "array"
+        },
+        "states": {
+          "items": {
+            "$ref": "#/$defs/State"
+          },
+          "minItems": 1,
+          "title": "States",
+          "type": "array"
+        },
+        "startState": {
+          "title": "Startstate",
+          "type": "string"
+        },
+        "transitions": {
+          "items": {
+            "$ref": "#/$defs/Transition"
+          },
+          "title": "Transitions",
+          "type": "array"
+        },
+        "kind": {
+          "enum": [
+            "mealy",
+            "moore"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "outputAlphabet": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Outputalphabet",
+          "type": "array"
+        }
+      },
+      "required": [
+        "alphabet",
+        "states",
+        "startState",
+        "transitions",
+        "kind",
+        "outputAlphabet"
+      ],
+      "title": "Transducer",
+      "type": "object"
+    },
+    "Transition": {
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "title": "From",
+          "type": "string"
+        },
+        "to": {
+          "title": "To",
+          "type": "string"
+        },
+        "symbol": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Symbol"
+        },
+        "output": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Output"
+        }
+      },
+      "required": [
+        "from",
+        "to",
+        "symbol"
+      ],
+      "title": "Transition",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "dfa": "#/$defs/Acceptor",
+      "enfa": "#/$defs/Acceptor",
+      "mealy": "#/$defs/Transducer",
+      "moore": "#/$defs/Transducer",
+      "nfa": "#/$defs/Acceptor"
+    },
+    "propertyName": "kind"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/Acceptor"
+    },
+    {
+      "$ref": "#/$defs/Transducer"
+    }
+  ]
+}

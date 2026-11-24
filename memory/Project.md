@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Runnable React/Vite and FastAPI scaffold implemented with exact package pins and lockfile, local proxy and health endpoint."
-next_actions: ["TRN-03"]
+current_state: "Strict schemas, all-five-kind semantic validation, input guards, shared budgets and bounded HTTP/error boundary implemented. Generated machine JSON Schema added."
+next_actions: ["TRN-04"]
 ---
 
 # Project state
@@ -36,7 +36,7 @@ The initial repository contained specifications and guides only, no application 
 
 ## Evidence and limitations
 
-Documentation checks are separate from application tests. TC-01–39 remain NOT RUN. External simulator exchange is untested. No user accounts, cloud DB, deployment or public regex-to-DFA studio are in scope. Proposed numerical limits need runtime testing and profiling.
+Documentation checks are separate from application tests. Full TC-01–39 workflow completion is tracked in the test plan and individual issues; unit checks alone do not establish full-case acceptance. External simulator exchange is untested. No user accounts, cloud DB, deployment or public regex-to-DFA studio are in scope. Proposed numerical limits need runtime testing and profiling.
 
 ## Links
 
@@ -51,3 +51,5 @@ Documentation checks are separate from application tests. TC-01–39 remain NOT 
 - [[memory/Issues/TRN-01]]: Formal contracts and ten reference fixtures implemented; architecture selected for local implementation, with partner agreement explicitly pending. Next: [[memory/Issues/TRN-02]].
 
 - [[memory/Issues/TRN-02]]: Runnable React/Vite and FastAPI scaffold implemented with exact package pins and lockfile, local proxy and health endpoint. Next: [[memory/Issues/TRN-03]].
+
+- [[memory/Issues/TRN-03]]: Strict schemas, all-five-kind semantic validation, input guards, shared budgets and bounded HTTP/error boundary implemented. Generated machine JSON Schema added. Next: [[memory/Issues/TRN-04]].

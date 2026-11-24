@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # Data Model — Transivium
 
-Version 0.1 | Proposed schema | No database in MVP
+Version 0.1 | Strict backend structural schemas and formal validator implemented at TRN-03; generated machine JSON Schema is `contracts/machine.schema.json`. No database in MVP.
 
 ## 1. Formal machine (Machine)
 A discriminated JSON union keyed by `kind`. The same model is used by the editor, API and optional machine export. Drafts may be incomplete; only valid machines execute. IDs are opaque, case-sensitive strings of 1–64 ASCII letters/digits/underscore/hyphen; labels are optional display strings ≤ 80 characters. State order in arrays is not semantically significant.

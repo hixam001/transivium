@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-03"
 issue_type: "Story"
 summary: "Formal models and validator (FR-17)"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-100"
 depends_on: ["TRN-01", "TRN-02"]
@@ -27,8 +27,8 @@ As a learner or instructor, I want formal models and validator (fr-17), so that 
 
 ## Acceptance criteria
 
-- [ ] Validate all five discriminated machine schemas and reject unknown fields, invalid references, illegal epsilon/output fields and incomplete deterministic machines.
-- [ ] Implement /validate structural versus semantic error behavior and preserve incomplete frontend drafts.
+- [x] Validate all five discriminated machine schemas and reject unknown fields, invalid references, illegal epsilon/output fields and incomplete deterministic machines.
+- [x] Implement /validate structural versus semantic error behavior and preserve incomplete frontend drafts.
 
 Baseline done condition: All validation fixtures pass
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -64,3 +64,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Strict schemas, all-five-kind semantic validation, input guards, shared budgets and bounded HTTP/error boundary implemented. Generated machine JSON Schema added.
+
+34 backend tests passed, covering all ten fixtures, invalid references/determinism/outputs, empty alphabets, invalid input, injected caps/deadline, 400/413/415/422/404/405 envelopes and restricted CORS. Ruff passed. Editor and simulation integration remain separate tasks.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
