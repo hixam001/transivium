@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-16"
 issue_type: "Story"
 summary: "Optional machine JSON and history (FR-19,20)"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P1"
 epic: "TRN-105"
 depends_on: ["TRN-17"]
@@ -27,8 +27,8 @@ As a learner or instructor, I want optional machine json and history (fr-19,20),
 
 ## Acceptance criteria
 
-- [ ] Start only after recorded P0 gate evidence from TRN-17, not merely a scheduled date.
-- [ ] Versioned machine JSON round-trips; invalid/oversized/unknown-version files preserve the draft; history retains up to 20 immutable session snapshots.
+- [x] Start only after recorded P0 gate evidence from TRN-17, not merely a scheduled date.
+- [x] Versioned machine JSON round-trips; invalid/oversized/unknown-version files preserve the draft; history retains up to 20 immutable session snapshots.
 
 Baseline done condition: Valid round-trip and snapshot history
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -43,7 +43,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-36, TC-37
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 3 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -64,3 +64,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Version 1 machine JSON, validated import preview, layout round-trip and 20 immutable session traces are implemented. Replaying a snapshot preserves the live draft and identifies older revisions.
+
+Frontend lint, 17 component tests, and both live Chromium reuse cases passed. Cases covered malformed, oversized, unsupported, invalid and unknown-layout JSON, cancel, export round-trip, 21-run rollover and mobile replay.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

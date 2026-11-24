@@ -11,10 +11,10 @@ tags: ["transivium", "documentation"]
 
 # User Guide — Transivium
 
-Version 0.1 | Local P0 release candidate. All five machine kinds and seven operations are available; P1 reuse remains deferred. See [[docs/TEST_EVIDENCE]] for validation and known limitations.
+Version 0.1 | Local P0 release candidate. All five machine kinds and seven operations are available; Machine files and session history are available. See [[docs/TEST_EVIDENCE]] for validation and known limitations.
 
 ## 1. Start and choose a machine
-Open the local application after setup. `/` and `/editor` open the workspace with the Ends in 01 example. Use the sidebar examples or the Machine type selector to choose a type: DFA (one next state per symbol), NFA (multiple or absent next states), ε-NFA (NFA plus non-consuming epsilon moves), Mealy (outputs on edges), Moore (outputs on states). No registration or login required. The editor holds a single working draft in memory; refresh may lose work. Machine import/export and history are P1, not assumed available in P0.
+Open the local application after setup. `/` and `/editor` open the workspace with the Ends in 01 example. Use the sidebar examples or the Machine type selector to choose a type: DFA (one next state per symbol), NFA (multiple or absent next states), ε-NFA (NFA plus non-consuming epsilon moves), Mealy (outputs on edges), Moore (outputs on states). No registration or login required. The editor holds a single working draft in memory; refresh may lose work. Machine files let you keep and reopen a validated model.
 
 ## 2. Build a machine
 1. Set input alphabet using unique single ASCII letters/digits (e.g. 0,1). For transducers also define nonempty output alphabet.
@@ -49,10 +49,16 @@ Build Mealy with a single start state s, input/output alphabets 0,1; loop on 0 e
 - Resource cap/deadline: reduce states, alphabet or input; no successful certified result from partial work.
 - API offline: editing may continue in loaded UI; run/convert require API. Start service and retry.
 - Changed draft: earlier trace/export is stale; rerun before adopting/exporting.
-- No account, cloud save, PDA, CFG or Turing machine support. P1 machine import/export and history are optional; don't rely on them until released.
+- No account, cloud save, PDA, CFG or Turing machine support.
 - Use table/forms if graph interaction is difficult; keyboard controls, visible focus and text statuses are implemented and acceptance-tested.
 
-## 8. Support
+## 8. Reuse machines and runs
+
+Under **Machine files**, validate the draft and download its JSON. To reopen a file, choose it, review the preview and confirm replacement. The file retains the machine and any saved graph coordinates.
+
+**Run history** keeps the latest 20 completed simulations in this browser session. Select a run to replay its original input and trace. Runs from earlier revisions carry a label. Refreshing clears session history.
+
+## 9. Support
 Report issue with application version/commit, operation, minimal reproducible machine and input, expected vs actual outcome, request ID if shown. Do not send credentials or unnecessary personal data. Local operator guide covers startup issues.
 
 ## Memory links

@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "All P0 implementation tasks are complete as an internally verified local release candidate. Guides match the running app; TC-01–39 have explicit evidence/status; the executable HTTP demo passes all five machine kinds and seven operations."
-next_actions: []
+current_state: "Version 1 machine JSON, validated import preview, layout round-trip and 20 immutable session traces are implemented. Replaying a snapshot preserves the live draft and identifies older revisions."
+next_actions: ["TRN-18"]
 ---
 
 # Transivium memory home

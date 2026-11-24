@@ -16,6 +16,11 @@ import Graph from "./Diagram";
 import TransitionTable from "./TransitionTable";
 import Simulation from "./Simulation";
 import Conversion from "./Conversion";
+import MachineFiles from "./MachineFiles";
+import RunHistory from "./RunHistory";
+import type { RunSnapshot } from "./RunHistory";
+import { machineFile } from "./machineFile";
+import type { Layout } from "./machineFile";
 const Compare = lazy(() => import("./Compare"));
 import type { Highlight } from "./Simulation";
 import type { Issue, Kind, Machine } from "./model";
@@ -41,6 +46,9 @@ export default function App() {
   const [machine, setMachine] = useState<Machine>(() =>
     structuredClone(examples.find((e) => e.id === "D01")!.machine),
   );
+  const [layout, setLayout] = useState<Layout>({});
+  const [runs, setRuns] = useState<RunSnapshot[]>([]);
+  const runSequence = useRef(0);
   const [title, setTitle] = useState("Ends in 01");
   const [selected, setSelected] = useState("q0");
   const [dirty, setDirty] = useState(false);
@@ -100,7 +108,7 @@ export default function App() {
     setValidation("draft");
     setError("");
   }
-  function replace(next: Machine, name: string) {
+  function replace(next: Machine, name: string, nextLayout: Layout = {}) {
     if (
       (dirty || compareDirty) &&
       !window.confirm(
@@ -111,6 +119,7 @@ export default function App() {
     setCompareDirty(false);
     update(structuredClone(next));
     setTitle(name);
+    setLayout(nextLayout);
     setSelected(next.states[0]?.id ?? "");
     setDirty(false);
     return true;
@@ -157,6 +166,7 @@ export default function App() {
       return;
     update(structuredClone(next));
     setTitle("Converted machine");
+    setLayout({});
     setSelected(next.states[0]?.id ?? "");
   }
   function connect(c: Connection) {
@@ -470,6 +480,11 @@ export default function App() {
                   </div>
                   <Graph
                     machine={machine}
+                    positions={layout}
+                    onPositions={(positions) => {
+                      setLayout((old) => ({ ...old, ...positions }));
+                      setDirty(true);
+                    }}
                     select={setSelected}
                     connect={connect}
                     activeStates={highlight.states}
@@ -492,7 +507,27 @@ export default function App() {
                   machine={machine}
                   valid={validation === "valid"}
                   onStep={setHighlight}
+                  onRun={(input, result) => {
+                    const snapshot = structuredClone({
+                      id: ++runSequence.current,
+                      revision,
+                      title,
+                      machine,
+                      input,
+                      result,
+                      createdAt: new Date().toISOString(),
+                    });
+                    setRuns((entries) => [snapshot, ...entries].slice(0, 20));
+                  }}
                 />
+                <MachineFiles
+                  file={() => machineFile(machine, layout)}
+                  valid={validation === "valid"}
+                  onImport={(next, name) =>
+                    replace(next.machine, name, next.layout)
+                  }
+                />
+                <RunHistory entries={runs} revision={revision} />
               </div>
               <section
                 className="inspector panel"

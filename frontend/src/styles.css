@@ -1120,3 +1120,37 @@ footer {
 .guide > button {
   margin-top: 18px;
 }
+
+.reuse-body {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  min-width: 0;
+}
+
+.reuse-body p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.reuse-body label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.reuse-body select {
+  width: 100%;
+}
+
+.reuse-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.reuse-preview {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}

@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import type { Layout } from "./machineFile";
+import { useEffect, useMemo, useRef } from "react";
 import {
   ReactFlow,
   Background,
@@ -104,6 +105,8 @@ export default function Graph({
   activeTransitions = [],
   readOnly = false,
   label = "Machine graph",
+  positions = {},
+  onPositions,
 }: {
   machine: Machine;
   select: (id: string) => void;
@@ -112,10 +115,9 @@ export default function Graph({
   activeTransitions?: Transition[];
   readOnly?: boolean;
   label?: string;
+  positions?: Layout;
+  onPositions?: (positions: Layout) => void;
 }) {
-  const [positions, setPositions] = useState<
-    Record<string, { x: number; y: number }>
-  >({});
   const viewOptions = readOnly
     ? { padding: { top: 60, bottom: 60, x: 35 }, maxZoom: 1 }
     : fitOptions;
@@ -135,10 +137,12 @@ export default function Graph({
     id: s.id,
     ariaLabel: `State ${s.label || s.id}${s.id === machine.startState ? ", start" : ""}${machine.finalStates?.includes(s.id) ? ", accepting" : ""}${s.output !== undefined ? `, output ${s.output}` : ""}${activeStates.includes(s.id) ? ", active" : ""}`,
     type: "machine",
-    position: positions[s.id] ?? {
-      x: 90 + (i % 4) * 190,
-      y: 150 + Math.floor(i / 4) * 170,
-    },
+    position: Object.hasOwn(positions, s.id)
+      ? positions[s.id]
+      : {
+          x: 90 + (i % 4) * 190,
+          y: 150 + Math.floor(i / 4) * 170,
+        },
     data: {
       label: s.label || s.id,
       output: s.output,
@@ -192,16 +196,16 @@ export default function Graph({
             void instance.fitView(viewOptions);
           };
         }}
-        onNodesChange={(changes) =>
-          setPositions((old) => {
-            if (changes.getByType("position").length === 0) return old;
-            const next = { ...old };
-            changes.getByType("position").forEach((c) => {
-              if (c.type === "position" && c.position) next[c.id] = c.position;
-            });
-            return next;
-          })
-        }
+        onNodesChange={(changes) => {
+          const moved = changes
+            .getByType("position")
+            .flatMap((change) =>
+              change.type === "position" && change.position
+                ? [[change.id, change.position]]
+                : [],
+            );
+          if (moved.length) onPositions?.(Object.fromEntries(moved));
+        }}
         fitView
         fitViewOptions={viewOptions}
         minZoom={0.2}

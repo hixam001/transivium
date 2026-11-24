@@ -143,14 +143,14 @@ Each PASS refers to the expected behavior in [[docs/07_TEST_PLAN]] and the actua
 | TC-33 | PASS | Fixed seeds; minimality/witness oracles; successful exports exact | backend/tests/test_regex_verification.py; backend/tests/test_minimization.py; backend/tests/test_equivalence.py |
 | TC-34 | PASS | Generated NFA/enfa/transducers exactly checked + independent bounded outputs | backend/tests/test_acceptor_conversions.py; backend/tests/test_transducer_conversions.py |
 | TC-35 | NOT RUN | Partner simulator/agreement unavailable; internal reconstruction is not this test | External follow-up; fixtures and formal-v1 contract ready |
-| TC-36 P1 | DEFERRED | Machine JSON import/export not implemented | FR-19 / TRN-16 |
-| TC-37 P1 | DEFERRED | Session history not implemented | FR-20 / TRN-16 |
+| TC-36 P1 | PASS | Machine JSON and layout round-trip; rejected files and cancel retain the draft | frontend/e2e/reuse.spec.ts |
+| TC-37 P1 | PASS | History keeps 20 completed runs; replay uses the original revision and retains the live draft | frontend/e2e/reuse.spec.ts |
 | TC-38 | PASS | Fresh pinned installation and build; reference p95 below2s | TRN-25 fresh setup; TRN-21 performance artifacts; hosted CI |
 | TC-39 | NOT RUN | Five volunteers not available; no completion-rate claim | Human learner-study follow-up |
 
 ## Gate decision and limits
 
-The **internal local P0 implementation gate passes**: FR-01–18 are implemented; all seven NFR targets have been evaluated; no unresolved critical correctness defect is known from the executed checks. Reference responsiveness meets the proposed target. 35 automated P0 cases pass; TC-35 and TC-39 remain NOT RUN, and two P1 cases are deferred. This is a local release candidate, not a claim that every planned test or human review passed. External exchange is a separate milestone under the project plan; the unavailable learner study is a recorded limitation under the PRD. No v1.0 tag, license selection, external communication or public deployment was performed.
+The **internal local P0 implementation gate passes**: FR-01–18 are implemented; all seven NFR targets have been evaluated; no unresolved critical correctness defect is known from the executed checks. Reference responsiveness meets the proposed target. 35 automated P0 cases pass; TC-35 and TC-39 remain NOT RUN, and TRN-16 later verified the two P1 cases. This is a local release candidate, not a claim that every planned test or human review passed. External exchange is a separate milestone under the project plan; the unavailable learner study is a recorded limitation under the PRD. No v1.0 tag, license selection, external communication or public deployment was performed.
 
 The candidate is stateless and local. Refresh loses drafts; machine file reuse/history are deferred. Exponential conversion growth can fail within documented caps even for valid input. Cooperative deadlines are not hard real-time cancellation. Automated axe/keyboard coverage is not full accessibility certification. Windows/macOS and other browser/runtime versions have not been tested. Default access logs contain route/status, not a persistent correlated telemetry service.
 

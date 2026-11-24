@@ -11,9 +11,8 @@ tags: ["transivium", "reference"]
 
 # Current handoff
 
-P0 implementation complete. Continue from [[memory/Handoffs/Release-Candidate]].
+Active task: [[memory/Handoffs/TRN-16]] → [[memory/Issues/TRN-16]].
 
-No implementation task is active. External/human evidence and optional P1 are explicitly separated in that handoff.
+Read [[memory/Project]] and [[memory/Workflow]] before implementation.
 
 - [[memory/Home]]
-- [[memory/Project]]
