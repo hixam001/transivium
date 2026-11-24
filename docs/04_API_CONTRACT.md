@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # API & Technical Contract — Transivium
 
-Version 0.1 | All five routes implemented through TRN-09. Simulation currently supports acceptors; four acceptor conversions are available. Independently verified DFA-to-regex export is now implemented at TRN-11; transducer operations follow the backlog. Contract below is the implementation target.
+Version 0.1 | All five routes implemented through TRN-09. Simulation supports all five machine kinds through TRN-13; four machine acceptor conversions and regex export are available. Independently verified DFA-to-regex export is now implemented at TRN-11; transducer operations follow the backlog. Contract below is the implementation target.
 
 Base: `/api/v1` | JSON UTF-8 | Stateless local server | No auth in proposed MVP. All POST requests use `Content-Type: application/json`. Machine and result schemas defined in 03_DATA_MODEL.md. Examples omit no required fields unless explicitly marked as a field reference. Validate complete request on server; UI hints are not authoritative.
 

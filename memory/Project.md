@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Conversion/results and educational derivations implemented with confirmed adoption, independently verified regex copy/JSON download, canonical reference diagrams, and a two-sided editable comparison workspace with witness replay. Navigation protects unsaved comparison edits."
-next_actions: ["TRN-13"]
+current_state: "Mealy/Moore simulation and playback implemented with full/prefix outputs, separate initial Moore output, normalized post-input streams and no acceptance label for transducers."
+next_actions: ["TRN-14"]
 ---
 
 # Project state
@@ -71,3 +71,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-11]]: Independent iterative formal-v1 parser and Thompson constructor implemented; DFA-to-regex API now emits artifacts only after exact reconstruction and canonical-reference checks. Next: [[memory/Issues/TRN-12]].
 
 - [[memory/Issues/TRN-12]]: Conversion/results and educational derivations implemented with confirmed adoption, independently verified regex copy/JSON download, canonical reference diagrams, and a two-sided editable comparison workspace with witness replay. Navigation protects unsaved comparison edits. Next: [[memory/Issues/TRN-13]].
+
+- [[memory/Issues/TRN-13]]: Mealy/Moore simulation and playback implemented with full/prefix outputs, separate initial Moore output, normalized post-input streams and no acceptance label for transducers. Next: [[memory/Issues/TRN-14]].

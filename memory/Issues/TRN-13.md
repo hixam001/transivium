@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-13"
 issue_type: "Story"
 summary: "Mealy/Moore simulation (FR-05,06)"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-101"
 depends_on: ["TRN-03", "TRN-06"]
@@ -27,8 +27,8 @@ As a learner or instructor, I want mealy/moore simulation (fr-05,06), so that th
 
 ## Acceptance criteria
 
-- [ ] Produce one Mealy output per input and show Moore initial output separately from normalized post-input output.
-- [ ] Empty input emits [] for Mealy and initial-only full Moore output; transducer acceptance is null.
+- [x] Produce one Mealy output per input and show Moore initial output separately from normalized post-input output.
+- [x] Empty input emits [] for Mealy and initial-only full Moore output; transducer acceptance is null.
 
 Baseline done condition: Full and normalized outputs correct
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -44,7 +44,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-06, TC-07
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 2 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -65,3 +65,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Mealy/Moore simulation and playback implemented with full/prefix outputs, separate initial Moore output, normalized post-input streams and no acceptance label for transducers.
+
+115 backend tests passed, including all binary inputs through length five against independent bit-inverter expectations, missing output errors, empty streams and response caps. Frontend lint/build and 17 component tests passed; eight live browser checks passed, including both transducers on 0101 and empty input. Inspected rendered Moore output/trace.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

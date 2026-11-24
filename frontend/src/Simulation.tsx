@@ -189,16 +189,50 @@ export default function Simulation({
                 Step {cursor} of {result.steps.length - 1}
               </span>
               <span
-                className={`status ${ended ? (result.accepted ? "valid" : "invalid") : "draft"}`}
+                className={`status ${ended ? (result.accepted !== false ? "valid" : "invalid") : "draft"}`}
               >
                 {ended
-                  ? result.accepted
-                    ? "Accepted"
-                    : "Rejected"
+                  ? result.accepted === null
+                    ? "Completed"
+                    : result.accepted
+                      ? "Accepted"
+                      : "Rejected"
                   : "In progress"}
               </span>
             </div>
             <div className="trace-current" aria-live="polite">
+              {step?.outputPrefix && (
+                <>
+                  <p>
+                    Output prefix:{" "}
+                    <output aria-label="Output prefix">
+                      <code>
+                        {step.outputPrefix.join("") || "ε (empty output)"}
+                      </code>
+                    </output>
+                  </p>
+                  <p>
+                    Normalized output:{" "}
+                    <output aria-label="Normalized output">
+                      <code>
+                        {(machine.kind === "moore"
+                          ? step.outputPrefix.slice(1)
+                          : step.outputPrefix
+                        ).join("") || "ε (empty output)"}
+                      </code>
+                    </output>
+                  </p>
+                  {result.initialOutput !== null && (
+                    <p>
+                      Initial Moore output:{" "}
+                      <output aria-label="Initial Moore output">
+                        <code>{result.initialOutput}</code>
+                      </output>{" "}
+                      · Excluded from normalized output.
+                    </p>
+                  )}
+                </>
+              )}
               <p>
                 Active states:{" "}
                 <strong>
@@ -235,6 +269,7 @@ export default function Simulation({
                     <th>Symbol</th>
                     <th>Active states</th>
                     <th>Configuration</th>
+                    {result.output !== null && <th>Output prefix</th>}
                   </tr>
                 </thead>
                 <tbody>
@@ -266,6 +301,11 @@ export default function Simulation({
                           ? "Initial configuration"
                           : `${i} symbol${i === 1 ? "" : "s"} consumed`}
                       </td>
+                      {s.outputPrefix !== null && (
+                        <td>
+                          <code>{s.outputPrefix.join("") || "ε"}</code>
+                        </td>
+                      )}
                     </tr>
                   ))}
                 </tbody>

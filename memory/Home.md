@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Conversion/results and educational derivations implemented with confirmed adoption, independently verified regex copy/JSON download, canonical reference diagrams, and a two-sided editable comparison workspace with witness replay. Navigation protects unsaved comparison edits."
-next_actions: ["TRN-13"]
+current_state: "Mealy/Moore simulation and playback implemented with full/prefix outputs, separate initial Moore output, normalized post-input streams and no acceptance label for transducers."
+next_actions: ["TRN-14"]
 ---
 
 # Transivium memory home

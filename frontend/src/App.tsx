@@ -454,14 +454,12 @@ export default function App() {
                   valid={validation === "valid"}
                   onAdopt={adopt}
                 />
-                {isAcceptor(machine) && (
-                  <Simulation
-                    key={revision}
-                    machine={machine}
-                    valid={validation === "valid"}
-                    onStep={setHighlight}
-                  />
-                )}
+                <Simulation
+                  key={revision}
+                  machine={machine}
+                  valid={validation === "valid"}
+                  onStep={setHighlight}
+                />
               </div>
               <aside className="inspector panel">
                 <h2>Machine definition</h2>

@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # User Guide — Transivium
 
-Version 0.1 | Editor, acceptor simulation/playback, conversion, equivalence and verified regex export are runnable through TRN-12. Transducer execution/conversions follow in TRN-13/14; P1 reuse remains deferred.
+Version 0.1 | Editor, acceptor simulation/playback, conversion, equivalence and verified regex export are runnable through TRN-12. Transducer execution is available through TRN-13; conversions follow in TRN-14. P1 reuse remains deferred.
 
 ## 1. Start and choose a machine
 Open the local application after setup. Select a type: DFA (one next state per symbol), NFA (multiple or absent next states), ε-NFA (NFA plus non-consuming epsilon moves), Mealy (outputs on edges), Moore (outputs on states). No registration or login required. The editor holds a single working draft in memory; refresh may lose work. Machine import/export and history are P1, not assumed available in P0.
