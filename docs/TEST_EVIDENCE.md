@@ -70,3 +70,22 @@ Typed API response DTOs and generated OpenAPI/machine contracts now have drift c
 Fresh /tmp checkout copy installed pinned Python/npm dependencies successfully: 160 backend tests, 17 component tests, frontend lint/build, root Ruff/check-format, contract check and nine script tests passed. Hosted CI execution remains unverified. Existing Starlette TestClient deprecation and upstream bundler directive warnings remain documented.
 
 The fresh environment excluded local dependencies, ignored host configuration and credentials. The engine remains independent of FastAPI; unit tests call pure algorithms while integration tests exercise strict HTTP contracts. Privacy scanning now includes explicitly selected application/test/config trees without indexing dependencies or credential directories. Duplicate comparison table IDs were replaced by React-generated IDs while keeping the editor error-focus target stable.
+
+## Resource bounds — TRN-26
+
+Resource bounds now include both synthetic GNFA states before construction. Cap tests cover generation, UTF-8 regex bytes, trace append, exact verification and shared deadlines without returning partial certified artifacts.
+
+169 backend tests passed, including a 256-state/16-symbol/512-token DFA execution and nine new resource cases; Ruff passed. Existing request/response/chunk/input/parser/subset/split limits remain covered. Limits are cooperative local-operation bounds, not production capacity or hard real-time guarantees.
+
+| Resource | Enforced bound |
+|---|---|
+| Machine / generated intermediate states | 256 (GNFA includes synthetic start/final) |
+| Input/output alphabet | 16 symbols each |
+| Transitions | 16,384 |
+| Input / derivation | 512 tokens / 2,000 derivation steps |
+| Request / response | 512 KiB / 2 MiB UTF-8 JSON |
+| Regex / parser nesting | 64 KiB UTF-8 / 128 levels |
+| AST work / product pairs | 50,000 / 65,536 |
+| Deadline | 5 seconds, shared generation and verification budget |
+
+A valid input may exceed an intermediate, trace or verification cap. Such requests return an explicit limit/deadline error, never a partially certified success. Backend tests inject small limits to deterministically exercise pre-growth checks; maximum-size simulation coverage does not imply all maximum-size conversions succeed.

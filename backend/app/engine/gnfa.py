@@ -7,6 +7,7 @@ from app.engine.regex_ast import EMPTY, EPSILON, Factory
 
 def generate_regex(machine: dict, budget: Budget, steps: list) -> tuple[str, dict]:
     reference = minimize(machine, budget, steps)
+    budget.check(len(reference["states"]) + 2, budget.limits.states, "GNFA state")
     factory = Factory(budget)
     labels = {}
     for edge in reference["transitions"]:

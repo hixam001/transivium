@@ -9,8 +9,8 @@ source: "repository-documentation-and-user-task"
 tags: ["transivium", "reference"]
 requirement_id: "NFR-07"
 priority: "P0"
-implementation_status: "Not implemented"
-test_status: "NOT RUN"
+implementation_status: "Implemented"
+test_status: "PASS"
 owners: ["TRN-26", "TRN-15", "TRN-17"]
 tests: ["TC-28"]
 ---
@@ -29,9 +29,9 @@ Success measure: Release evidence in docs/07_TEST_PLAN.md.
 
 ## Verification and scope
 
-Planned evidence: TC-28. Application test status: **NOT RUN**.
+Planned evidence: TC-28. Application test status: **PASS**; see [[memory/Sessions/2026-11-24-TRN-26]].
 Priority P0; P1 begins only after the P0 release gate; P2 remains deferred.
-The requirement is documented, not implemented. Proposed numerical targets retain proposed status.
+Resource bounds now include both synthetic GNFA states before construction. Cap tests cover generation, UTF-8 regex bytes, trace append, exact verification and shared deadlines without returning partial certified artifacts.
 
 ## Sources and delivery
 
