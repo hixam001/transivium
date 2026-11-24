@@ -30,7 +30,7 @@ from app.schemas import (
 
 app = FastAPI(
     title="Transivium",
-    version="0.1.0",
+    version="1.0.0",
     responses={code: {"model": ErrorEnvelope} for code in [400, 408, 413, 415, 422, 500, 503]},
 )
 app.add_middleware(

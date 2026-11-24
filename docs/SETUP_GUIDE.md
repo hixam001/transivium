@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # Setup & Development Guide — Transivium
 
-Version 0.1 | P0 application implemented; release evidence is tracked in [[memory/Project]]. Tested on Python 3.14.10, Node 26.13.1, npm 12.2.3. Frontend packages are pinned in package.json/package-lock.json; all backend runtime and development dependencies are pinned in requirements.txt.
+Version 1.0.0 | Release evidence is tracked in [[docs/TEST_EVIDENCE]]. Tested on Python 3.14.10, Node 26.13.1, npm 12.2.3. Frontend packages are pinned in package.json/package-lock.json; all backend runtime and development dependencies are pinned in requirements.txt.
 
 ## 1. Prerequisites
 - Git, Python 3.14.10 and Node 26.13.1 (version files), npm 12.2.3. Other Python ≥3.12 / Node ≥22.12 versions are compatibility targets, not verified platforms.
@@ -19,7 +19,7 @@ Version 0.1 | P0 application implemented; release evidence is tracked in [[memor
 - No database, API key or external service is required. Install pinned dependencies from the committed manifests.
 
 ## 2. Get repository
-Repository remote: `git@github.com:hixam001/transivium.git`. Clone the repository and enter its root.
+Repository remote: `git@github.com:hixam001/transivium.git`. Clone the repository at `v1.0.0` or extract the source archive from GitHub Releases, then enter its root.
 
 ## 3. Backend
 From repository root:
@@ -82,4 +82,4 @@ After an intentional DTO change, run `backend/.venv/bin/python scripts/contracts
 
 ## Reproducible demonstration
 
-With the current API running on loopback, run `python3 scripts/demo.py` from the repository root. It fails on any fixture mismatch and prints curated JSON for 12 simulation samples across all five machine kinds, seven exactly certified operations, equivalent and shortest-witness comparisons, and the actual verified D01 artifact. The recorded run is [demo.json](artifacts/demo.json); its source commit identifies the application snapshot. This script does not contact the partner simulator or create a learner-study result.
+With the current API running on loopback, run `python3 scripts/demo.py` from the repository root. It fails on any fixture mismatch and prints curated JSON for 12 simulation samples across all five machine kinds, seven exactly certified operations, equivalent and shortest-witness comparisons, and the actual verified D01 artifact. The recorded run is [demo.json](artifacts/demo.json); its source commit identifies the earlier P0 snapshot. Run the script on v1.0.0 to produce current evidence. Archive installs show the software version with an empty source commit field. This script does not contact the partner simulator or create a learner-study result.

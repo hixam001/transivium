@@ -1850,3 +1850,29 @@ Focused security, dependency, correctness and interface reviews completed. Added
 
 Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
 ",Highest,transivium-p0
+28,Task,Publish Transivium v1.0.0,"Local planning key: TRN-28
+Planning status: In Progress
+Epic: TRN-104
+Depends on: TRN-27
+Requirements: See linked source contracts
+Estimate (proposed person-days): Unestimated
+
+
+# TRN-28 — Publish Transivium v1.0.0
+
+## Acceptance criteria
+
+- [ ] Align release version metadata and document the MIT license.
+- [ ] Verify the source archive works with the setup guide and executable demo.
+- [ ] Publish an exact verified main commit to GitHub Releases and record external evidence still pending.
+
+## Test and delivery evidence
+
+Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+
+## Links
+
+- memory/Issues/TRN-27
+- memory/Issues/TRN-104
+- docs/QUALITY_REVIEW
+",Highest,transivium-p0

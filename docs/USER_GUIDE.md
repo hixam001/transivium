@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # User Guide — Transivium
 
-Version 0.1 | Local P0 release candidate. All five machine kinds and seven operations are available; Machine files and session history are available. See [[docs/TEST_EVIDENCE]] for validation and known limitations.
+Version 1.0.0 | Local application. All five machine kinds and seven operations are available; Machine files and session history are available. See [[docs/TEST_EVIDENCE]] for validation and known limitations.
 
 ## 1. Start and choose a machine
 Open the local application after setup. `/` and `/editor` open the workspace with the Ends in 01 example. Use the sidebar examples or the Machine type selector to choose a type: DFA (one next state per symbol), NFA (multiple or absent next states), ε-NFA (NFA plus non-consuming epsilon moves), Mealy (outputs on edges), Moore (outputs on states). No registration or login required. The editor holds a single working draft in memory; refresh may lose work. Machine files let you keep and reopen a validated model.

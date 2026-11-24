@@ -19,9 +19,9 @@ Workflow for the implementation repository. Read [AGENTS.md](AGENTS.md) and [[me
 4. Add tests for standard, empty, invalid and resource-bound cases. For language changes use exact equivalence and hand-calculated fixtures. For Mealy/Moore use normalized-output comparison. Test serialized regex via independent parser, not just AST.
 5. Run actual checks ([Setup Guide](docs/SETUP_GUIDE.md)); attach commit/environment/results. Use NOT RUN if not executed.
 6. Record review evidence, scope, tests, known risks and screenshots for visual changes. Require peer review for formal algorithms and exchange contract changes. Stage task-owned files, commit with the configured identity and no added contributor/Co-authored-by attribution, then push normally to `main`; preserve remote protection rules.
-7. Update docs in same PR when changing API, schemas, semantics, UI flow, requirements or limits; note changes in Unreleased CHANGELOG.
+7. Update docs in same PR when changing API, schemas, semantics, UI flow, requirements or limits; note unreleased changes in CHANGELOG.
 
-Never commit secrets, venv, node_modules, generated build outputs or private data. Use dependency lockfiles and documented setup. License and branch protection settings are [DECIDE].
+Never commit secrets, venv, node_modules, generated build outputs or private data. Use dependency lockfiles and documented setup. Source is MIT-licensed. Follow the repository’s GitHub branch protection settings.
 
 ## Memory links
 

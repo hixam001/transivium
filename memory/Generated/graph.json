@@ -165,6 +165,15 @@
       ]
     },
     {
+      "id": "docs/RELEASE_VALIDATION",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "release"
+      ]
+    },
+    {
       "id": "docs/SETUP_GUIDE",
       "type": "reference",
       "status": "active",
@@ -489,6 +498,15 @@
       ]
     },
     {
+      "id": "memory/Handoffs/TRN-28",
+      "type": "session",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "session"
+      ]
+    },
+    {
       "id": "memory/Home",
       "type": "project",
       "status": "active",
@@ -796,6 +814,15 @@
     },
     {
       "id": "memory/Issues/TRN-27",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-28",
       "type": "reference",
       "status": "active",
       "tags": [
@@ -1578,6 +1605,10 @@
     },
     {
       "source": "docs/ADMIN_GUIDE",
+      "target": "docs/RELEASE_VALIDATION"
+    },
+    {
+      "source": "docs/ADMIN_GUIDE",
       "target": "memory/Home"
     },
     {
@@ -1629,6 +1660,30 @@
       "target": "memory/Issues/TRN-27"
     },
     {
+      "source": "docs/RELEASE_VALIDATION",
+      "target": "docs/05_ALGORITHMS"
+    },
+    {
+      "source": "docs/RELEASE_VALIDATION",
+      "target": "docs/QUALITY_REVIEW"
+    },
+    {
+      "source": "docs/RELEASE_VALIDATION",
+      "target": "docs/TEST_EVIDENCE"
+    },
+    {
+      "source": "docs/RELEASE_VALIDATION",
+      "target": "docs/USER_GUIDE"
+    },
+    {
+      "source": "docs/RELEASE_VALIDATION",
+      "target": "memory/Decisions/Open-Decisions"
+    },
+    {
+      "source": "docs/RELEASE_VALIDATION",
+      "target": "memory/Issues/TRN-28"
+    },
+    {
       "source": "docs/SETUP_GUIDE",
       "target": "docs/TEST_EVIDENCE"
     },
@@ -1638,15 +1693,19 @@
     },
     {
       "source": "docs/SETUP_GUIDE",
-      "target": "memory/Project"
-    },
-    {
-      "source": "docs/SETUP_GUIDE",
       "target": "memory/References/Documentation-Review"
     },
     {
       "source": "docs/TEST_EVIDENCE",
       "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "docs/TEST_EVIDENCE",
+      "target": "docs/QUALITY_REVIEW"
+    },
+    {
+      "source": "docs/TEST_EVIDENCE",
+      "target": "docs/RELEASE_VALIDATION"
     },
     {
       "source": "docs/TEST_EVIDENCE",
@@ -1738,6 +1797,14 @@
     },
     {
       "source": "memory/Decisions/Open-Decisions",
+      "target": "memory/Issues/TRN-18"
+    },
+    {
+      "source": "memory/Decisions/Open-Decisions",
+      "target": "memory/Issues/TRN-19"
+    },
+    {
+      "source": "memory/Decisions/Open-Decisions",
       "target": "memory/Project"
     },
     {
@@ -1758,7 +1825,7 @@
     },
     {
       "source": "memory/Handoffs/Current",
-      "target": "memory/Handoffs/TRN-27"
+      "target": "memory/Handoffs/TRN-28"
     },
     {
       "source": "memory/Handoffs/Current",
@@ -1766,7 +1833,7 @@
     },
     {
       "source": "memory/Handoffs/Current",
-      "target": "memory/Issues/TRN-27"
+      "target": "memory/Issues/TRN-28"
     },
     {
       "source": "memory/Handoffs/Current",
@@ -2809,6 +2876,30 @@
       "target": "memory/Workflow"
     },
     {
+      "source": "memory/Handoffs/TRN-28",
+      "target": "memory/Decisions/Working-Agreement"
+    },
+    {
+      "source": "memory/Handoffs/TRN-28",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Handoffs/TRN-28",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Handoffs/TRN-28",
+      "target": "memory/Issues/TRN-28"
+    },
+    {
+      "source": "memory/Handoffs/TRN-28",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Handoffs/TRN-28",
+      "target": "memory/Workflow"
+    },
+    {
       "source": "memory/Home",
       "target": "README"
     },
@@ -3003,6 +3094,10 @@
     {
       "source": "memory/Issues/Backlog",
       "target": "memory/Issues/TRN-27"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-28"
     },
     {
       "source": "memory/Issues/Backlog",
@@ -4527,6 +4622,18 @@
     {
       "source": "memory/Issues/TRN-27",
       "target": "memory/Issues/TRN-19"
+    },
+    {
+      "source": "memory/Issues/TRN-28",
+      "target": "docs/QUALITY_REVIEW"
+    },
+    {
+      "source": "memory/Issues/TRN-28",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-28",
+      "target": "memory/Issues/TRN-27"
     },
     {
       "source": "memory/Project",

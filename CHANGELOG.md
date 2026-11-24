@@ -13,14 +13,15 @@ tags: ["transivium", "documentation"]
 
 Track actual changes here; planned functionality is not a released feature.
 
-## [Unreleased] — local P0 release candidate, 2026-11-24
+## [1.0.0] — 2026-11-24
 
 - Implemented all five machine kinds, seven exactly certified operations, step playback, shortest language witnesses and independent serialized-regex reconstruction/verification.
 - Added responsive graph/table editing, explicit adoption, stale-response and navigation protection, request IDs and recoverable diagram/route loading errors.
 - Added strict typed request/response schemas, bounded JSON/algorithm/trace/regex work, deterministic results and exact contract drift checks.
 - Added generated Jira-style requirement coverage, Obsidian memory/handoffs/graph, pinned setup, read-only CI, performance measurements and a reproducible HTTP demonstration.
 - Verified engine/API, components, browser workflows, accessibility scans and fresh setup; full counts/case mapping are in [[docs/TEST_EVIDENCE]].
-- Pending: independent peer review, external simulator agreement/exchange, five-learner study, license and actual schedule decisions. No v1.0 tag or public deployment is claimed.
+- The source release uses the MIT License. Partner simulator exchange, learner study and independent human peer review are pending.
+- Hardened the local API Host and upload handling and limited the number of rendered controls in large transition tables.
 - Added versioned machine JSON, session run history, named browser projects, practice examples, layout presets, undo/redo and SVG/PNG export.
 
 ## [0.1-docs] — 2026-11-24

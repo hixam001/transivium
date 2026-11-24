@@ -11,6 +11,12 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def source_revision() -> str | None:
+    if not (ROOT / ".git").exists():
+        return None
+    return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+
+
 def run(base: str) -> dict:
     parsed = urlsplit(base)
     if parsed.scheme != "http" or parsed.hostname not in {"127.0.0.1", "localhost", "::1"}:
@@ -105,9 +111,8 @@ def run(base: str) -> dict:
             require(outcomes == [True, False], "witness replay")
         comparisons.append({"left": left, "right": right, **result})
     return {
-        "sourceCommit": subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
-        ).strip(),
+        "sourceCommit": source_revision(),
+        "softwareVersion": json.loads((ROOT / "frontend/package.json").read_text())["version"],
         "status": "PASS",
         "simulations": simulations,
         "conversions": conversions,

@@ -7,13 +7,14 @@ import math
 import os
 import platform
 import statistics
-import subprocess
 import time
 import urllib.error
 import urllib.request
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlsplit
+
+from demo import source_revision
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -146,9 +147,7 @@ def main():
         )
     report = dict(
         schemaVersion=1,
-        sourceCommit=subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
-        ).strip(),
+        sourceCommit=source_revision(),
         environment=dict(
             os=platform.system(),
             kernel=platform.release(),

@@ -14,7 +14,7 @@ tags: ["transivium", "documentation"]
 **Finite Automata & Transducer Simulation Studio**\
 Construct. Convert. Simulate. Verify.
 
-> Local P0 release candidate: all five machine kinds, seven operations, exact comparison and verified regex export are implemented. See [executed evidence](docs/TEST_EVIDENCE.md) for results and pending external reviews. No public deployment or v1.0 release is claimed.
+> **v1.0.0** includes all five machine kinds, seven operations, exact comparison and verified regex export. Download the [GitHub release](https://github.com/hixam001/transivium/releases/tag/v1.0.0) and run it locally.
 
 Transivium is an interactive Theory of Automata university project for constructing, simulating and converting DFA, NFA, ε-NFA, Mealy and Moore machines. Its signature feature is DFA-to-regular-expression export with exact language-equivalence verification and an exchange format for an independent simulator.
 
@@ -47,7 +47,9 @@ See [Setup Guide](docs/SETUP_GUIDE.md). Install `backend/requirements.txt` in a 
 | [API Contract](docs/04_API_CONTRACT.md) | Endpoints, errors and limits |
 | [Algorithm Specification](docs/05_ALGORITHMS.md) | Formal methods, regex exchange grammar, verification |
 | [Project Plan](docs/06_PROJECT_PLAN.md) | Scope, milestones, Jira-style work breakdown and budget |
-| [Test Plan](docs/07_TEST_PLAN.md) | Planned test cases and release gates |
+| [Test Plan](docs/07_TEST_PLAN.md) | Test cases and release gates |
+| [Quality review](docs/QUALITY_REVIEW.md) | Audit scope, changes and verification |
+| [External validation](docs/RELEASE_VALIDATION.md) | Partner test and human review procedures |
 | [Application Flow](docs/APP_FLOW.md) | Navigation, screens, state and recovery |
 | [Setup Guide](docs/SETUP_GUIDE.md) | Verified local installation and configuration |
 | [User Guide](docs/USER_GUIDE.md) | Learner and instructor usage, demo |
@@ -59,7 +61,7 @@ See [Setup Guide](docs/SETUP_GUIDE.md). Install `backend/requirements.txt` in a 
 A verified regex denotes exactly the language of the input DFA over its declared alphabet. The external simulator's minimal complete DFA over the same alphabet is unique up to renaming, assuming correct reconstruction. Arbitrary state labels, unreachable states, redundant states and layouts cannot be recovered from a regex alone. See the algorithm specification for the exchange contract.
 
 ## Contributing
-Follow [CONTRIBUTING.md](CONTRIBUTING.md). Review PRD/SRD and ADRs before implementation, keep formal model and API consistent, and attach reproducible tests. Do not claim passing tests without evidence. License remains [DECIDE]. Use the configured Git author without adding contributor attribution.
+Follow [CONTRIBUTING.md](CONTRIBUTING.md). Review PRD/SRD and ADRs before implementation, keep formal model and API consistent, and attach reproducible tests. Do not claim passing tests without evidence. Transivium is licensed under the [MIT License](LICENSE). Use the configured Git author without adding contributor attribution.
 
 ## Memory links
 

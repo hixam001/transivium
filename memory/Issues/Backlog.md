@@ -44,6 +44,7 @@ These are **local planning IDs**, not issues created in a connected Jira project
 | [[memory/Issues/TRN-25\|TRN-25: Verify maintainability]] | Task | P0 | To Do | Unestimated |
 | [[memory/Issues/TRN-26\|TRN-26: Verify scalability]] | Task | P0 | To Do | Unestimated |
 | [[memory/Issues/TRN-27\|TRN-27: Security, correctness and interface review]] | Task | P0 | To Do | Unestimated |
+| [[memory/Issues/TRN-28\|TRN-28: Publish Transivium v1.0.0]] | Task | P0 | To Do | Unestimated |
 
 ## Epics
 

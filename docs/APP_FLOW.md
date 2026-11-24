@@ -11,10 +11,10 @@ tags: ["transivium", "documentation"]
 
 # Application Flow — Transivium
 
-Version 0.1 | Implemented P0 navigation and recovery behavior. No accounts.
+Version 1.0.0 | Navigation and recovery behavior. No accounts.
 
 ## 1. Entry points
-Direct local URL `/` opens the editor workspace with the D01 example; machine choices and examples live in the sidebar/toolbar. There is no separate welcome screen. `/editor`, `/compare`, `/help` are direct routes. A refresh/revisit opens a new in-memory session unless P1 file import is used. No email notifications, OAuth, search indexing, marketing or account onboarding in MVP. Local maintainer starts services outside app.
+Direct local URL `/` opens the editor workspace with the D01 example; machine choices and examples live in the sidebar/toolbar. There is no separate welcome screen. `/editor`, `/compare`, `/help` are direct routes. A refresh starts a new editor session. Reopen a named browser project or import a machine file to restore work. No email notifications, OAuth, search indexing, marketing or account onboarding in MVP. Local maintainer starts services outside app.
 
 ## 2. Core user flows
 ### Flow A — Create/edit/validate machine
@@ -50,7 +50,7 @@ Errors: unverified, limit or mismatch → error, no enabled verified export. If 
 ### Flow E — Compare acceptors
 Open Compare, select/edit two acceptor snapshots (can copy current draft to either side; second side editable). Display each alphabet and validation status. Compare enabled only for valid acceptors with same alphabet set. On result, equivalent=true displays exact product check; false displays shortest witness, including ε for [] and both acceptance outcomes. Allow run witness on each side using simulation endpoint. Errors: invalid machines or alphabet mismatch require correction; no witness if computation failed. Editing either invalidates result. Back retains current editor draft in same session.
 
-### Flow F — P1 reuse (not release blocker)
+### Flow F — Reuse machines and runs
 Import versioned JSON via file chooser, validate schema and machine; show preview, then confirm replace. Export current valid machine to JSON. Open recent history entry using immutable source snapshot; do not overwrite active draft. Reject oversized/invalid/unsupported files; cancel preserves draft. No account management or admin UI.
 
 ### Flow G — Recover from failures
@@ -63,7 +63,7 @@ On connection error, show disconnected message and retry; no successful state un
 │   ├── Machine editor + transition table
 │   ├── Simulation panel
 │   ├── Conversion panel → regex export panel (DFA only)
-│   └── Import/export & history (P1)
+│   └── Machine files, run history and saved projects
 ├── /compare [local/public] ↔ editor snapshots
 └── /help [local/public] → syntax, conventions, limitations
 ```
@@ -79,7 +79,7 @@ Local/public means any user of running local instance, not internet-hosted. Edit
 | `/editor` regex | Exchange | Expression, alphabet, canonical DFA, copy/download | Loading, verified, error, stale |
 | `/compare` | Compare | Left/right editors, alphabet checks, witness | Empty, invalid, loading, equivalent/different, error |
 | `/help` | Learn | Model conventions, grammar, constraints, setup link | Static |
-| P1 editor file/history | Reuse | File picker, preview, history | Empty, success, invalid, canceled |
+| Editor file/history | Reuse | File picker, preview, history | Empty, success, invalid, canceled |
 
 ## 5. Decision points
 - IF kind is acceptor THEN show finals/acceptance, ELSE output alphabet and outputs; IF enfa THEN allow epsilon.

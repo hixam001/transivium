@@ -25,7 +25,7 @@ Reviewed on 2026-11-24 from `f108c0e` through the TRN-27 changes. The scope was 
 
 The focused security review was source-based. Regression tests exercised application behavior in the local development environment. Coverage does not include penetration testing, deployed infrastructure, physical touch devices or an independent human review. No partner exchange or learner study evidence was available.
 
-The combined local run passed **171 backend tests, 17 frontend component tests, 35 Chromium cases and nine repository script tests**. Build, lint, contract and memory checks passed. Upstream TestClient deprecation and bundler directive warnings remain. Chromium recorded transient graph measurement warnings during browser setup while all exercised graph workflows completed.
+[Hosted verification for the audit commit](https://github.com/hixam001/transivium/actions/runs/45366691312) passed. The combined local run passed **171 backend tests, 17 frontend component tests, 35 Chromium cases and nine repository script tests**. Build, lint, contract and memory checks passed. Upstream TestClient deprecation and bundler directive warnings remain. Chromium recorded transient graph measurement warnings during browser setup while all exercised graph workflows completed.
 
 - [[memory/Issues/TRN-27]]
 - [[docs/TEST_EVIDENCE]]

@@ -20,9 +20,9 @@ tags: ["transivium", "reference"]
 | External exchange | formal-v1 grammar and fixtures documented; partner agreement absent | Track agreement and external test separately; do not contact others without authorization |
 | Schedule/capacity | Relative six weeks and 53 P0 person-days proposed | Confirm team size/deadline; no invented dates or assignees |
 | Resource limits | SAD/API caps enforced; API/browser measurements recorded | Retain limits and reference-workload caveats; see [[docs/TEST_EVIDENCE]] |
-| Release policy | Local stateless MVP, no public deployment | Separate decision/review if public hosting is requested |
-| Governance | License and branch protection unspecified | Resolve before a release; follow authorized normal main pushes subject to remote rules |
-| P2 scope | FR-21/22 have no detailed tests or estimates | Keep deferred; elaborate only when authorized |
+| Release policy | User requested GitHub Releases for the local application | Versioned MIT source release under TRN-28 |
+| Governance | MIT license selected under delegated user authorization | Keep normal main pushes subject to remote rules |
+| P2 scope | FR-21/22 implemented and verified | See [[memory/Issues/TRN-18]] and [[memory/Issues/TRN-19]] |
 | Verification dependency | Shared checker implemented in TRN-07 | TRN-08/09 and integration gates pass; preserve independent text verification |
 
 ## Links

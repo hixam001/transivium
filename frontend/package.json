@@ -1,6 +1,7 @@
 {
   "name": "transivium",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "license": "MIT",
   "description": "Finite Automata and Transducer Simulation Studio",
   "scripts": {
     "dev": "vite",

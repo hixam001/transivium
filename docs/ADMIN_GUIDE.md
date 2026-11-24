@@ -11,7 +11,7 @@ tags: ["transivium", "documentation"]
 
 # Administrator / Local Maintainer Guide — Transivium
 
-Version 0.1 | Local release-candidate operations
+Version 1.0.0 | Local release operations
 
 ## 1. Role boundary
 The MVP has no administrator account, RBAC, dashboard, user database or server-side saved machines. This guide is for whoever runs the local instance (developer, instructor, demo operator). Administration means environment/configuration, updates, diagnostics and release checks, not managing user accounts.
@@ -33,7 +33,7 @@ Pin dependencies and track configuration in repo without secrets. Use local bind
 | External regex mismatch | Verify alphabet, formal grammar, completion and minimization; run internal exact check; document external limitation without assigning unverified blame |
 
 ## 5. Updates and releases
-Review changes against requirement IDs, run fresh setup and full test plan, record test evidence; update README, API/schema/algorithm docs as appropriate and CHANGELOG. Tag release only after acceptance gate. The local P0 release candidate has automated evidence; partner/learner testing and human peer review remain pending. No version tag or public deployment is implied. If regression found, stop affected demo path or revert to last verified commit (if one exists); never advertise unverified regex as correct. No database migrations in MVP.
+Review changes against requirement IDs, run fresh setup and full test plan, record test evidence; update README, API/schema/algorithm docs as appropriate and CHANGELOG. Tag release only after acceptance gate. GitHub hosts the versioned source release. Partner and learner testing and independent human peer review remain pending. [[docs/RELEASE_VALIDATION]] provides the procedures. If regression found, stop affected demo path or revert to last verified commit (if one exists); never advertise unverified regex as correct. No database migrations in MVP.
 
 ## 6. Demo operations
 Before class: start services, check health, test all five machine types, run DFA-to-regex and witness examples, prepare external exchange fixtures, record whether partner integration was actually tested. Keep offline copies of docs and verified test artifacts once available. If external simulator unavailable, demonstrate internal exact reconstruction and state that cross-team test is pending. Do not claim a passed integration based on expected mathematical behavior alone.
