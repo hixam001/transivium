@@ -155,3 +155,80 @@ def equivalent(left: dict, right: dict, budget: Budget) -> dict:
         rightAccepts=None,
         visitedPairs=len(parents),
     )
+
+
+def canonicalize(machine: dict, budget: Budget) -> dict:
+    alphabet = sorted(machine["alphabet"])
+    table = {(t["from"], t["symbol"]): t["to"] for t in machine["transitions"]}
+    names = {machine["startState"]: "q0"}
+    queue = deque([machine["startState"]])
+    edges = []
+    while queue:
+        budget.check()
+        source = queue.popleft()
+        for symbol in alphabet:
+            target = table[source, symbol]
+            if target not in names:
+                budget.check(len(names) + 1, budget.limits.states, "Canonical state")
+                names[target] = f"q{len(names)}"
+                queue.append(target)
+            add_edge(edges, names[source], symbol, names[target], budget)
+    finals = set(machine["finalStates"])
+    return dict(
+        kind="dfa",
+        alphabet=alphabet,
+        states=[{"id": n} for n in names.values()],
+        startState="q0",
+        finalStates=[n for old, n in names.items() if old in finals],
+        transitions=edges,
+    )
+
+
+def minimize(machine: dict, budget: Budget, steps: list | None = None) -> dict:
+    alphabet = sorted(machine["alphabet"])
+    table = {(t["from"], t["symbol"]): t["to"] for t in machine["transitions"]}
+    reachable = {machine["startState"]}
+    queue = deque(reachable)
+    while queue:
+        budget.check()
+        source = queue.popleft()
+        for symbol in alphabet:
+            target = table[source, symbol]
+            if target not in reachable:
+                reachable.add(target)
+                queue.append(target)
+    record(budget, steps, "reachable", "Remove unreachable states", states=sorted(reachable))
+    finals = reachable & set(machine["finalStates"])
+    blocks = [sorted(group) for group in [reachable - finals, finals] if group]
+    record(budget, steps, "partition", "Partition final and nonfinal states", blocks=blocks)
+    while True:
+        membership = {s: i for i, block in enumerate(blocks) for s in block}
+        refined = []
+        for block in blocks:
+            groups = {}
+            for state in block:
+                budget.check()
+                signature = tuple(membership[table[state, symbol]] for symbol in alphabet)
+                groups.setdefault(signature, []).append(state)
+            refined.extend(groups.values())
+        if len(refined) == len(blocks):
+            break
+        blocks = refined
+        record(
+            budget, steps, "partition", "Split states with different future behavior", blocks=blocks
+        )
+    membership = {s: f"b{i}" for i, block in enumerate(blocks) for s in block}
+    edges = []
+    for block in blocks:
+        source = block[0]
+        for symbol in alphabet:
+            add_edge(edges, membership[source], symbol, membership[table[source, symbol]], budget)
+    quotient = dict(
+        kind="dfa",
+        alphabet=alphabet,
+        states=[{"id": f"b{i}"} for i in range(len(blocks))],
+        startState=membership[machine["startState"]],
+        finalStates=sorted({membership[s] for s in finals}),
+        transitions=edges,
+    )
+    return canonicalize(quotient, budget)

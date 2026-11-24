@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-08"
 issue_type: "Story"
 summary: "Minimization and canonicalization (FR-10)"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-102"
 depends_on: ["TRN-03", "TRN-07"]
@@ -27,8 +27,8 @@ As a learner or instructor, I want minimization and canonicalization (fr-10), so
 
 ## Acceptance criteria
 
-- [ ] Remove unreachable states, refine partitions, handle empty alphabet, and emit complete minimal DFA with sorted-symbol BFS IDs.
-- [ ] Use the shared exact product checker implemented in TRN-07 before certifying minimization.
+- [x] Remove unreachable states, refine partitions, handle empty alphabet, and emit complete minimal DFA with sorted-symbol BFS IDs.
+- [x] Use the shared exact product checker implemented in TRN-07 before certifying minimization.
 
 Baseline done condition: Reachability, partition and canonical fixtures
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -64,3 +64,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+DFA minimization and canonical BFS numbering implemented with unreachable removal, partition traces and exact language certification.
+
+58 backend tests passed. D01/D02 reduce to the same three-state canonical machine; universal/empty and empty-alphabet cases pass. Renaming/order/labels do not affect canonical output. 25 fixed-seed complete DFAs preserve language, minimize idempotently and have pairwise distinguishable result states. Ruff passed.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Epsilon removal and reachable subset construction implemented with final propagation, empty sinks, deterministic derivations and exact product certification. Shared checker brought forward to satisfy certification dependency."
-next_actions: ["TRN-08"]
+current_state: "DFA minimization and canonical BFS numbering implemented with unreachable removal, partition traces and exact language certification."
+next_actions: ["TRN-09"]
 ---
 
 # Project state
@@ -61,3 +61,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-06]]: Acceptor playback implemented with initial/next/back/reset/play/pause controls, state/edge highlights, trace navigation, explicit empty input and safe error/stale handling. Next: [[memory/Issues/TRN-07]].
 
 - [[memory/Issues/TRN-07]]: Epsilon removal and reachable subset construction implemented with final propagation, empty sinks, deterministic derivations and exact product certification. Shared checker brought forward to satisfy certification dependency. Next: [[memory/Issues/TRN-08]].
+
+- [[memory/Issues/TRN-08]]: DFA minimization and canonical BFS numbering implemented with unreachable removal, partition traces and exact language certification. Next: [[memory/Issues/TRN-09]].

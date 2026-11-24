@@ -594,7 +594,7 @@ Epsilon removal and reachable subset construction implemented with final propaga
 Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
 ",Highest,transivium-p0
 8,Story,Minimization and canonicalization (FR-10),"Local planning key: TRN-08
-Planning status: To Do
+Planning status: Done
 Epic: TRN-102
 Depends on: TRN-03, TRN-07
 Requirements: FR-10
@@ -609,8 +609,8 @@ As a learner or instructor, I want minimization and canonicalization (fr-10), so
 
 ## Acceptance criteria
 
-- [ ] Remove unreachable states, refine partitions, handle empty alphabet, and emit complete minimal DFA with sorted-symbol BFS IDs.
-- [ ] Use the shared exact product checker implemented in TRN-07 before certifying minimization.
+- [x] Remove unreachable states, refine partitions, handle empty alphabet, and emit complete minimal DFA with sorted-symbol BFS IDs.
+- [x] Use the shared exact product checker implemented in TRN-07 before certifying minimization.
 
 Baseline done condition: Reachability, partition and canonical fixtures
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -646,6 +646,14 @@ External partner results must be recorded separately from internal verification.
 - docs/05_ALGORITHMS
 - docs/APP_FLOW
 - docs/07_TEST_PLAN
+
+## Executed implementation evidence
+
+DFA minimization and canonical BFS numbering implemented with unreachable removal, partition traces and exact language certification.
+
+58 backend tests passed. D01/D02 reduce to the same three-state canonical machine; universal/empty and empty-alphabet cases pass. Renaming/order/labels do not affect canonical output. 25 fixed-seed complete DFAs preserve language, minimize idempotently and have pairwise distinguishable result states. Ruff passed.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
 ",Highest,transivium-p0
 9,Story,Exact equivalence and shortest witness (FR-14),"Local planning key: TRN-09
 Planning status: To Do

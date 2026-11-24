@@ -1,6 +1,6 @@
 """Certify every successful conversion within the same request budget."""
 
-from app.engine.acceptors import determinize, equivalent, remove_epsilon
+from app.engine.acceptors import determinize, equivalent, minimize, remove_epsilon
 from app.engine.budget import Budget
 from app.engine.errors import EngineError
 from app.engine.validation import require_valid
@@ -10,6 +10,7 @@ OPERATIONS = {
     "enfa_to_nfa": ("enfa", remove_epsilon),
     "nfa_to_dfa": ("nfa", determinize),
     "enfa_to_dfa": ("enfa", determinize),
+    "minimize_dfa": ("dfa", minimize),
 }
 
 
