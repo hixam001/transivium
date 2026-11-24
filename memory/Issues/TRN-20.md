@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-20"
 issue_type: "Task"
 summary: "Verify correctness"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-104"
 depends_on: []
@@ -27,8 +27,8 @@ As a maintainer, I want verify correctness, so that the documented Transivium wo
 
 ## Acceptance criteria
 
-- [ ] exact algorithmic checks and explicit formal conventions; no approximation passed off as equivalence.
-- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+- [x] exact algorithmic checks and explicit formal conventions; no approximation passed off as equivalence.
+- [x] Record reproducible evidence and any unmet target before the P0 release gate.
 
 Baseline done condition: exact algorithmic checks and explicit formal conventions; no approximation passed off as equivalence.
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -43,7 +43,7 @@ This task verifies cross-cutting requirements as component work lands; it does n
 ## Test and delivery evidence
 
 Planned cases: TC-08, TC-09, TC-10, TC-11, TC-12, TC-13, TC-14, TC-15, TC-16, TC-17, TC-18, TC-19, TC-20, TC-21, TC-22, TC-23, TC-24, TC-33, TC-34, TC-35
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: Unestimated; do not interpret as zero.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -63,3 +63,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Cross-operation correctness gate implemented and documented; all seven API operations return valid exactly certified results, and interrupted verification returns no artifact.
+
+140 backend tests passed, with seven-operation API/schema/certification coverage, empty-alphabet semantics, NFA witness replay and injected verification limit/deadline failures. Ruff passed. Existing browser coverage includes ten cases. External peer/partner/volunteer evidence remains pending rather than inferred.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

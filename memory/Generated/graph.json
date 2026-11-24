@@ -165,6 +165,15 @@
       ]
     },
     {
+      "id": "docs/TEST_EVIDENCE",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
       "id": "docs/USER_GUIDE",
       "type": "reference",
       "status": "active",
@@ -337,6 +346,15 @@
     },
     {
       "id": "memory/Handoffs/TRN-14",
+      "type": "session",
+      "status": "complete",
+      "tags": [
+        "transivium",
+        "session"
+      ]
+    },
+    {
+      "id": "memory/Handoffs/TRN-20",
       "type": "session",
       "status": "complete",
       "tags": [
@@ -1074,6 +1092,15 @@
       ]
     },
     {
+      "id": "memory/Sessions/2026-11-24-TRN-20",
+      "type": "session",
+      "status": "complete",
+      "tags": [
+        "transivium",
+        "session"
+      ]
+    },
+    {
       "id": "memory/Templates/Jira-Issue",
       "type": "reference",
       "status": "active",
@@ -1319,6 +1346,26 @@
       "target": "memory/References/Documentation-Review"
     },
     {
+      "source": "docs/TEST_EVIDENCE",
+      "target": "docs/07_TEST_PLAN"
+    },
+    {
+      "source": "docs/TEST_EVIDENCE",
+      "target": "memory/Issues/TRN-15"
+    },
+    {
+      "source": "docs/TEST_EVIDENCE",
+      "target": "memory/Issues/TRN-17"
+    },
+    {
+      "source": "docs/TEST_EVIDENCE",
+      "target": "memory/Issues/TRN-20"
+    },
+    {
+      "source": "docs/TEST_EVIDENCE",
+      "target": "memory/Project"
+    },
+    {
       "source": "docs/USER_GUIDE",
       "target": "memory/Home"
     },
@@ -1396,7 +1443,7 @@
     },
     {
       "source": "memory/Handoffs/Current",
-      "target": "memory/Handoffs/TRN-14"
+      "target": "memory/Handoffs/TRN-20"
     },
     {
       "source": "memory/Handoffs/Current",
@@ -1404,7 +1451,7 @@
     },
     {
       "source": "memory/Handoffs/Current",
-      "target": "memory/Issues/TRN-14"
+      "target": "memory/Issues/TRN-20"
     },
     {
       "source": "memory/Handoffs/Current",
@@ -1924,6 +1971,38 @@
     },
     {
       "source": "memory/Handoffs/TRN-14",
+      "target": "memory/Workflow"
+    },
+    {
+      "source": "memory/Handoffs/TRN-20",
+      "target": "memory/Decisions/Working-Agreement"
+    },
+    {
+      "source": "memory/Handoffs/TRN-20",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Handoffs/TRN-20",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Handoffs/TRN-20",
+      "target": "memory/Issues/TRN-20"
+    },
+    {
+      "source": "memory/Handoffs/TRN-20",
+      "target": "memory/Issues/TRN-21"
+    },
+    {
+      "source": "memory/Handoffs/TRN-20",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Handoffs/TRN-20",
+      "target": "memory/Requirements/NFR-01"
+    },
+    {
+      "source": "memory/Handoffs/TRN-20",
       "target": "memory/Workflow"
     },
     {
@@ -3680,6 +3759,10 @@
     },
     {
       "source": "memory/Project",
+      "target": "memory/Issues/TRN-21"
+    },
+    {
+      "source": "memory/Project",
       "target": "memory/References/Documentation-Review"
     },
     {
@@ -4452,6 +4535,10 @@
     },
     {
       "source": "memory/Requirements/NFR-01",
+      "target": "docs/TEST_EVIDENCE"
+    },
+    {
+      "source": "memory/Requirements/NFR-01",
       "target": "memory/Issues/TRN-15"
     },
     {
@@ -4888,6 +4975,22 @@
     },
     {
       "source": "memory/Sessions/2026-11-24-TRN-14",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-20",
+      "target": "memory/Handoffs/TRN-20"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-20",
+      "target": "memory/Issues/TRN-20"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-20",
+      "target": "memory/Issues/TRN-21"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-20",
       "target": "memory/Project"
     },
     {

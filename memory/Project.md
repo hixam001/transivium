@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Both transducer conversions implemented and integrated, with reachable incoming-output splitting, synthetic initial Moore output, destination-state Mealy outputs and exact normalized-output certification."
-next_actions: ["TRN-20"]
+current_state: "Cross-operation correctness gate implemented and documented; all seven API operations return valid exactly certified results, and interrupted verification returns no artifact."
+next_actions: ["TRN-21"]
 ---
 
 # Project state
@@ -75,3 +75,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-13]]: Mealy/Moore simulation and playback implemented with full/prefix outputs, separate initial Moore output, normalized post-input streams and no acceptance label for transducers. Next: [[memory/Issues/TRN-14]].
 
 - [[memory/Issues/TRN-14]]: Both transducer conversions implemented and integrated, with reachable incoming-output splitting, synthetic initial Moore output, destination-state Mealy outputs and exact normalized-output certification. Next: [[memory/Issues/TRN-20]].
+
+- [[memory/Issues/TRN-20]]: Cross-operation correctness gate implemented and documented; all seven API operations return valid exactly certified results, and interrupted verification returns no artifact. Next: [[memory/Issues/TRN-21]].

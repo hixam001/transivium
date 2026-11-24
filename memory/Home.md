@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Both transducer conversions implemented and integrated, with reachable incoming-output splitting, synthetic initial Moore output, destination-state Mealy outputs and exact normalized-output certification."
-next_actions: ["TRN-20"]
+current_state: "Cross-operation correctness gate implemented and documented; all seven API operations return valid exactly certified results, and interrupted verification returns no artifact."
+next_actions: ["TRN-21"]
 ---
 
 # Transivium memory home
