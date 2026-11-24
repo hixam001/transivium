@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-18"
 issue_type: "Task"
 summary: "Saved projects and example library"
-issue_status: "Deferred"
+issue_status: "Done"
 priority: "P2"
 epic: "TRN-105"
 depends_on: ["TRN-17"]
@@ -27,10 +27,10 @@ As a learner or instructor, I want saved projects and example library, so that t
 
 ## Acceptance criteria
 
-- [ ] Optional persistence and curated examples beyond basic demo fixtures
-- [ ] Deferred; detailed design, effort and test cases are not specified by the baseline.
+- [x] Optional persistence and curated examples beyond basic demo fixtures
+- [x] Named projects persist in the current browser. Opening validates the snapshot and requires explicit replacement. Deletion asks for confirmation and leaves the live draft intact.
 
-Baseline done condition: Scope and acceptance criteria agreed before any implementation.
+Baseline done condition: Named projects reopen after refresh and the practice library contains runnable new examples.
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
 
 ## Dependencies and sequencing
@@ -43,7 +43,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: Unestimated; do not interpret as zero.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -63,3 +63,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Named local projects preserve validated machines and diagram layout across refresh. The practice library adds focused acceptor and transducer exercises.
+
+Frontend lint and two live Chromium cases passed. Tests covered refresh, rejected and confirmed replacement/deletion, mobile parity transducer operation and a scoped axe scan. Storage stays in the current browser, up to 12 projects and 2 MiB of serialized browser storage.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

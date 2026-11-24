@@ -17,6 +17,7 @@ import TransitionTable from "./TransitionTable";
 import Simulation from "./Simulation";
 import Conversion from "./Conversion";
 import MachineFiles from "./MachineFiles";
+import ProjectLibrary from "./ProjectLibrary";
 import RunHistory from "./RunHistory";
 import type { RunSnapshot } from "./RunHistory";
 import { machineFile } from "./machineFile";
@@ -528,6 +529,17 @@ export default function App() {
                   }
                 />
                 <RunHistory entries={runs} revision={revision} />
+                <ProjectLibrary
+                  file={() => machineFile(machine, layout)}
+                  valid={validation === "valid"}
+                  onOpen={(next, name) =>
+                    replace(next.machine, name, next.layout)
+                  }
+                  onSave={(name) => {
+                    setTitle(name);
+                    setDirty(false);
+                  }}
+                />
               </div>
               <section
                 className="inspector panel"

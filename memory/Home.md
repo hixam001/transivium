@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Version 1 machine JSON, validated import preview, layout round-trip and 20 immutable session traces are implemented. Replaying a snapshot preserves the live draft and identifies older revisions."
-next_actions: ["TRN-18"]
+current_state: "Named local projects preserve validated machines and diagram layout across refresh. The practice library adds focused acceptor and transducer exercises."
+next_actions: ["TRN-19"]
 ---
 
 # Transivium memory home

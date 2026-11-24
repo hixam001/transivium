@@ -58,7 +58,13 @@ Under **Machine files**, validate the draft and download its JSON. To reopen a f
 
 **Run history** keeps the latest 20 completed simulations in this browser session. Select a run to replay its original input and trace. Runs from earlier revisions carry a label. Refreshing clears session history.
 
-## 9. Support
+## 9. Save projects and practice
+
+In **Projects and examples**, validate the current machine, enter a name and save. To reopen it after a refresh, select the saved project, choose **Open project** and confirm replacement. Saving under an existing name or deleting a project asks for confirmation.
+
+Projects stay in this browser and are subject to its storage settings. You can save up to 12 projects. Download JSON to keep a portable copy. The practice selector offers guided examples for minimization, regex export, language comparison and parity.
+
+## 10. Support
 Report issue with application version/commit, operation, minimal reproducible machine and input, expected vs actual outcome, request ID if shown. Do not send credentials or unnecessary personal data. Local operator guide covers startup issues.
 
 ## Memory links

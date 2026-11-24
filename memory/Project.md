@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Version 1 machine JSON, validated import preview, layout round-trip and 20 immutable session traces are implemented. Replaying a snapshot preserves the live draft and identifies older revisions."
-next_actions: ["TRN-18"]
+current_state: "Named local projects preserve validated machines and diagram layout across refresh. The practice library adds focused acceptor and transducer exercises."
+next_actions: ["TRN-19"]
 ---
 
 # Project state
@@ -95,3 +95,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-17]]: All P0 implementation tasks are complete as an internally verified local release candidate. Guides match the running app; TC-01–39 have explicit evidence/status; the executable HTTP demo passes all five machine kinds and seven operations. Next: [[memory/Issues/TRN-16]].
 
 - [[memory/Issues/TRN-16]]: Version 1 machine JSON, validated import preview, layout round-trip and 20 immutable session traces are implemented. Replaying a snapshot preserves the live draft and identifies older revisions. Next: [[memory/Issues/TRN-18]].
+
+- [[memory/Issues/TRN-18]]: Named local projects preserve validated machines and diagram layout across refresh. The practice library adds focused acceptor and transducer exercises. Next: [[memory/Issues/TRN-19]].

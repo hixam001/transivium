@@ -1268,7 +1268,7 @@ Hosted Verify run 45357991995 passed for 69645a6: 169 backend, 17 component, 28 
 Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
 ",Highest,transivium-p0
 18,Task,Saved projects and example library,"Local planning key: TRN-18
-Planning status: Deferred
+Planning status: Done
 Epic: TRN-105
 Depends on: TRN-17
 Requirements: FR-21
@@ -1283,10 +1283,10 @@ As a learner or instructor, I want saved projects and example library, so that t
 
 ## Acceptance criteria
 
-- [ ] Optional persistence and curated examples beyond basic demo fixtures
-- [ ] Deferred; detailed design, effort and test cases are not specified by the baseline.
+- [x] Optional persistence and curated examples beyond basic demo fixtures
+- [x] Named projects persist in the current browser. Opening validates the snapshot and requires explicit replacement. Deletion asks for confirmation and leaves the live draft intact.
 
-Baseline done condition: Scope and acceptance criteria agreed before any implementation.
+Baseline done condition: Named projects reopen after refresh and the practice library contains runnable new examples.
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
 
 ## Dependencies and sequencing
@@ -1299,7 +1299,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: Unestimated; do not interpret as zero.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -1319,7 +1319,15 @@ External partner results must be recorded separately from internal verification.
 - docs/05_ALGORITHMS
 - docs/APP_FLOW
 - docs/07_TEST_PLAN
-",Low,transivium-p2-deferred
+
+## Executed implementation evidence
+
+Named local projects preserve validated machines and diagram layout across refresh. The practice library adds focused acceptor and transducer exercises.
+
+Frontend lint and two live Chromium cases passed. Tests covered refresh, rejected and confirmed replacement/deletion, mobile parity transducer operation and a scoped axe scan. Storage stays in the current browser, up to 12 projects and 2 MiB of serialized browser storage.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
+",Low,transivium-p2
 19,Task,Advanced editing and diagram image export,"Local planning key: TRN-19
 Planning status: Deferred
 Epic: TRN-105
