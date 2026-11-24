@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "DFA minimization and canonical BFS numbering implemented with unreachable removal, partition traces and exact language certification."
-next_actions: ["TRN-09"]
+current_state: "Public exact equivalence endpoint implemented with same-alphabet validation, sorted shortest witnesses, epsilon-vs-null semantics and explicit resource failures."
+next_actions: ["TRN-10"]
 ---
 
 # Transivium memory home

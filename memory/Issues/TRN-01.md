@@ -43,7 +43,7 @@ No hard issue prerequisites recorded; review linked source contracts before impl
 ## Test and delivery evidence
 
 Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 1 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.

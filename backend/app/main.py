@@ -8,11 +8,19 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException
 
 from app.boundary import Boundary, error_response
+from app.engine.acceptors import equivalent
+from app.engine.budget import Budget
 from app.engine.conversion import convert
 from app.engine.errors import EngineError
 from app.engine.simulation import simulate
-from app.engine.validation import validate
-from app.schemas import ConversionRequest, MachineRequest, SimulationRequest
+from app.engine.validation import require_valid, validate
+from app.schemas import (
+    Acceptor,
+    ConversionRequest,
+    EquivalenceRequest,
+    MachineRequest,
+    SimulationRequest,
+)
 
 app = FastAPI(title="Transivium", version="0.1.0")
 app.add_middleware(
@@ -75,3 +83,15 @@ def simulate_machine(request: SimulationRequest):
 @app.post("/api/v1/convert")
 def convert_machine(request: ConversionRequest):
     return convert(request.machine, request.operation)
+
+
+@app.post("/api/v1/equivalence")
+def compare_machines(request: EquivalenceRequest):
+    budget = Budget()
+    if not isinstance(request.left, Acceptor) or not isinstance(request.right, Acceptor):
+        raise EngineError(
+            "INVALID_OPERATION", "Language comparison accepts DFA, NFA and epsilon-NFA only."
+        )
+    require_valid(request.left, budget)
+    require_valid(request.right, budget)
+    return equivalent(request.left.as_dict(), request.right.as_dict(), budget)

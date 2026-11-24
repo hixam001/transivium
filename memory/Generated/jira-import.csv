@@ -189,7 +189,7 @@ No hard issue prerequisites recorded; review linked source contracts before impl
 ## Test and delivery evidence
 
 Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 1 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -250,7 +250,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: Scaffold/contract checks or detailed cases to be defined from the source plan.
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 2 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -312,7 +312,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-02, TC-25, TC-26, TC-27
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 3 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -374,7 +374,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-01, TC-02
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 5 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -436,7 +436,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-03, TC-04, TC-05
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 3 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -500,7 +500,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-03, TC-31
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 3 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -562,7 +562,7 @@ The shared exact product checker was brought forward into TRN-07 and is integrat
 ## Test and delivery evidence
 
 Planned cases: TC-08, TC-09, TC-10, TC-34
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 4 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -626,7 +626,7 @@ The shared exact product checker was brought forward into TRN-07 and is integrat
 ## Test and delivery evidence
 
 Planned cases: TC-11, TC-12, TC-34
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 3 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -656,7 +656,7 @@ DFA minimization and canonical BFS numbering implemented with unreachable remova
 Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
 ",Highest,transivium-p0
 9,Story,Exact equivalence and shortest witness (FR-14),"Local planning key: TRN-09
-Planning status: To Do
+Planning status: Done
 Epic: TRN-102
 Depends on: TRN-07
 Requirements: FR-14
@@ -671,8 +671,8 @@ As a learner or instructor, I want exact equivalence and shortest witness (fr-14
 
 ## Acceptance criteria
 
-- [ ] Require identical declared alphabets; product BFS returns shortest sorted-tie witness, including [] at initial mismatch.
-- [ ] Prove equality by queue exhaustion; limits and deadlines produce errors, never equality. Integrate this checker into TRN-07 and TRN-08 before closing those stories.
+- [x] Require identical declared alphabets; product BFS returns shortest sorted-tie witness, including [] at initial mismatch.
+- [x] Prove equality by queue exhaustion; limits and deadlines produce errors, never equality. Integrate this checker into TRN-07 and TRN-08 before closing those stories.
 
 Baseline done condition: Positive and negative cases, ε witness
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -687,7 +687,7 @@ All linked requirement acceptance criteria also apply; their links below are par
 ## Test and delivery evidence
 
 Planned cases: TC-21, TC-22, TC-23, TC-24
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: 3 person-days.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -707,6 +707,14 @@ External partner results must be recorded separately from internal verification.
 - docs/05_ALGORITHMS
 - docs/APP_FLOW
 - docs/07_TEST_PLAN
+
+## Executed implementation evidence
+
+Public exact equivalence endpoint implemented with same-alphabet validation, sorted shortest witnesses, epsilon-vs-null semantics and explicit resource failures.
+
+66 backend tests passed. TC-21–24 backend decisions/witnesses and alphabet errors passed; 40 fixed-seed DFA pairs matched independent shortest-word enumeration through length eight. Incorrect conversion mutation rejected with VERIFICATION_FAILED. Product cap never returns equality. Ruff passed. Compare UI remains TRN-12.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.
 ",Highest,transivium-p0
 10,Story,"GNFA AST, simplifier, serializer (FR-13)","Local planning key: TRN-10
 Planning status: To Do

@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "DFA minimization and canonical BFS numbering implemented with unreachable removal, partition traces and exact language certification."
-next_actions: ["TRN-09"]
+current_state: "Public exact equivalence endpoint implemented with same-alphabet validation, sorted shortest witnesses, epsilon-vs-null semantics and explicit resource failures."
+next_actions: ["TRN-10"]
 ---
 
 # Project state
@@ -63,3 +63,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-07]]: Epsilon removal and reachable subset construction implemented with final propagation, empty sinks, deterministic derivations and exact product certification. Shared checker brought forward to satisfy certification dependency. Next: [[memory/Issues/TRN-08]].
 
 - [[memory/Issues/TRN-08]]: DFA minimization and canonical BFS numbering implemented with unreachable removal, partition traces and exact language certification. Next: [[memory/Issues/TRN-09]].
+
+- [[memory/Issues/TRN-09]]: Public exact equivalence endpoint implemented with same-alphabet validation, sorted shortest witnesses, epsilon-vs-null semantics and explicit resource failures. Next: [[memory/Issues/TRN-10]].
