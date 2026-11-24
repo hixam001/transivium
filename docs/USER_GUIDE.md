@@ -19,7 +19,7 @@ Open the local application after setup. `/` and `/editor` open the workspace wit
 ## 2. Build a machine
 1. Set input alphabet using unique single ASCII letters/digits (e.g. 0,1). For transducers also define nonempty output alphabet.
 2. Add states and choose exactly one start. For acceptors, mark final states (can be none). For Moore, assign each state's output.
-3. Connecting diagram state handles adds an edge for the first declared input symbol (and first output for Mealy). Use the transition table to choose destinations for every symbol, including epsilon for ε-NFA, and edit Mealy edge outputs. For Mealy, specify each edge's output. Only ε-NFA permits epsilon transitions.
+3. Connecting diagram state handles adds an edge for the first declared input symbol (and first output for Mealy). Use the transition table to choose destinations for every symbol, including epsilon for ε-NFA, and edit Mealy edge outputs. For Mealy, specify each edge's output. Only ε-NFA permits epsilon transitions. Large tables offer state pages and a **Jump to state** selector.
 4. Check completeness for DFA/transducers: every state needs exactly one destination per symbol. Add sink explicitly where appropriate. NFA may omit edges.
 5. Select Validate. Resolve reported issues before running. Graph and table reflect the same machine; coordinates do not affect results.
 

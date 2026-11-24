@@ -76,7 +76,11 @@ def test_chunked_request_cap_does_not_trust_content_length():
         scope = {
             "type": "http",
             "method": "POST",
-            "headers": [(b"content-type", b"application/json"), (b"content-length", b"1")],
+            "headers": [
+                (b"host", b"localhost"),
+                (b"content-type", b"application/json"),
+                (b"content-length", b"1"),
+            ],
         }
         await Boundary(inner)(scope, receive, send)
         assert not called
@@ -99,3 +103,41 @@ def test_strict_wire_fields_and_configured_origin(client, fixture):
     assert response.json()["error"]["code"] == "CORS_REJECTED"
     response = client.get("/api/v1/health", headers={"Origin": "http://127.0.0.1:5173"})
     assert response.headers["access-control-allow-origin"] == "http://127.0.0.1:5173"
+
+
+def test_local_host_allowlist_returns_uniform_errors(client):
+    for host in ["localhost:8000", "127.0.0.1:8000", "[::1]:8000"]:
+        assert client.get("/api/v1/health", headers={"host": host}).status_code == 200
+    response = client.get("/api/v1/health", headers={"host": "unconfigured.example"})
+    assert response.status_code == 400
+    assert response.json()["error"]["code"] == "HOST_REJECTED"
+
+
+def test_request_reader_timeout_is_typed_and_never_dispatches(monkeypatch):
+    import app.boundary as boundary
+
+    monkeypatch.setattr(boundary, "LIMITS", replace(LIMITS, request_read_seconds=0))
+
+    async def scenario():
+        async def inner(*_):
+            pytest.fail("Timed out requests must not reach the application")
+
+        async def receive():
+            await asyncio.sleep(0)
+            return {"type": "http.request", "body": b"{}"}
+
+        messages = []
+
+        async def send(message):
+            messages.append(message)
+
+        scope = {
+            "type": "http",
+            "method": "POST",
+            "headers": [(b"host", b"localhost"), (b"content-type", b"application/json")],
+        }
+        await Boundary(inner)(scope, receive, send)
+        assert messages[0]["status"] == 408
+        assert json.loads(messages[1]["body"])["error"]["code"] == "REQUEST_TIMEOUT"
+
+    asyncio.run(scenario())

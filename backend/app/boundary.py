@@ -1,11 +1,15 @@
 """Bounded request reading and uniform, privacy-safe error envelopes."""
 
+import re
+from asyncio import timeout
 from uuid import uuid4
 
 from starlette.responses import JSONResponse
 
 from app.engine.budget import LIMITS
 from app.engine.errors import EngineError
+
+LOCAL_HOST = re.compile(rb"(localhost|127\.0\.0\.1|\[::1\])(?::[0-9]{1,5})?")
 
 
 def error_response(code, message, status=422, issues=None, request_id=None):
@@ -37,8 +41,11 @@ class Boundary:
             response.headers["X-Request-ID"] = request_id
             await response(scope, receive, send)
 
+        headers = dict(scope["headers"])
+        if not LOCAL_HOST.fullmatch(headers.get(b"host", b"").lower()):
+            return await fail("HOST_REJECTED", "Use the local Transivium address.", 400)
+
         if scope["method"] == "POST":
-            headers = dict(scope["headers"])
             if (
                 headers.get(b"content-type", b"").split(b";", 1)[0].strip().lower()
                 != b"application/json"
@@ -47,16 +54,22 @@ class Boundary:
                     "UNSUPPORTED_MEDIA_TYPE", "POST requests require application/json.", 415
                 )
             body = bytearray()
-            while True:
-                message = await receive()
-                if message["type"] == "http.disconnect":
-                    return
-                chunk = message.get("body", b"")
-                if len(body) + len(chunk) > LIMITS.request_bytes:
-                    return await fail("PAYLOAD_TOO_LARGE", "Request exceeds 512 KiB.", 413)
-                body.extend(chunk)
-                if not message.get("more_body", False):
-                    break
+            try:
+                async with timeout(LIMITS.request_read_seconds):
+                    while True:
+                        message = await receive()
+                        if message["type"] == "http.disconnect":
+                            return
+                        chunk = message.get("body", b"")
+                        if len(body) + len(chunk) > LIMITS.request_bytes:
+                            return await fail("PAYLOAD_TOO_LARGE", "Request exceeds 512 KiB.", 413)
+                        body.extend(chunk)
+                        if not message.get("more_body", False):
+                            break
+            except TimeoutError:
+                return await fail(
+                    "REQUEST_TIMEOUT", "Request upload timed out. Retry locally.", 408
+                )
             consumed = False
 
             async def body_receive():

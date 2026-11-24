@@ -14,7 +14,20 @@ export function diagramSvg(machine: Machine, layout: Layout, title: string) {
     const node = document.createElementNS(namespace, tag);
     for (const [key, value] of Object.entries(attributes))
       node.setAttribute(key, String(value));
-    if (text !== undefined) node.textContent = text;
+    if (text !== undefined) {
+      // XML 1.0 cannot represent every Unicode scalar accepted in display labels.
+      node.textContent = Array.from(text, (character) => {
+        const code = character.codePointAt(0)!;
+        return code === 9 ||
+          code === 10 ||
+          code === 13 ||
+          (code >= 0x20 && code <= 0xd7ff) ||
+          (code >= 0xe000 && code <= 0xfffd) ||
+          code >= 0x10000
+          ? character
+          : "�";
+      }).join("");
+    }
     parent?.append(node);
     return node;
   };

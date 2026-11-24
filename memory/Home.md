@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Grid, row and circle layouts, bounded undo/redo and SVG/PNG downloads are implemented. Formal edits invalidate stale results and layout-only edits preserve validation."
-next_actions: ["TRN-105"]
+current_state: "Focused security, dependency, correctness and interface reviews completed. Added local Host validation, a five-second upload deadline, bounded table rendering and XML-safe diagram labels."
+next_actions: ["TRN-104"]
 ---
 
 # Transivium memory home

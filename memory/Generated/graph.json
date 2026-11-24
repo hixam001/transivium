@@ -156,6 +156,15 @@
       ]
     },
     {
+      "id": "docs/QUALITY_REVIEW",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "quality"
+      ]
+    },
+    {
       "id": "docs/SETUP_GUIDE",
       "type": "reference",
       "status": "active",
@@ -471,6 +480,15 @@
       ]
     },
     {
+      "id": "memory/Handoffs/TRN-27",
+      "type": "session",
+      "status": "complete",
+      "tags": [
+        "transivium",
+        "session"
+      ]
+    },
+    {
       "id": "memory/Home",
       "type": "project",
       "status": "active",
@@ -769,6 +787,15 @@
     },
     {
       "id": "memory/Issues/TRN-26",
+      "type": "reference",
+      "status": "active",
+      "tags": [
+        "transivium",
+        "reference"
+      ]
+    },
+    {
+      "id": "memory/Issues/TRN-27",
       "type": "reference",
       "status": "active",
       "tags": [
@@ -1308,6 +1335,15 @@
       ]
     },
     {
+      "id": "memory/Sessions/2026-11-24-TRN-27",
+      "type": "session",
+      "status": "complete",
+      "tags": [
+        "transivium",
+        "session"
+      ]
+    },
+    {
       "id": "memory/Templates/Jira-Issue",
       "type": "reference",
       "status": "active",
@@ -1581,6 +1617,18 @@
       "target": "memory/Issues/TRN-01"
     },
     {
+      "source": "docs/QUALITY_REVIEW",
+      "target": "docs/SETUP_GUIDE"
+    },
+    {
+      "source": "docs/QUALITY_REVIEW",
+      "target": "docs/TEST_EVIDENCE"
+    },
+    {
+      "source": "docs/QUALITY_REVIEW",
+      "target": "memory/Issues/TRN-27"
+    },
+    {
       "source": "docs/SETUP_GUIDE",
       "target": "docs/TEST_EVIDENCE"
     },
@@ -1710,7 +1758,7 @@
     },
     {
       "source": "memory/Handoffs/Current",
-      "target": "memory/Handoffs/TRN-19"
+      "target": "memory/Handoffs/TRN-27"
     },
     {
       "source": "memory/Handoffs/Current",
@@ -1718,7 +1766,7 @@
     },
     {
       "source": "memory/Handoffs/Current",
-      "target": "memory/Issues/TRN-19"
+      "target": "memory/Issues/TRN-27"
     },
     {
       "source": "memory/Handoffs/Current",
@@ -2729,6 +2777,38 @@
       "target": "memory/Workflow"
     },
     {
+      "source": "memory/Handoffs/TRN-27",
+      "target": "docs/QUALITY_REVIEW"
+    },
+    {
+      "source": "memory/Handoffs/TRN-27",
+      "target": "memory/Decisions/Working-Agreement"
+    },
+    {
+      "source": "memory/Handoffs/TRN-27",
+      "target": "memory/Handoffs/Current"
+    },
+    {
+      "source": "memory/Handoffs/TRN-27",
+      "target": "memory/Home"
+    },
+    {
+      "source": "memory/Handoffs/TRN-27",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Handoffs/TRN-27",
+      "target": "memory/Issues/TRN-27"
+    },
+    {
+      "source": "memory/Handoffs/TRN-27",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Handoffs/TRN-27",
+      "target": "memory/Workflow"
+    },
+    {
       "source": "memory/Home",
       "target": "README"
     },
@@ -2919,6 +2999,10 @@
     {
       "source": "memory/Issues/Backlog",
       "target": "memory/Issues/TRN-26"
+    },
+    {
+      "source": "memory/Issues/Backlog",
+      "target": "memory/Issues/TRN-27"
     },
     {
       "source": "memory/Issues/Backlog",
@@ -4429,6 +4513,22 @@
       "target": "memory/Requirements/NFR-07"
     },
     {
+      "source": "memory/Issues/TRN-27",
+      "target": "docs/QUALITY_REVIEW"
+    },
+    {
+      "source": "memory/Issues/TRN-27",
+      "target": "docs/TEST_EVIDENCE"
+    },
+    {
+      "source": "memory/Issues/TRN-27",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Issues/TRN-27",
+      "target": "memory/Issues/TRN-19"
+    },
+    {
       "source": "memory/Project",
       "target": "docs/00_PRD"
     },
@@ -4506,6 +4606,10 @@
     },
     {
       "source": "memory/Project",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Project",
       "target": "memory/Issues/TRN-105"
     },
     {
@@ -4571,6 +4675,10 @@
     {
       "source": "memory/Project",
       "target": "memory/Issues/TRN-26"
+    },
+    {
+      "source": "memory/Project",
+      "target": "memory/Issues/TRN-27"
     },
     {
       "source": "memory/Project",
@@ -6074,6 +6182,26 @@
     },
     {
       "source": "memory/Sessions/2026-11-24-TRN-26",
+      "target": "memory/Project"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-27",
+      "target": "docs/QUALITY_REVIEW"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-27",
+      "target": "memory/Handoffs/TRN-27"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-27",
+      "target": "memory/Issues/TRN-104"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-27",
+      "target": "memory/Issues/TRN-27"
+    },
+    {
+      "source": "memory/Sessions/2026-11-24-TRN-27",
       "target": "memory/Project"
     },
     {

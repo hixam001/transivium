@@ -104,7 +104,8 @@ This example describes a start-state mismatch. When equivalent, `counterexample`
 
 | Status | Code | Meaning |
 |---|---|---|
-| 400 | `MALFORMED_JSON`, `CORS_REJECTED` | Invalid UTF-8/JSON or rejected local CORS preflight |
+| 400 | `MALFORMED_JSON`, `CORS_REJECTED`, `HOST_REJECTED` | Invalid UTF-8/JSON, rejected CORS preflight or a Host outside the loopback allowlist |
+| 408 | `REQUEST_TIMEOUT` | POST body was incomplete after five seconds |
 | 413 | `PAYLOAD_TOO_LARGE` | Body exceeds cap |
 | 415 | `UNSUPPORTED_MEDIA_TYPE` | POST is not JSON |
 | 422 | `SCHEMA_ERROR`, `INVALID_MACHINE`, `INVALID_INPUT`, `INVALID_OPERATION`, `ALPHABET_MISMATCH` | Correct input then retry |
@@ -115,7 +116,7 @@ This example describes a start-state mismatch. When equivalent, `counterexample`
 Framework routes may also return 404/405 using same envelope (`NOT_FOUND`, `METHOD_NOT_ALLOWED`). No client access to exception internals. Network failures have no HTTP envelope; frontend shows connection/retry message.
 
 ## 7. Limits / determinism
-256 states, 16 input/output symbols, 16,384 transitions, 512 tokens, 512 KiB request, 64 KiB UTF-8 regex, 50,000 AST work allocations, parser nesting 128, 65,536 product pairs, 2,000 derivation steps, 2 MiB response, 5 s cooperative deadline. Intermediate machines obey state/transition limits; budget guards apply before expansion. Limits are enforced and acceptance-tested; see [[docs/TEST_EVIDENCE]]. GNFA state count includes its two synthetic states. Sort symbols ASCII and IDs consistently for predictable traces; canonically number minimized DFAs by BFS. Do not silently discard output, approximate equivalence or mark failed export verified.
+256 states, 16 input/output symbols, 16,384 transitions, 512 tokens, 512 KiB request, 64 KiB UTF-8 regex, 50,000 AST work allocations, parser nesting 128, 65,536 product pairs, 2,000 derivation steps, 2 MiB response, 5 s cooperative deadline. The API accepts Host values for localhost, 127.0.0.1 and [::1]. Uploads have a five-second body-read timeout before formal computation begins. Intermediate machines obey state/transition limits and budget guards apply before expansion. Limits are enforced and acceptance-tested; see [[docs/TEST_EVIDENCE]]. GNFA state count includes its two synthetic states. Sort symbols ASCII and IDs consistently for predictable traces; canonically number minimized DFAs by BFS. Do not silently discard output, approximate equivalence or mark failed export verified.
 
 ## Memory links
 

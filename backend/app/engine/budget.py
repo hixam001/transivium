@@ -15,6 +15,7 @@ class Limits:
     transitions: int = 16_384
     input_tokens: int = 512
     request_bytes: int = 512 * 1024
+    request_read_seconds: float = 5
     regex_bytes: int = 64 * 1024
     ast_work: int = 50_000
     product_pairs: int = 65_536

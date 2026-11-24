@@ -117,7 +117,7 @@ Enforced limits: 256 states per formal machine, 16 input/output symbols each, 16
 
 ## 9. Security / accessibility / deployment
 - Strict schema, bounded body reader, no eval, no regex execution against host engine, render labels as text, safe file parsing, no secrets required.
-- Local API bind 127.0.0.1; CORS restricted to configured frontend origin; production sharing requires separate review and is not in MVP.
+- Local API bind 127.0.0.1; Host restricted to loopback names and addresses, with CORS restricted to the configured frontend origin; production sharing requires separate review and is not in MVP.
 - Keyboard form/table editor, visible focus, accessible labels, text status, playback controls; animation is optional and respects reduced-motion preference.
 - Backend unit tests plus API integration; frontend component and end-to-end tests. Exact dependencies and runtimes are pinned; see [[docs/SETUP_GUIDE]] and [[docs/TEST_EVIDENCE]].
 

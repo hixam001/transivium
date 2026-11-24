@@ -1,5 +1,5 @@
-import { useId } from "react";
-import type { Machine } from "./model";
+import { useId, useMemo, useState } from "react";
+import type { Machine, Transition } from "./model";
 import { isNondeterministic } from "./model";
 
 export default function TransitionTable({
@@ -16,10 +16,34 @@ export default function TransitionTable({
     ...machine.alphabet,
     ...(machine.kind === "enfa" ? [null] : []),
   ];
+  const [requestedPage, setPage] = useState(0);
+  // Each native destination selector contains every state. Bound the option
+  // count as machines approach the supported state and alphabet limits.
+  const optionsPerRow = Math.max(
+    1,
+    columns.length * (machine.states.length + 1),
+  );
+  const rowsPerPage = Math.max(1, Math.floor(24_576 / optionsPerRow));
+  const lastPage = Math.max(
+    0,
+    Math.ceil(machine.states.length / rowsPerPage) - 1,
+  );
+  const page = Math.min(requestedPage, lastPage);
+  const start = page * rowsPerPage;
+  const rows = machine.states.slice(start, start + rowsPerPage);
+  const edgesByState = useMemo(() => {
+    const index = new Map<string, Map<string | null, Transition[]>>();
+    for (const edge of machine.transitions) {
+      const bySymbol = index.get(edge.from) ?? new Map();
+      const edges = bySymbol.get(edge.symbol) ?? [];
+      edges.push(edge);
+      bySymbol.set(edge.symbol, edges);
+      index.set(edge.from, bySymbol);
+    }
+    return index;
+  }, [machine.transitions]);
   function setTargets(from: string, symbol: string | null, targets: string[]) {
-    const oldOutput = machine.transitions.find(
-      (t) => t.from === from && t.symbol === symbol,
-    )?.output;
+    const oldOutput = edgesByState.get(from)?.get(symbol)?.[0]?.output;
     update({
       ...machine,
       transitions: [
@@ -49,6 +73,41 @@ export default function TransitionTable({
           </p>
         </div>
       </div>
+      {lastPage > 0 && (
+        <div className="table-page">
+          <p aria-live="polite">
+            States {start + 1}–{start + rows.length} of {machine.states.length}
+          </p>
+          <label className="inline-field">
+            Jump to state
+            <select
+              aria-label="Jump to state"
+              value=""
+              onChange={(event) =>
+                setPage(Math.floor(Number(event.target.value) / rowsPerPage))
+              }
+            >
+              <option value="" disabled>
+                Choose a state
+              </option>
+              {machine.states.map(({ id, label }, index) => (
+                <option key={id} value={index}>
+                  {label || id}
+                </option>
+              ))}
+            </select>
+          </label>
+          <button disabled={page === 0} onClick={() => setPage(page - 1)}>
+            Previous states
+          </button>
+          <button
+            disabled={page === lastPage}
+            onClick={() => setPage(page + 1)}
+          >
+            Next states
+          </button>
+        </div>
+      )}
       <div
         className="table-scroll"
         role="region"
@@ -68,7 +127,7 @@ export default function TransitionTable({
             </tr>
           </thead>
           <tbody>
-            {machine.states.map((state) => (
+            {rows.map((state) => (
               <tr key={state.id}>
                 <th scope="row">
                   <span className="state-id">
@@ -81,9 +140,7 @@ export default function TransitionTable({
                   ) : null}
                 </th>
                 {columns.map((symbol) => {
-                  const edges = machine.transitions.filter(
-                    (t) => t.from === state.id && t.symbol === symbol,
-                  );
+                  const edges = edgesByState.get(state.id)?.get(symbol) ?? [];
                   return (
                     <td key={symbol ?? "epsilon"}>
                       <select

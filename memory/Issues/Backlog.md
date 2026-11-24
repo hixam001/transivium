@@ -13,7 +13,7 @@ tags: ["transivium", "reference"]
 
 ## Scope and identifiers
 
-These are **local planning IDs**, not issues created in a connected Jira project. TRN-01–17 preserve the original plan. TRN-18–19 capture deferred P2 FR-21–22. TRN-20–26 are explicit NFR verification tasks; they add no invented effort to the 53-person-day P0 estimate. TRN-100–105 are grouping epics. No assignees, deadlines, stakeholder approvals or test passes are invented.
+These are **local planning IDs**, not issues created in a connected Jira project. TRN-01–17 preserve the original plan. TRN-18–19 capture the original P2 scope for FR-21–22. TRN-20–26 are explicit NFR verification tasks; they add no invented effort to the 53-person-day P0 estimate. TRN-100–105 are grouping epics. No assignees, deadlines, stakeholder approvals or test passes are invented.
 
 | Issue | Type | Priority | Initial status | Proposed person-days |
 |---|---|---|---|---|
@@ -43,6 +43,7 @@ These are **local planning IDs**, not issues created in a connected Jira project
 | [[memory/Issues/TRN-24\|TRN-24: Verify reliability]] | Task | P0 | To Do | Unestimated |
 | [[memory/Issues/TRN-25\|TRN-25: Verify maintainability]] | Task | P0 | To Do | Unestimated |
 | [[memory/Issues/TRN-26\|TRN-26: Verify scalability]] | Task | P0 | To Do | Unestimated |
+| [[memory/Issues/TRN-27\|TRN-27: Security, correctness and interface review]] | Task | P0 | To Do | Unestimated |
 
 ## Epics
 

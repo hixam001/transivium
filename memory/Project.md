@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Grid, row and circle layouts, bounded undo/redo and SVG/PNG downloads are implemented. Formal edits invalidate stale results and layout-only edits preserve validation."
-next_actions: ["TRN-105"]
+current_state: "Focused security, dependency, correctness and interface reviews completed. Added local Host validation, a five-second upload deadline, bounded table rendering and XML-safe diagram labels."
+next_actions: ["TRN-104"]
 ---
 
 # Project state
@@ -99,3 +99,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-18]]: Named local projects preserve validated machines and diagram layout across refresh. The practice library adds focused acceptor and transducer exercises. Next: [[memory/Issues/TRN-19]].
 
 - [[memory/Issues/TRN-19]]: Grid, row and circle layouts, bounded undo/redo and SVG/PNG downloads are implemented. Formal edits invalidate stale results and layout-only edits preserve validation. Next: [[memory/Issues/TRN-105]].
+
+- [[memory/Issues/TRN-27]]: Focused security, dependency, correctness and interface reviews completed. Added local Host validation, a five-second upload deadline, bounded table rendering and XML-safe diagram labels. Next: [[memory/Issues/TRN-104]].

@@ -52,7 +52,12 @@ class MemoryChecks(unittest.TestCase):
     def test_csv_preserves_multiline_acceptance_and_unique_import_ids(self):
         generated = memory.outputs(self.notes)
         rows = list(csv.DictReader(io.StringIO(generated["jira-import.csv"])))
-        self.assertEqual(len(rows), 32)
+        expected_ids = {
+            str(int(note["fields"]["issue_key"].split("-")[1]))
+            for note in self.notes.values()
+            if "issue_key" in note["fields"]
+        }
+        self.assertEqual({row["Issue ID"] for row in rows}, expected_ids)
         self.assertEqual(len({row["Issue ID"] for row in rows}), len(rows))
         verifier = next(row for row in rows if row["Issue ID"] == "11")
         self.assertIn("## Acceptance criteria\n", verifier["Description"])

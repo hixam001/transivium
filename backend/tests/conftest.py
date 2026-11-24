@@ -11,7 +11,7 @@ FIXTURES = Path(__file__).resolve().parents[2] / "contracts/fixtures"
 
 @pytest.fixture
 def client():
-    with TestClient(app) as client:
+    with TestClient(app, base_url="http://127.0.0.1") as client:
         yield client
 
 
