@@ -55,10 +55,14 @@ async def schema_error(request: Request, exc: RequestValidationError):
 
 @app.exception_handler(HTTPException)
 async def http_error(request: Request, exc: HTTPException):
-    code = {404: "NOT_FOUND", 405: "METHOD_NOT_ALLOWED"}.get(exc.status_code, "INTERNAL_ERROR")
+    code = {400: "MALFORMED_JSON", 404: "NOT_FOUND", 405: "METHOD_NOT_ALLOWED"}.get(
+        exc.status_code, "INTERNAL_ERROR"
+    )
     return error_response(
         code,
-        "Requested route or method is unavailable.",
+        "Use valid UTF-8 JSON."
+        if exc.status_code == 400
+        else "Requested route or method is unavailable.",
         exc.status_code,
         request_id=request.state.request_id,
     )

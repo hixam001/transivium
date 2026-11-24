@@ -44,3 +44,9 @@ Production-browser measurements used Chromium 159 at 1440×1050: 20 samples each
 The production entry JavaScript bundle decreased from 515.75 kB to 259.67 kB; graph code (250.34 kB) and comparison code (7.80 kB) load separately. This reduces the entry bundle, not the total transfer for an editor that immediately loads its graph. Lint/build, 17 component checks and ten live browser checks passed after splitting.
 
 Reproduce with the local API running: `python3 scripts/benchmark.py --samples 30`. Build the frontend and serve `npm run preview -- --port 4173`, with API on 8000, then run `node scripts/benchmark-browser.mjs --samples 20`. Dependencies and browser setup are in [[docs/SETUP_GUIDE]].
+
+## Local boundary safety — TRN-22
+
+Backend: **146 tests passed**. Added malformed UTF-8, deeply nested schema-invalid JSON, untrusted Content-Length with chunked oversized bodies, typed response overflow, strict wire aliases, CORS preflight rejection and unexpected-exception privacy checks. Response overflow is buffered/discarded before publication and returns 422 LIMIT_EXCEEDED rather than a partial result. Invalid UTF-8 maps to 400 MALFORMED_JSON; parsed but schema-invalid nested data maps to 422 SCHEMA_ERROR. CORS rejections now use the uniform error envelope and generated request IDs.
+
+A live Chromium test confirmed markup-like state labels remain literal text in the graph/table/forms and create no image element or executable handler. The installed memory skill privacy scan found no patterns in documentation/memory/source text it supports. Runtime defaults stay local, with configured-origin CORS, strict JSON schemas and no account/database or code evaluation. This is scoped implementation acceptance, not a comprehensive codebase audit or a public-deployment approval.

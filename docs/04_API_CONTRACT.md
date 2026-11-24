@@ -104,7 +104,7 @@ This example describes a start-state mismatch. When equivalent, `counterexample`
 
 | Status | Code | Meaning |
 |---|---|---|
-| 400 | `MALFORMED_JSON` | Invalid JSON syntax |
+| 400 | `MALFORMED_JSON`, `CORS_REJECTED` | Invalid UTF-8/JSON or rejected local CORS preflight |
 | 413 | `PAYLOAD_TOO_LARGE` | Body exceeds cap |
 | 415 | `UNSUPPORTED_MEDIA_TYPE` | POST is not JSON |
 | 422 | `SCHEMA_ERROR`, `INVALID_MACHINE`, `INVALID_INPUT`, `INVALID_OPERATION`, `ALPHABET_MISMATCH` | Correct input then retry |

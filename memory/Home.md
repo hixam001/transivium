@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Build a correct finite automata and transducer studio"
-current_state: "Lazy graph/comparison loading and reproducible API/browser responsiveness benchmarks implemented. Recorded reference workloads meet the proposed 2 s p95 target."
-next_actions: ["TRN-22"]
+current_state: "Local API boundary safety hardened: typed response-overflow errors, malformed UTF-8 handling, uniform CORS failures and generated request IDs. Browser labels remain literal text."
+next_actions: ["TRN-23"]
 ---
 
 # Transivium memory home

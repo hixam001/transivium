@@ -8,8 +8,8 @@ confidence: "high"
 source: "repository-documentation-and-user-task"
 tags: ["transivium", "project"]
 goal: "Verified educational automata workflows"
-current_state: "Lazy graph/comparison loading and reproducible API/browser responsiveness benchmarks implemented. Recorded reference workloads meet the proposed 2 s p95 target."
-next_actions: ["TRN-22"]
+current_state: "Local API boundary safety hardened: typed response-overflow errors, malformed UTF-8 handling, uniform CORS failures and generated request IDs. Browser labels remain literal text."
+next_actions: ["TRN-23"]
 ---
 
 # Project state
@@ -79,3 +79,5 @@ Documentation checks are separate from application tests. Full TC-01–39 workfl
 - [[memory/Issues/TRN-20]]: Cross-operation correctness gate implemented and documented; all seven API operations return valid exactly certified results, and interrupted verification returns no artifact. Next: [[memory/Issues/TRN-21]].
 
 - [[memory/Issues/TRN-21]]: Lazy graph/comparison loading and reproducible API/browser responsiveness benchmarks implemented. Recorded reference workloads meet the proposed 2 s p95 target. Next: [[memory/Issues/TRN-22]].
+
+- [[memory/Issues/TRN-22]]: Local API boundary safety hardened: typed response-overflow errors, malformed UTF-8 handling, uniform CORS failures and generated request IDs. Browser labels remain literal text. Next: [[memory/Issues/TRN-23]].

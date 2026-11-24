@@ -9,7 +9,7 @@ source: "repository-documentation-and-user-task"
 tags: ["transivium", "reference"]
 requirement_id: "NFR-03"
 priority: "P0"
-implementation_status: "Not implemented"
+implementation_status: "Local API safety and text rendering implemented and tested"
 test_status: "NOT RUN"
 owners: ["TRN-22", "TRN-15", "TRN-17"]
 tests: ["TC-30"]
@@ -31,7 +31,7 @@ Success measure: Release evidence in docs/07_TEST_PLAN.md.
 
 Planned evidence: TC-30. Application test status: **NOT RUN**.
 Priority P0; P1 begins only after the P0 release gate; P2 remains deferred.
-The requirement is documented, not implemented. Proposed numerical targets retain proposed status.
+Strict schemas, bounded HTTP bodies/responses, sanitized errors, configured-origin CORS and literal label rendering are implemented; scoped evidence is in [[docs/TEST_EVIDENCE]]. Proposed numerical targets retain proposed status.
 
 ## Sources and delivery
 

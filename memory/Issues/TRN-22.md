@@ -10,7 +10,7 @@ tags: ["transivium", "reference"]
 issue_key: "TRN-22"
 issue_type: "Task"
 summary: "Verify safety"
-issue_status: "To Do"
+issue_status: "Done"
 priority: "P0"
 epic: "TRN-104"
 depends_on: []
@@ -27,8 +27,8 @@ As a maintainer, I want verify safety, so that the documented Transivium workflo
 
 ## Acceptance criteria
 
-- [ ] validate every backend request, reject oversized payloads, never execute user strings as code, avoid exposing stack traces; local-only binding by default.
-- [ ] Record reproducible evidence and any unmet target before the P0 release gate.
+- [x] validate every backend request, reject oversized payloads, never execute user strings as code, avoid exposing stack traces; local-only binding by default.
+- [x] Record reproducible evidence and any unmet target before the P0 release gate.
 
 Baseline done condition: validate every backend request, reject oversized payloads, never execute user strings as code, avoid exposing stack traces; local-only binding by default.
 All linked requirement acceptance criteria also apply; their links below are part of this issue's scope.
@@ -43,7 +43,7 @@ This task verifies cross-cutting requirements as component work lands; it does n
 ## Test and delivery evidence
 
 Planned cases: TC-30
-Application checks: **NOT RUN**. Assignee: Unassigned. Actual effort: unrecorded.
+Application checks: executed evidence below; full release acceptance remains separate. Assignee: Unassigned. Actual effort: unrecorded.
 Proposed estimate: Unestimated; do not interpret as zero.
 Record actual commands, environment, evidence, limitations and review before marking Done.
 External partner results must be recorded separately from internal verification.
@@ -63,3 +63,11 @@ External partner results must be recorded separately from internal verification.
 - [[docs/05_ALGORITHMS]]
 - [[docs/APP_FLOW]]
 - [[docs/07_TEST_PLAN]]
+
+## Executed implementation evidence
+
+Local API boundary safety hardened: typed response-overflow errors, malformed UTF-8 handling, uniform CORS failures and generated request IDs. Browser labels remain literal text.
+
+146 backend tests passed, including chunked caps independent of Content-Length, response overflow with no partial trace, private exception-message suppression, strict alias rejection and local origin policy. One live Chromium markup-label check passed; memory privacy scan found no supported secret patterns. Ruff passed. No comprehensive audit or public-deployment approval is claimed.
+
+Git history and remote tracking record publication. No external stakeholder review or partner test is implied.

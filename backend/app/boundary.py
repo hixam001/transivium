@@ -33,7 +33,9 @@ class Boundary:
         scope.setdefault("state", {})["request_id"] = request_id
 
         async def fail(code, message, status):
-            await error_response(code, message, status, request_id=request_id)(scope, receive, send)
+            response = error_response(code, message, status, request_id=request_id)
+            response.headers["X-Request-ID"] = request_id
+            await response(scope, receive, send)
 
         if scope["method"] == "POST":
             headers = dict(scope["headers"])
@@ -70,14 +72,17 @@ class Boundary:
         # This app has JSON responses, not unbounded streaming endpoints.
         messages = []
         size = 0
+        overflow = False
 
         async def bounded_send(message):
-            nonlocal size
+            nonlocal size, overflow
             if message["type"] == "http.response.body":
                 size += len(message.get("body", b""))
                 if size > LIMITS.response_bytes:
-                    raise EngineError("LIMIT_EXCEEDED", "Response size limit exceeded.")
-            messages.append(message)
+                    overflow = True
+                    messages.clear()
+            if not overflow:
+                messages.append(message)
 
         try:
             await self.app(scope, app_receive, bounded_send)
@@ -88,6 +93,17 @@ class Boundary:
             return await fail(
                 "INTERNAL_ERROR", "Operation failed; retry or report the request ID.", 500
             )
+        if overflow:
+            return await fail("LIMIT_EXCEEDED", "Response size limit exceeded.", 422)
+        start = next((m for m in messages if m["type"] == "http.response.start"), None)
+        if start and start["status"] >= 400:
+            content_type = dict(start.get("headers", [])).get(b"content-type", b"")
+            if not content_type.startswith(b"application/json"):
+                return await fail(
+                    "CORS_REJECTED" if scope["method"] == "OPTIONS" else "INTERNAL_ERROR",
+                    "Request rejected by the local HTTP boundary.",
+                    start["status"],
+                )
         for message in messages:
             if message["type"] == "http.response.start":
                 message.setdefault("headers", []).append((b"x-request-id", request_id.encode()))
